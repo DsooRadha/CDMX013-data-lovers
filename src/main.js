@@ -23,13 +23,39 @@ function dataghibli() {
   fetch("data/ghibli/ghibli.json")
     .then(respuesta => respuesta.json())
     .then(data => {
-      let name = (data.films['0'].title)
-      let imagen = (data.films['0'].poster)
-      //console.log(name);
-      document.getElementById('titulo').innerHTML = name
-      document.getElementById('exp0').innerHTML = imagen
+      let name =  (data.films.title);
+      let name0 = (data.films['0'].title);
+      let name1 = (data.films['1'].title);
+     
+     
+      document.getElementById('movie0').innerHTML = name0
+      document.getElementById('movie1').innerHTML = name1
+     
+     console.log (name1);
+     console.log(name0);
+     //document.getElementById("movie1").innerHTML = '<img src="${data.films['1'].poster">';
+   
+
+     name.forEach(p => {
+      console.log (p)
+    });
     })
+   
 }
+
+
+
+
+/*
+dataAccess();
+
+async function  dataAccess(){
+  const dataghibli = await fetch ("data/ghibli/ghibli.json");
+  const data= await dataghibli.json
+  data.forEach(p => {
+    console.log(p");
+  });
+}*/
 //}    for (var i = 0; i < data.length; i++)
 /*
 */
