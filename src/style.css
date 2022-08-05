@@ -1,0 +1,87 @@
+html, body {
+    height: 100%;
+    width: 100%;
+  }
+  
+  .root{
+    background-color: none;
+    color: black;
+  }
+  
+  .header{
+    background-color: #c5c6c8;
+    color: #6b6b6b;
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin: 0px;
+    
+  }
+  
+  .filters{
+    background-color: #b2e2f2;
+    color: #6097a9;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  
+  }
+  
+
+  .columns{
+    display: table;
+    background-color: #d6ddfc;
+    width: 100%;
+  }
+  .left{
+    background-color: #fabfb7;
+    color: #b18681;
+    text-align: center;
+    width: 35%;
+    height: 580px;
+    float: left;
+    margin: 30px;
+    margin-top: 50px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+  
+  }
+  
+  .right{
+    background-color: #fdf9c4;
+    color: #c0bc8c;
+    text-align: center;
+    width: 50%;
+    height: 1500px;
+    float: right;
+    margin: 50px;
+    border-radius: 15px;
+    display: table;
+    flex-direction: column;
+    
+  }
+
+  #movie1 {
+    background-color: #fdc4ea;
+    margin: 5%;
+    padding: 5%;
+    float: left;
+    width: 30%;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #movie0 {
+    background-color: #bcf8d5;
+    margin: 5%;
+    padding: 5%;
+    float: left;
+    width: 30%;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
