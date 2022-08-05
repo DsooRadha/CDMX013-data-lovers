@@ -19,19 +19,16 @@ function loadDoc() {
 }
 */
 dataghibli();
-function dataghibli(){
-fetch("data/ghibli/ghibli.json")
-.then (respuesta=> respuesta.json())
-.then(data=> {
-    let name= (data.films['0'].title)
-    let imagen=(data.films['0'].poster)
-    //console.log(name);
-    document.getElementById('titulo').innerHTML = name
-    document.getElementById('exp0').innerHTML = imagen
-    
+function dataghibli() {
+  fetch("data/ghibli/ghibli.json")
+    .then(respuesta => respuesta.json())
+    .then(data => {
+      let name = (data.films['0'].title)
+      let imagen = (data.films['0'].poster)
+      //console.log(name);
+      document.getElementById('titulo').innerHTML = name
+      document.getElementById('exp0').innerHTML = imagen
     })
-
-    
 }
 //}    for (var i = 0; i < data.length; i++)
 /*
