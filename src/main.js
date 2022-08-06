@@ -19,15 +19,20 @@ function loadDoc() {
 }
 */
 dataghibli();
-function dataghibli() {
+function dataghibli() { 
   fetch("data/ghibli/ghibli.json")
     .then(respuesta => respuesta.json())
     .then(data => {
-      let name =  (data.films.title);
       let name0 = (data.films['0'].title);
       let name1 = (data.films['1'].title);
      
-     
+    // for (let i=0; i<data.films.poster.length; i++)
+
+    // const image= document.createElement("img");
+    //image.src= "data[i].films[i].poster"
+
+
+
       document.getElementById('movie0').innerHTML = name0
       document.getElementById('movie1').innerHTML = name1
      
