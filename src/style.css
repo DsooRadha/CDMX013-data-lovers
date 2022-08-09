@@ -26,7 +26,7 @@ body {
   color: white;
   padding: 4vh;
   width: 18vw;
-  font-size: 1.7vw;
+  font-size: 1.6vw;
   cursor: pointer;
   font-family: 'Nanum Gothic';
 }
@@ -106,7 +106,6 @@ body {
   justify-content: center;
   cursor: pointer;
   background-color: #682a07;
-
 }
 
 .ColumnTwo img {
@@ -116,7 +115,7 @@ body {
   border-radius: 7%;
 }
 
-.ColumnTwo h3 {
+.ColumnTwo h4 {
   text-align: center;
   justify-items: center;
   text-transform: uppercase;
@@ -133,7 +132,7 @@ body {
 }
 */
 footer {
-  font-size: 1.7vw;
+  font-size: 1.5vw;
   text-align: center;
   color: aliceblue;
   background: #011f4ee2;

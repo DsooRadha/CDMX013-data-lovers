@@ -11,6 +11,4 @@ export const anotherExample = () => {
 };
 
 
-
-
 //filtro(type,data)
