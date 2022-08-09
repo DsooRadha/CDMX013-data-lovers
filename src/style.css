@@ -37,6 +37,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  display: none;
 }
 
 .filter button {
@@ -57,7 +58,7 @@ body {
   grid-template-rows: 39vw;
   background-image: url("./images/894d5e8ee8190a41c4baaaed35bf3597.png");
   background-position: 0, 0;
-  background-size: 47.5%;
+  background-size: 47vw;
   background-repeat: no-repeat;
   opacity: 0.7;
  
@@ -66,95 +67,88 @@ body {
 
 .ColumnOne {
   grid-column: 1/2;
-  margin-bottom: 6%;
+  margin-bottom: 4vh;
   align-self: flex-end;
-  height: 30%;
-  width: 60%;
+  height: 23vh;
+  width: 20vw;
   justify-self: center;
-  border-radius: 5%;
+  border-radius: 2vw;
   background-color: #001c47f1;
   color: #f0ebeb;
   text-align: center;
-  font-family: 'Nanum Gothic', sans-serif;
-  font-size: 30px;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  padding: 8%;
-}
-
-.ghibliTitle {
-  font-size: 100%;
-  font-family: 'Nanum Gothic', sans-serif;
-font-weight: bold;
-  line-height : 150%;
+  padding: 3vw;
+  max-height: 23vh;
 }
 
 .ColumnTwo {
   text-align: center;
   grid-column: 2/4;
-  margin: 3%;
-  margin-left: 10%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   overflow: auto;
-  grid-row: 1%;
   border-radius: 3%;
+  background-color: rgba(4, 66, 142, 0.837);
+  margin: 2vw;
 }
 
 .ColumnTwo div {
   height: 85%;
-  border-radius: 10%;
-  margin: 6%;
+  border-radius: 7%;
+  margin: 9%;
   background-color: transparent;
   text-align: center;
-  display: flex;
+  display: grid;
+  grid-template-rows: 20vh;
   align-items: center;
   justify-content: center;
-  cursor: pointer
+  cursor: pointer;
+  background-color: #682a07;
+
 }
 
 .ColumnTwo img {
-  height: calc(100% - 2%);
-  width: calc(100% - 2%);
+ height: calc(10.2vw - 1.7vw);
+  width: calc(16vw - 0.5vw);
   object-fit: cover;
-  border-radius: 10%;
+  border-radius: 7%;
 }
 
 .ColumnTwo h3 {
   text-align: center;
   justify-items: center;
-}
-
-.ColumnTwo div:hover {
-  border: 4px solid cornflowerblue;
-  border-radius: 10%;
-  display: flex;
+  text-transform: uppercase;
+  color: aliceblue;
+  font-family: 'Nanum Gothic';
+  font-size: 160%;
+  height: calc(1vw - 1vw);
   align-items: center;
-  justify-content: center;
-
 }
-
+/*
+.ColumnTwo div:hover {
+  border: 2vwx solid cornflowerblue;
+  border-radius: 10%;
+}
+*/
 footer {
-  font-size: 30px;
+  font-size: 1.7vw;
   text-align: center;
   color: aliceblue;
   background: #011f4ee2;
   font-family: 'PT Sans Narrow', sans-serif;
-  padding: .2%;
+  padding: 1vh;
   height:  3vw;
   display: flex;
   align-items: center;
-  justify-content: center
+  justify-content: center;
 }
 
-.ghibliTitle {
-  font-weight: 100;
-  line-height :1 vh;
-  
-}
 .ColumnOne p {
-  line-height :2.1vh
+  line-height :150%;
+  font-family: 'Nanum Gothic', sans-serif;
+  font-size: 180%;
 }
 
 
