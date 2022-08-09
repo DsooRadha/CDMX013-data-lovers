@@ -1,77 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&family=Poiret+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+
 html,
 body {
-  background-color: #bbc0f5;
-}
-
-.gridAll {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 15% 8% 200%;
-
+  background-image: url("https://i1.wp.com/caps.pictures/198/6-castleinthesky/full/castleinthesky-disneyscreencaps.com-414.jpg");
+  background-size: cover;
 }
 
 .header {
-  grid-column: 1/4;
-  background-color: #c5c6c8;
-  color: #6b6b6b;
-  text-align: center;
-  padding-top: 40px;
-  padding-bottom: 40px;
-  margin: 0px;
+  background: #011f4ebc;
+  height: 7vw;
+  background-image: url("./images/studio-ghibli_0.png");
+  background-size: 20vw;
+  background-repeat: no-repeat;
+  background-position: left;
+  display: flex;
+  justify-content: flex-end;
+  opacity: 0.9;
+  align-items: center;
 }
 
-.filters {
-  grid-column: 1/4;
-  background-color: #b2e2f2;
-  color: #6097a9;
-  text-align: center;
-  padding-top: 10px;
-  padding-bottom: 10px;
+.header button {
+  background-color:transparent;
+  border: none;
+  color: white;
+  padding: 4vh;
+  width: 18vw;
+  font-size: 1.7vw;
+  cursor: pointer;
+  font-family: 'Nanum Gothic';
 }
 
-.ColumnOne {
-  grid-column: 1/2;
-  margin-bottom: 10%;
-  align-self: flex-end;
-  background-color: #d6ddfc;
-  height: 45%;
-  width: 80%;
-  justify-self: center;
-  border-radius: 5%;
-  background-color: #fabfb7;
-  color: #b18681;
-  text-align: center;
+.filter {
+  background-color: #01519ba0;
+  height: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.ColumnTwo {
-  background-color: #fdf9c4;
-  color: #c0bc8c;
-  text-align: center;
-  grid-column: 2/4;
-  margin: 3%;
-  grid-template-rows: repeat(2, 1fr);
+.filter button {
+  background-color: transparent;
+  border: none;
+  color: rgb(214, 211, 211);
+  padding: 1vh 3vw;
+  width: 50vw;
+  font-size: 1vw;
+  cursor: pointer;
+  font-family: 'Nanum Gothic';
+  font-weight: bold;
+
+}
+.gridAll {
   display: grid;
-  border: 10px solid;
-  border-image: linear-gradient(to right, rgb(33, 78, 210), rgb(191, 50, 204)) 1;
-  grid-auto-columns: 40%;
-  grid-auto-flow: column;
-  overflow: auto;
-  grid-row:1% ;
-}
-
-.ColumnTwo div {
-  height: 90%;
-  border-radius: 5%;
-  margin: 5%;
-  background-color: #fdc4ea;
-  text-align: center;
-  position: relative;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 39vw;
+  background-image: url("./images/894d5e8ee8190a41c4baaaed35bf3597.png");
+  background-position: 0, 0;
+  background-size: 47.5%;
+  background-repeat: no-repeat;
+  opacity: 0.7;
  
 }
 
-.ColumnTwo img {
+
+.ColumnOne {
+  grid-column: 1/2;
+  margin-bottom: 6%;
+  align-self: flex-end;
+  height: 30%;
   width: 60%;
-  position: absolute;
+  justify-self: center;
+  border-radius: 5%;
+  background-color: #001c47f1;
+  color: #f0ebeb;
+  text-align: center;
+  font-family: 'Nanum Gothic', sans-serif;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 8%;
+}
+
+.ghibliTitle {
+  font-size: 100%;
+  font-family: 'Nanum Gothic', sans-serif;
+font-weight: bold;
+  line-height : 150%;
+}
+
+.ColumnTwo {
+  text-align: center;
+  grid-column: 2/4;
+  margin: 3%;
+  margin-left: 10%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  overflow: auto;
+  grid-row: 1%;
+  border-radius: 3%;
+}
+
+.ColumnTwo div {
+  height: 85%;
+  border-radius: 10%;
+  margin: 6%;
+  background-color: transparent;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer
+}
+
+.ColumnTwo img {
+  height: calc(100% - 2%);
+  width: calc(100% - 2%);
+  object-fit: cover;
+  border-radius: 10%;
 }
 
 .ColumnTwo h3 {
@@ -80,6 +127,34 @@ body {
 }
 
 .ColumnTwo div:hover {
-  border: 7px solid;
-  border-radius: 5%;
+  border: 4px solid cornflowerblue;
+  border-radius: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
 }
+
+footer {
+  font-size: 30px;
+  text-align: center;
+  color: aliceblue;
+  background: #011f4ee2;
+  font-family: 'PT Sans Narrow', sans-serif;
+  padding: .2%;
+  height:  3vw;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+.ghibliTitle {
+  font-weight: 100;
+  line-height :1 vh;
+  
+}
+.ColumnOne p {
+  line-height :2.1vh
+}
+
+
