@@ -4,6 +4,8 @@
 // import data from './data/rickandmorty/rickandmorty.js';
 //console.log(example, data);
 
+//const right = document.querySelector(".ColumnTwo")
+
 dataAccess();
 function dataAccess() {
   const dataghibli = fetch("data/ghibli/ghibli.json").then (res=> {
@@ -25,4 +27,3 @@ function dataAccess() {
   });
   console.log(dataghibli);
 }
-
