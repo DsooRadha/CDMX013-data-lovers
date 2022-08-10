@@ -3,9 +3,6 @@
 //import data from './data/pokemon/pokemon.js';
 // import data from './data/rickandmorty/rickandmorty.js';
 //console.log(example, data);
-
-//const right = document.querySelector(".ColumnTwo")
-
 dataAccess();
 function dataAccess() {
   const dataghibli = fetch("data/ghibli/ghibli.json").then (res=> {
@@ -21,9 +18,16 @@ function dataAccess() {
     div.innerHTML = `<h4> ${p.title}</h4>`;    //le agregamos el título de cada película con interpolación
     div.innerHTML = ` <img class="poster"src="${p.poster}"><h4> ${p.title}</h4>`;
     column2.appendChild(div);    //agregamos ese div creado dentro del div con clase ColumnTwo
-
   });
     })
   });
   console.log(dataghibli);
 }
+
+let btnHamburguer = document.getElementById("menu");
+btnHamburguer.addEventListener("click", function (e) { 
+    e.preventDefault() //evita que se corra la funcion por accidente como cuando recargas la pagina XD
+    document.querySelector(".ColumnOne").style.display = "none";
+    document.querySelector(".filter").style.display = "flex";
+    }
+    );

@@ -9,17 +9,18 @@
 
 <body>
   <div class="header">
-    <button>INICIO</button>
-    <button>ORDENAR</button>
-    <button>SABIAS QUE...</button>
-    <button>PERSONAJES</button>
+    <button id="menu"></button>
   </div>
-  <div class="filter">
-    <button>TITULO (A-Z)</button>
-    <button>DIRECTOR/PRODUCTOR</button>
-    <button>FECHA DE LANZAMIENTO</button>
-  </div>
+
   <div class="gridAll">
+    <div class="filter">
+      <h1>ORDENAR POR:</h1>
+      <button>DIRECTOR</button>
+      <button>TITULO (A-Z)</button>
+      <h1>BONUS:</h1>
+      <button>RATING</button>
+      <button>GALERÍA</button>
+    </div>
     <div class="ColumnOne">
       <p class="ghibliTitle">Studio Ghibli <br> スタジオジブリ <br>Es un estudio de animación japonés, con sede en Tokio. Fue
         fundada en 1985 por Hayao Miyazaki e Isao Takahata,han realizado más de 20 películas.</p>
@@ -29,7 +30,9 @@
       <div id="image"></div>
     </div>
   </div>
-  <footer> TERMINOS Y CONDICIONES | AVISO DE PRIVACIDAD </footer>
+  <footer> 
+    <p>  TERMINOS Y CONDICIONES | POLITICA DE PRIVACIDAD  </p>
+     </footer>
   </div>
   <script src="main.js" type="module"></script>
 </body>

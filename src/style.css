@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&family=Poiret+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
 
 html,
 body {
@@ -11,47 +12,92 @@ body {
   background: #011f4ebc;
   height: 7vw;
   background-image: url("./images/studio-ghibli_0.png");
-  background-size: 20vw;
+  background-size: 17vw;
   background-repeat: no-repeat;
-  background-position: left;
+  background-position: right;
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   opacity: 0.9;
   align-items: center;
+  padding: 0.3vw;
 }
 
+
 .header button {
-  background-color:transparent;
+  background-color: #011f4ebc;
+  margin-left: 5vw;
   border: none;
   color: white;
-  padding: 4vh;
-  width: 18vw;
+  height: 13vh;
+  width: 20vw;
   font-size: 1.6vw;
   cursor: pointer;
   font-family: 'Nanum Gothic';
+  background-image: url("./images/menuhamburguesa.png");
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: center;
+  border-radius: 1vw;
+}
+
+.header button:hover {
+  background-color: #06457fea;
+  color: white;
 }
 
 .filter {
-  background-color: #01519b8f;
-  height: 5vh;
-  display: flex;
+  background-color: #011f4e;
+  height: 68vh;
+  width: 25vw;
+  display: none;
+  /*None*/
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  display: none;
+  border-radius: 1vw;
+  margin: 3vw;
+  justify-self: center;
+  border-radius: 2vw;
+
+}
+
+.filter h1 {
+  color: white;
+  margin: 1vw;
+  margin-top: 3vh;
+  margin-left: 5vw;
+  width: 24vw;
+  height: 6vw;
+  align-items: center;
+  justify-content: center;
+  padding: 1vh;
+  font-family: 'Nanum Gothic';
+  justify-items: center;
+  font-size: 1.2vw;
+
 }
 
 .filter button {
-  background-color: transparent;
-  border: none;
-  color: rgb(214, 211, 211);
-  padding: 1vh 3vw;
-  width: 50vw;
-  font-size: 1vw;
+  background-color: #06457fea;
+  border: solid #011f4ebc;
+  color: rgb(255, 255, 255);
+  padding: 1vh 1vw;
+  width: 25vw;
+  font-size: 1.2vw;
   cursor: pointer;
   font-family: 'Nanum Gothic';
   font-weight: bold;
+  height: 30vh;
+  text-align: center;
+  justify-content: center;
 
 }
+
+.filter button:hover {
+  background-color: #07285ee1;
+  color: white;
+}
+
 .gridAll {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -61,7 +107,6 @@ body {
   background-size: 48vw;
   background-repeat: no-repeat;
   opacity: 0.7;
- 
 }
 
 
@@ -74,13 +119,14 @@ body {
   justify-self: center;
   border-radius: 2vw;
   background-color: #001c47f1;
-  color: #f0ebeb;
+  color: #ffffff;
   text-align: center;
   display: flex;
   justify-content: center;
   flex-direction: column;
   padding: 3vw;
   max-height: 23vh;
+
 }
 
 .ColumnTwo {
@@ -89,7 +135,7 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 21vw);
   overflow: auto;
-  background-color:transparent;
+  background-color: transparent;
   margin: 2vw;
   grid-column-gap: 9vw;
   grid-row-gap: -1vw;
@@ -102,16 +148,21 @@ body {
   text-align: center;
   display: grid;
   grid-template-rows: 24vh;
-  align-items:flex-start;
+  align-items: flex-start;
   justify-content: center;
   cursor: pointer;
-  background-color: #197e74;
+  background-color: #2aa89c;
   border-radius: 1vw;
- 
 }
 
+
+.ColumnTwo div:hover {
+  background-color: #2a6660;
+  color: white;
+  
+}
 .ColumnTwo img {
- height: calc(10vw - 1.7vw);
+  height: calc(10.5vw - 1.7vw);
   width: calc(18vw - 0.5vw);
   object-fit: cover;
   border-radius: 2vh;
@@ -122,29 +173,40 @@ body {
   text-align: center;
   justify-items: center;
   text-transform: uppercase;
-  color: aliceblue;
-  font-family: 'Nanum Gothic';
-  font-size: 1.5vh;
+  color: rgb(255, 255, 255);
+  font-family: 'Patrick Hand', cursive;
+  font-size: 2.7vh;
   height: calc(1vw - 1vw);
   align-items: center;
-  margin-top: -4vh;
+  margin-top: -4.5vh;
 }
 
 footer {
-  font-size: 1.5vw;
+  font-size: 1.2vw;
   text-align: center;
-  color: aliceblue;
+  color: rgb(171, 186, 199);
   background: #011f4ee2;
   font-family: 'PT Sans Narrow', sans-serif;
-  padding: 1vh;
-  height:  3vw;
+  padding: 0.6vh;
+  height: 2.7vw;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
+/*
+footer img {
+  width: 2vw;
+  margin: 0.5vw;
+  opacity: 0.7;
+}
+.chikorita {
+  transform: scaleX(-1);
+}
+*/
 .ColumnOne p {
-  line-height :4vh;
+  line-height: 4vh;
   font-family: 'Nanum Gothic', sans-serif;
   font-size: 2em;
+
 }
+
