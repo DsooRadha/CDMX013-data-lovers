@@ -144,7 +144,6 @@ body {
 
 .ColumnTwo div {
   margin: 1vw;
-  background-color: transparent;
   text-align: center;
   display: grid;
   grid-template-rows: 24vh;
@@ -207,6 +206,15 @@ footer img {
   line-height: 4vh;
   font-family: 'Nanum Gothic', sans-serif;
   font-size: 2vh;
-
 }
 
+.columnaDirectores {
+  background-color: #080c0c;
+}
+.columnaDirectores div {
+ 
+  text-align: center;
+  justify-content: center;
+  background-color: #2aa89c;
+  border-radius: 1vw;
+}

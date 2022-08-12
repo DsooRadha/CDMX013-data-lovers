@@ -4,8 +4,13 @@
 // import data from './data/rickandmorty/rickandmorty.js';
 //console.log(example, data);
 
+
 import { experimento } from "./data.js";
 console.log(experimento)
+import { filterDirectorFuncion } from "./data.js";
+//import {titleDirector}
+//console.log(titleDirector)
+console.log (filterDirectorFuncion())
 
 dataAccess();
 function dataAccess() {
@@ -15,7 +20,7 @@ function dataAccess() {
         //console.log(dataaaa)
         const data = dataaaa.films
         data.forEach(p => {
-          //console.log(p.title);    //imprime en la consola el título de cada pelicula del array
+          console.log(p.title);    //imprime en la consola el título de cada pelicula del array
           let column2 = document.querySelector('.ColumnTwo');    //buscamos el elemento con clase .ColumnTwo y lo guardamos en una variable
           let div = document.createElement('div');    //creamos un elemento div por cada elemento del array
           div.setAttribute('id', 'card');    //le asignamos el id 'card' a cada div
@@ -28,6 +33,15 @@ function dataAccess() {
   return (dataghibli)
   //console.log(dataghibli);
 }
+let columnDirectores = document.querySelector('.columnaDirectores'); 
+const card= document.createElement('div')
+card.className= 'columnaDirectores'
+const title= document.createElement('h3')
+title.textContent= filterDirectorFuncion()
+   //buscamos el elemento con clase .ColumnTwo y lo guardamos en una variable
+
+card.append(title)  
+columnDirectores.append(card)
 
 let btnHamburguer = document.getElementById("menu");
 btnHamburguer.addEventListener("click", function (e) {
