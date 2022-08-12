@@ -12,7 +12,7 @@ function dataAccess() {
   const dataghibli = fetch("data/ghibli/ghibli.json").then(res => {
     res.json()
       .then(dataaaa => {
-        console.log(dataaaa)
+        //console.log(dataaaa)
         const data = dataaaa.films
         data.forEach(p => {
           //console.log(p.title);    //imprime en la consola el título de cada pelicula del array
@@ -25,7 +25,8 @@ function dataAccess() {
         });
       })
   });
-  console.log(dataghibli);
+  return (dataghibli)
+  //console.log(dataghibli);
 }
 
 let btnHamburguer = document.getElementById("menu");
