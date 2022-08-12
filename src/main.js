@@ -4,6 +4,8 @@
 // import data from './data/rickandmorty/rickandmorty.js';
 //console.log(example, data);
 
+import { experimento } from "./data.js";
+console.log(experimento)
 
 dataAccess();
 function dataAccess() {
@@ -13,7 +15,7 @@ function dataAccess() {
         console.log(dataaaa)
         const data = dataaaa.films
         data.forEach(p => {
-          console.log(p.title+ p.director);    //imprime en la consola el título de cada pelicula del array
+          //console.log(p.title);    //imprime en la consola el título de cada pelicula del array
           let column2 = document.querySelector('.ColumnTwo');    //buscamos el elemento con clase .ColumnTwo y lo guardamos en una variable
           let div = document.createElement('div');    //creamos un elemento div por cada elemento del array
           div.setAttribute('id', 'card');    //le asignamos el id 'card' a cada div
@@ -31,7 +33,5 @@ btnHamburguer.addEventListener("click", function (e) {
   e.preventDefault() //evita que se corra la funcion por accidente como cuando recargas la pagina XD
   document.querySelector(".ColumnOne").style.display = "none";
   document.querySelector(".filter").style.display = "flex";
-
-
 }
 );

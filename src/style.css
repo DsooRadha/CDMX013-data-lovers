@@ -125,7 +125,7 @@ body {
   justify-content: center;
   flex-direction: column;
   padding: 3vw;
-  max-height: 23vh;
+  max-height: 27vh;
 
 }
 
@@ -206,7 +206,7 @@ footer img {
 .ColumnOne p {
   line-height: 4vh;
   font-family: 'Nanum Gothic', sans-serif;
-  font-size: 2em;
+  font-size: 2vh;
 
 }
 
