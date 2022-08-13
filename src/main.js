@@ -33,16 +33,25 @@ function dataAccess() {
   return (dataghibli)
   //console.log(dataghibli);
 }
+
+
+const director=filterDirectorFuncion()
+  director.forEach(d=>{
+    console.log (d)
 let columnDirectores = document.querySelector('.columnaDirectores'); 
 const card= document.createElement('div')
 card.className= 'columnaDirectores'
 const title= document.createElement('h3')
-title.textContent= filterDirectorFuncion()
-   //buscamos el elemento con clase .ColumnTwo y lo guardamos en una variable
+title.textContent= d
+
+// recibe un director
+// regrsa un Div con la informacin
+// const data = filtrado()
+// inerHtml = data.map(getCard)
 
 card.append(title)  
 columnDirectores.append(card)
-
+})
 let btnHamburguer = document.getElementById("menu");
 btnHamburguer.addEventListener("click", function (e) {
   e.preventDefault() //evita que se corra la funcion por accidente como cuando recargas la pagina XD

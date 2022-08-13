@@ -140,6 +140,7 @@ body {
   grid-column-gap: 9vw;
   grid-row-gap: -1vw;
   margin-left: 4vw;
+  display:none
 }
 
 .ColumnTwo div {
@@ -209,12 +210,37 @@ footer img {
 }
 
 .columnaDirectores {
-  background-color: #080c0c;
+  text-align: center;
+  grid-column: 2/4;
+  display: grid;
+  background-color:#07285ee1;
+  margin: 2vw;
+  grid-column-gap: 30vw;
+  grid-row-gap: 1vw;
+  margin-left: 4vw;
 }
 .columnaDirectores div {
  
+  margin: 1vw;
   text-align: center;
+  display: grid;
+  grid-template-columns: 8vw;
+  grid-template-rows: 8vh;
+  align-items: flex-start;
   justify-content: center;
+
   background-color: #2aa89c;
   border-radius: 1vw;
+}
+
+.ColumnTwo h3 {
+  text-align: center;
+  justify-items: center;
+  text-transform: uppercase;
+  color: rgb(255, 255, 255);
+  font-family: 'Patrick Hand', cursive;
+  font-size: 2.7vh;
+  height: calc(1vw - 1vw);
+  align-items: center;
+  margin-top: -4.5vh;
 }
