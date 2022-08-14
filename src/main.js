@@ -4,13 +4,10 @@
 // import data from './data/rickandmorty/rickandmorty.js';
 //console.log(example, data);
 
+import { filterDirectorHayao, filterDirectorIsao } from "./data.js";
 
-import { experimento } from "./data.js";
-console.log(experimento)
-import { filterDirectorFuncion } from "./data.js";
 //import {titleDirector}
 //console.log(titleDirector)
-console.log (filterDirectorFuncion())
 
 dataAccess();
 function dataAccess() {
@@ -24,7 +21,7 @@ function dataAccess() {
           let column2 = document.querySelector('.ColumnTwo');    //buscamos el elemento con clase .ColumnTwo y lo guardamos en una variable
           let div = document.createElement('div');    //creamos un elemento div por cada elemento del array
           div.setAttribute('id', 'card');    //le asignamos el id 'card' a cada div
-          div.innerHTML = `<h4> ${p.title}</h4>`;    //le agregamos el título de cada película con interpolación
+          //le agregamos el título de cada película con interpolación
           div.innerHTML = ` <img class="poster"src="${p.poster}"><h4> ${p.title}</h4>`;
           column2.appendChild(div);    //agregamos ese div creado dentro del div con clase ColumnTwo
         });
@@ -35,27 +32,48 @@ function dataAccess() {
 }
 
 
-const director=filterDirectorFuncion()
-  director.forEach(d=>{
-    console.log (d)
-let columnDirectores = document.querySelector('.columnaDirectores'); 
-const card= document.createElement('div')
+const directorHayao = filterDirectorHayao()
+directorHayao.forEach(d => {
+  let columnDirectors = document.querySelector('.columnHayao');
+  let div = document.createElement('div');    //creamos un elemento div por cada elemento del array
+  div.setAttribute('id', 'title');    //le asignamos el id 'card' a cada div
+  div.innerHTML = `<h2> ${d.title}</h2><h6>${d.release_date}</h6>`;
+  columnDirectors.appendChild(div);
+})
+/*const card= document.createElement('div') //PREGUNTAR PORQUE REEMPLAZABA LA INFO EN VEZ DE MOSTAR AMBOS
 card.className= 'columnaDirectores'
-const title= document.createElement('h3')
-title.textContent= d
-
+const title= document.createElement('h3', 'p')
+title.textContent= d.title,  d.release_date
+//const date= document.createElement('p')
+//title.textContent= d.release_date
+ 
 // recibe un director
 // regrsa un Div con la informacin
 // const data = filtrado()
 // inerHtml = data.map(getCard)
-
+ 
 card.append(title)  
-columnDirectores.append(card)
+columnDirectores.append(card)*/
+
+const directorIsao = filterDirectorIsao()
+directorIsao.forEach(d => {
+  let columnDirectors = document.querySelector('.columnIsao');
+  let div = document.createElement('div');    //creamos un elemento div por cada elemento del array
+  div.setAttribute('id', 'title');    //le asignamos el id 'card' a cada div
+  div.innerHTML = `<h2> ${d.title}</h2><h6>${d.release_date}</h6>`;
+  columnDirectors.appendChild(div);
 })
-let btnHamburguer = document.getElementById("menu");
+
+const btnHamburguer = document.getElementById("menu");
 btnHamburguer.addEventListener("click", function (e) {
   e.preventDefault() //evita que se corra la funcion por accidente como cuando recargas la pagina XD
-  document.querySelector(".ColumnOne").style.display = "none";
   document.querySelector(".filter").style.display = "flex";
-}
-);
+});
+
+const btnDirectors = document.getElementById("directors");
+btnDirectors.addEventListener("click", function (e) {
+  e.preventDefault() //evita que se corra la funcion por accidente como cuando recargas la pagina XD
+  document.querySelector(".gridAll").style.display = "none";
+  document.querySelector(".filter").style.display = "none";
+  document.querySelector(".all").style.display = "grid";
+});
