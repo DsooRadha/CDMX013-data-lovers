@@ -22,8 +22,11 @@ body {
   padding: 0.3vw;
 }
 
-
-.header button {
+.dropdown {
+  display: inline-block;
+  position: relative;
+}
+.dropdown button {
   background-color: #011f4ef6;
   margin-left: 5vw;
   border: none;
@@ -40,51 +43,52 @@ body {
   border-radius: 1vw;
 }
 
-.header button:hover {
+.dropdown button:hover {
   background-color: #06457fea;
   color: white;
 }
 
-.filter {
-  background-color: #011f4ef6;
-  width: 26.5vw;
-  display: none;
-  /*None*/
-  flex-direction: column;
-  z-index: 1;
-  border-radius: 0, 0, 2vw, 2vw;
-  position: absolute;
+.dropdown div {
   margin-left: 3vw;
+  z-index: 1;
+  position: absolute;
+  opacity: 0;
+  transition: 0.5s;
+  overflow: hidden;
+  visibility: hidden;
+  display:block;
 }
 
-.filter h1 {
-  color: white;
-  margin: 1vw;
-  width: 24vw;
-  padding: 1vh;
-  font-family: 'Nanum Gothic';
-  font-size: 1.2vw;
+.dropdown:hover div{
+  visibility: visible;
+  opacity:1;
 }
 
-.filter button {
-  background-color: #075aa8;
+.dropdown div a {
+  display:block;
+  text-decoration: none;
+  padding: 1vw;
+  color:rgb(240, 255, 248);
+  white-space: nowrap;
+  cursor: pointer;
+  border-radius: 1vw;
+}
+
+.dropdown:hover div a{
+  background-color: #042253;
   border: solid #022c6f;
-  color: rgb(255, 255, 255);
+  color: #ffffff;
+  display: block;
   padding: 1vh 1vw;
-  width: 26.3vw;
+  width: 21.5vw;
   font-size: 1.2vw;
   cursor: pointer;
   font-family: 'Nanum Gothic';
   font-weight: bold;
-  height: 10vh;
+  height: 5vh;
   text-align: center;
   justify-content: center;
-
-}
-
-.filter button:hover {
-  background-color: #05398c;
-  color: white;
+  align-self: center;
 }
 
 .gridAll {
@@ -96,7 +100,7 @@ body {
   background-size: 48vw;
   background-repeat: no-repeat;
   position: relative;
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
 
@@ -202,7 +206,7 @@ footer p {
 }
 
 .all {
-  display: none;
+  display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 39vw;
   background-image: url("./images/894d5e8ee8190a41c4baaaed35bf3597.png");
