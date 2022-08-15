@@ -9,6 +9,20 @@ dataGhibliJs.forEach(data => {
 
 })
 
+//PASOS A SEGUIR CUANDO QUIERO ELIMINAR DATA REPETIDA
+
+const allDirectors = dataGhibliJs.map(({ director}) => { return ({ director }).director })//1.hago un Array con los elementos a analizar de dataJS
+const director = [];            // 2. creo un array vacio donde llegaran los datos ya sin repetir 
+allDirectors.forEach( (elemento) => {   // 3. sustituyo el elemento a iterar "allDirector" 
+  if (!director.includes(elemento)) {
+    director.push(elemento);
+  }
+});
+
+console.log(director); //4. festejas bailando en circulos
+console.log (director [1])
+
+
 export const filterDirectorHayao = function () { //function (data,directorName)
   const filterHayao = ({ director }) => ({ director }).director === 'Hayao Miyazaki' // 
   const directors = (dataGhibliJs).filter(filterHayao)
@@ -16,15 +30,33 @@ export const filterDirectorHayao = function () { //function (data,directorName)
 }
 
 export const filterDirectorIsao = function () { //function (data,directorName)
-  const filterHayao = ({ director }) => ({ director }).director === 'Isao Takahata' // 
-  const directors = (dataGhibliJs).filter(filterHayao)
+  const filterIsao = ({ director }) => ({ director }).director === 'Isao Takahata' // 
+  const directors = (dataGhibliJs).filter(filterIsao)
   return directors
 }
+
+export const filterDirectorYoshifumi = function () { //function (data,directorName)
+  const filterYoshifumi = ({ director }) => ({ director }).director === 'Yoshifumi Kondō' // 
+  const directors = (dataGhibliJs).filter(filterYoshifumi)
+  return directors
+}
+
+export const filterDirectorHiroyuki = function () { //function (data,directorName)
+  const filterHiroyuki = ({ director }) => ({ director }).director === 'Hiroyuki Morita' // 
+  const directors = (dataGhibliJs).filter(filterHiroyuki)
+  console.log (directors) 
+}
+/*
+export const filterDirectorYoshifumi = function () { //function (data,directorName)
+  const filterYoshifumi = ({ director }) => ({ director }).director === 'Yoshifumi Kondō' // 
+  const directors = (dataGhibliJs).filter(filterYoshifumi)
+  return directors
+}*/
+
 /*
 export 
 const allDirectors = function () { //function (data,directorName)
  directores.map
-
   return allDirectors
 }
 */
@@ -55,25 +87,16 @@ const acumular = (acumulador, numero) => acumulador + numero
 let totalAverageRt = (numerosRt.reduce(acumular)) / numerosRt.length
 console.log(totalAverageRt);
 
-
 /*
-function print minMax(dataGhibliJs){
-  let min dataGhibliJs[0] == 3
-  let max dataGhibliJs[0] == 6
-}
-
 function print MinMax(peliculas){
   let min peliculas[0] == 3
   let max peliculas[0] == 6
-
   forach(()=>[
     if(pelicula.rate menor min) // 5 3 6
       gurado en min  la perlicula
-
     if(pelicula.rate mayopr a max ) // 5 3 6
     guardo pelicula en maxRt
   ])
-
   retorno min max
 }
 */

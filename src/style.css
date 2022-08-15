@@ -19,66 +19,75 @@ body {
   justify-content: flex-start;
   opacity: 0.9;
   align-items: center;
-  padding: 0.3vw;
+  padding-left: 0.3vw;
 }
 
-.dropdown {
+.dropdown{
   display: inline-block;
   position: relative;
-}
-.dropdown button {
-  background-color: #011f4ef6;
-  margin-left: 5vw;
-  border: none;
-  color: white;
-  height: 13vh;
-  width: 20vw;
-  font-size: 1.6vw;
-  cursor: pointer;
-  font-family: 'Nanum Gothic';
-  background-image: url("./images/menuhamburguesa.png");
-  background-repeat: no-repeat;
-  background-size: 50%;
-  background-position: center;
-  border-radius: 1vw;
+
 }
 
-.dropdown button:hover {
+.dropdown button{
+  border: none;
+  padding: 8px 16px;
+  color: white;
+  cursor: pointer;
+  background-color: #011f4ef6;
+  width: 24.75vw;
+  height: 7vh;
+  font-size: 1.2vw;
+  font-family: 'Nanum Gothic';
+}
+
+.dropdown:hover button{
   background-color: #06457fea;
   color: white;
 }
-
 .dropdown div {
-  margin-left: 3vw;
+  background-color: #042253;
+  box-shadow: 0px, 4px,8px rgba (0,0,0,0.2);
   z-index: 1;
-  position: absolute;
-  opacity: 0;
-  transition: 0.5s;
-  overflow: hidden;
   visibility: hidden;
-  display:block;
+  position: absolute;
+  margin-left: 1vw;
+  min-width: 100%;
+  opacity: 0;
+  transition:0.5s;
+  margin-left: 0vw;
+  
 }
 
-.dropdown:hover div{
+.dropdown:hover div {
   visibility: visible;
-  opacity:1;
+  opacity: 1;
 }
 
 .dropdown div a {
-  display:block;
+  display: block;
   text-decoration: none;
   padding: 1vw;
-  color:rgb(240, 255, 248);
+  color:  rgb(240, 255, 248);
+  transition: 1s;
   white-space: nowrap;
-  cursor: pointer;
+  text-transform: uppercase;
   border-radius: 1vw;
+  font-size: 1vw;
+  font-family: 'Nanum Gothic';
+  
 }
 
-.dropdown:hover div a{
+.dropdown div a:hover {
+  background-color: #042b6a;
+  color: #fff;
+}
+/*
+
+
+.dropdown:hover div a {
   background-color: #042253;
   border: solid #022c6f;
   color: #ffffff;
-  display: block;
   padding: 1vh 1vw;
   width: 21.5vw;
   font-size: 1.2vw;
@@ -90,7 +99,7 @@ body {
   justify-content: center;
   align-self: center;
 }
-
+*/
 .gridAll {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -120,7 +129,6 @@ body {
   flex-direction: column;
   padding: 3vw;
   max-height: 27vh;
-
 }
 
 .ColumnTwo {
@@ -134,7 +142,6 @@ body {
   grid-column-gap: 9vw;
   grid-row-gap: -1vw;
   margin-left: 8vw;
-
 }
 
 .ColumnTwo div {
@@ -149,11 +156,9 @@ body {
   border-radius: 1vw;
 }
 
-
 .ColumnTwo div:hover {
   background-color: #2a6660;
   color: white;
-
 }
 
 .ColumnTwo img {
@@ -196,7 +201,6 @@ footer p {
   color: rgb(255, 255, 255);
   font-family: 'Patrick Hand', cursive;
   font-size: 2.5vh;
-
 }
 
 .ColumnOne p {
@@ -209,17 +213,16 @@ footer p {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 39vw;
-  background-image: url("./images/894d5e8ee8190a41c4baaaed35bf3597.png");
-  background-position: 0, 0;
-  background-size: 48vw;
+  background-size: 40vw;
   background-repeat: no-repeat;
-
   position: relative;
   opacity: 0.7;
 }
 
 .spaceRigth {
   grid-column: 1/2;
+  background-image: url("./images/ghiblifondopantalladirectores.png");
+  margin-left: 5vw;
 
 }
 
@@ -228,10 +231,10 @@ footer p {
   overflow: auto;
   background-color: #022660;
   padding: 3vw;
-  margin: 2vw;
-  margin-left: 8vw;
+  margin-top: 2vw;
+  margin-bottom: 2vw;
+  margin-right: 2vw;
   border-radius: 2vw;
-
 }
 
 .container {
@@ -240,20 +243,21 @@ footer p {
   padding-bottom: 12vh;
 }
 
-img {
+.container img {
   width: 15vw;
+  margin-left: 2vw;
 }
 
-.columnHayao {
+.columnHayao, .columnIsao, .columnYoshifumi, .columnHiromasa , .columnGoro, .columnHiroyuki  {
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 2fr;
   column-gap: 2vw;
   row-gap: 2vh;
   display: grid;
-  margin-left: 2vw;
+  margin-left: 8vw;
 }
 
-.columnHayao div {
+.columnHayao div, .columnIsao div, .columnYoshifumi div , .columnHiromasa div, .columnGoro div, .columnHiroyuki div   {
   background-color: #05162c;
   border-radius: 1vw;
   padding: .8vw;
@@ -261,26 +265,6 @@ img {
   width: 14vw;
   justify-content: center;
   justify-self: center;
-  text-align: center;
-
-}
-
-
-.columnIsao {
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 2fr;
-  column-gap: 2vw;
-  row-gap: 2vh;
-  display: grid;
-  margin-left: 2vw;
-}
-
-.columnIsao div {
-  background-color: #05162c;
-  border-radius: 1vw;
-  padding: .8vw;
-  height: 5vh;
-  width: 14vw;
   text-align: center;
 }
 
