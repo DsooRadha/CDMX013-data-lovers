@@ -1,4 +1,4 @@
-import { filterDirector} from "./data.js";
+import { filterDirector, directors} from "./data.js";
 
 dataAccess();
 function dataAccess() {
@@ -8,7 +8,6 @@ function dataAccess() {
         //console.log(dataaaa)
         const data = dataaaa.films
         data.forEach(p => {
-          //console.log(p.title);    //imprime en la consola el título de cada pelicula del array
           let column2 = document.querySelector('.ColumnTwo');    //buscamos el elemento con clase .ColumnTwo y lo guardamos en una variable
           let div = document.createElement('div');    //creamos un elemento div por cada elemento del array
           div.setAttribute('id', 'card');    //le asignamos el id 'card' a cada div
@@ -19,7 +18,6 @@ function dataAccess() {
       })
   });
   return (dataghibli)
-  //console.log(dataghibli);
 }
  
 const renderDirector = (directorName, columnDirectorSelector) => {
@@ -32,20 +30,11 @@ const renderDirector = (directorName, columnDirectorSelector) => {
     columnDirectors.appendChild(div);
   })
 }
-
-const directors = [
-  {name: "Isao Takahata", selector: '.columnIsao'},
-  {name: "Hayao Miyazaki", selector: '.columnHayao'},
-  {name: "Yoshifumi Kondō", selector: '.columnYoshifumi'},
-  {name: "Hiroyuki Morita", selector: '.columnHiroyuki'},
-  {name: "Gorō Miyazaki", selector: '.columnGoro'},
-  {name: "Hiromasa Yonebayashi", selector: '.columnHiromasa'},
-]
 directors.forEach(director => renderDirector(director.name, director.selector))
 
 const btnHayao = document.getElementById("Hayao");
 btnHayao.addEventListener("click", function (e) {
-  e.preventDefault() //evita que se corra la funcion por accidente como cuando recargas la pagina XD
+  e.preventDefault() 
   document.querySelector(".gridAll").style.display = "none";
   document.querySelector(".all").style.display = "grid";
   document.querySelector("#imgIsao").style.display = "none";
@@ -63,8 +52,7 @@ btnHayao.addEventListener("click", function (e) {
 });
 
 const btnIsao = document.getElementById("Isao");
-btnIsao.addEventListener("click", function (e) {
-  e.preventDefault() //evita que se corra la funcion por accidente como cuando recargas la pagina XD
+btnIsao.addEventListener("click", function (e) {e.preventDefault() 
   document.querySelector(".gridAll").style.display = "none";
   document.querySelector(".all").style.display = "grid";
   document.querySelector("#imgIsao").style.display = "block"
@@ -81,7 +69,7 @@ btnIsao.addEventListener("click", function (e) {
 
 const btnYoshifumi = document.getElementById("Yoshifumi");
 btnYoshifumi.addEventListener("click", function (e) {
-  e.preventDefault() //evita que se corra la funcion por accidente como cuando recargas la pagina XD
+  e.preventDefault() 
   document.querySelector(".gridAll").style.display = "none";
   document.querySelector(".all").style.display = "grid";
   document.querySelector("#imgIsao").style.display = "none";
