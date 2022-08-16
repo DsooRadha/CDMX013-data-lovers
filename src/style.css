@@ -22,40 +22,42 @@ body {
   padding-left: 0.3vw;
 }
 
-.dropdown{
+.dropdown {
   display: inline-block;
   position: relative;
 
 }
 
-.dropdown button{
+.dropdown button {
   border: none;
   padding: 8px 16px;
   color: white;
   cursor: pointer;
   background-color: #011f4ef6;
-  width: 24.75vw;
+  width: 19.755vw;
   height: 7vh;
   font-size: 1.2vw;
   font-family: 'Nanum Gothic';
+  align-items: center;
 }
 
-.dropdown:hover button{
+.dropdown:hover button {
   background-color: #06457fea;
   color: white;
 }
+
 .dropdown div {
   background-color: #042253;
-  box-shadow: 0px, 4px,8px rgba (0,0,0,0.2);
+  box-shadow: 0px, 4px, 8px rgba (0, 0, 0, 0.2);
   z-index: 1;
   visibility: hidden;
   position: absolute;
   margin-left: 1vw;
   min-width: 100%;
   opacity: 0;
-  transition:0.5s;
+  transition: 0.5s;
   margin-left: 0vw;
-  
+
 }
 
 .dropdown:hover div {
@@ -67,20 +69,21 @@ body {
   display: block;
   text-decoration: none;
   padding: 1vw;
-  color:  rgb(240, 255, 248);
+  color: rgb(240, 255, 248);
   transition: 1s;
   white-space: nowrap;
   text-transform: uppercase;
   border-radius: 1vw;
   font-size: 1vw;
   font-family: 'Nanum Gothic';
-  
+
 }
 
 .dropdown div a:hover {
-  background-color: #042b6a;
+  background-color: #09429d;
   color: #fff;
 }
+
 /*
 
 
@@ -103,7 +106,7 @@ body {
 .gridAll {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 39vw;
+  grid-template-rows: 36vw;
   background-image: url("./images/894d5e8ee8190a41c4baaaed35bf3597.png");
   background-position: 0, 0;
   background-size: 48vw;
@@ -212,61 +215,70 @@ footer p {
 .all {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 39vw;
+  grid-template-rows: 36vw;
   background-size: 40vw;
   background-repeat: no-repeat;
   position: relative;
-  opacity: 0.7;
+  display: none;
 }
 
 .spaceRigth {
   grid-column: 1/2;
-  background-image: url("./images/ghiblifondopantalladirectores.png");
   margin-left: 5vw;
+}
 
+#imgHayao,
+#imgYoshifumi,
+#imgIsao,
+#imgHiroyuki,
+#imgGoro,
+#imgHiromasa {
+  display: none;
+  width: 65%;
+  margin-top: 16vh;
+  margin-left: 5.5vw;
 }
 
 .allDirectors {
   grid-column: 2/4;
   overflow: auto;
-  background-color: #022660;
+  background-color: #022660df;
   padding: 3vw;
-  margin-top: 2vw;
-  margin-bottom: 2vw;
-  margin-right: 2vw;
+  margin: 4vw;
   border-radius: 2vw;
 }
 
-.container {
-  text-align: center;
-  display: flex;
-  padding-bottom: 12vh;
-}
-
-.container img {
-  width: 15vw;
-  margin-left: 2vw;
-}
-
-.columnHayao, .columnIsao, .columnYoshifumi, .columnHiromasa , .columnGoro, .columnHiroyuki  {
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 2fr;
+.columnHayao,
+.columnIsao,
+.columnYoshifumi,
+.columnHiromasa,
+.columnGoro,
+.columnHiroyuki {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
   column-gap: 2vw;
   row-gap: 2vh;
   display: grid;
-  margin-left: 8vw;
+  padding: 0.8vw;
+  display: none;
 }
 
-.columnHayao div, .columnIsao div, .columnYoshifumi div , .columnHiromasa div, .columnGoro div, .columnHiroyuki div   {
+
+.columnHayao div,
+.columnIsao div,
+.columnYoshifumi div,
+.columnHiromasa div,
+.columnGoro div,
+.columnHiroyuki div {
   background-color: #05162c;
   border-radius: 1vw;
   padding: .8vw;
-  height: 5vh;
+  height: 10vh;
   width: 14vw;
+  align-items: center;
   justify-content: center;
-  justify-self: center;
-  text-align: center;
 }
+
 
 h2 {
   text-align: center;
@@ -303,3 +315,42 @@ h6 {
   align-items: center;
   margin-top: -4.5vh;
 }
+
+.card {
+  position: relative;
+  width: 300px;
+  height: 400px;
+}
+
+.card div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backface-visibility: hidden;
+  transition: 2s;
+}
+.card .front {
+  background-color: #288ca0;
+  transform: perspective(500px) rotateY(0deg);
+}
+.card .back {
+  background-color: #682fc4;
+  transform: perspective(500px) rotateY(180deg);
+}
+.card:hover .front {
+  transform: perspective(500px) rotateY(180deg);
+}
+.card:hover .back {
+  transform: perspective(500px) rotateY(360deg);
+}
+
+.card div h1 {
+  font-size: 100px;
+  color:aliceblue
+
+}
+
+
