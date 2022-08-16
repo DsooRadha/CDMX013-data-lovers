@@ -1,4 +1,4 @@
-import { filterDirector, directors} from "./data.js";
+import { filterDirector, directors, title,  filterPersonajes} from "./data.js";
 
 dataAccess();
 function dataAccess() {
@@ -31,6 +31,19 @@ const renderDirector = (directorName, columnDirectorSelector) => {
   })
 }
 directors.forEach(director => renderDirector(director.name, director.selector))
+
+
+const renderPersonajes = (directorName, columnDirectorSelector) => {
+  const title = filterPersonajes(directorName)
+  title.forEach(d => {
+    let columnDirectors = document.querySelector(columnDirectorSelector);
+    let div = document.createElement('div');    //creamos un elemento div por cada elemento del array
+    div.setAttribute('id', 'title');    //le asignamos el id 'card' a cada div
+    div.innerHTML = `<h2> ${d.title}</h2><h6>${d.release_date}</h6>`;
+    columnDirectors.appendChild(div);
+  })
+}
+directors.forEach(director => renderPersonajes(director.name, director.selector))
 
 const btnHayao = document.getElementById("Hayao");
 btnHayao.addEventListener("click", function (e) {
