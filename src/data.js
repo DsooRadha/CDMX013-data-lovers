@@ -3,8 +3,7 @@ import ghibli from './data/ghibli/ghibli.js';
 const dataGhibliJs = (ghibli.films);
 console.log(dataGhibliJs)
 dataGhibliJs.forEach(data => {
-  const directores = data.director 
-  return directores
+  data.people
 })
 
 export const directors = [
@@ -29,16 +28,16 @@ export const title = [
   {name: "My Neighbors the Yamadas", selector: '.columnYamadas'},
   {name: "Spirited Away", selector: '.columnSpirited'},
   {name: "The Cat Returns", selector: '.columnTheCat'},
-  {name: "Howl's Moving Castle", selector: '.columnHowl"'},
+  {name: "Howl's Moving Castle", selector: '.columnHowl'},
   {name: "Tales from Earthsea", selector: '.columnTales'},
   {name: "Ponyo on the Cliff by the Sea", selector: '.columnPonyo'},
   {name: "The Secret World of Arrietty", selector: '.columnArrietty'},
   {name: "From Up on Poppy Hill", selector: '.columnPoppyhill'},
   {name: "The Wind Rises", selector: '.columnThewind'},
   {name: "The Tale of the Princess Kaguya", selector: '.columnTale'},
-  {name: "When Marnie Was There", selector: '.columnMarnie"'},
+  {name: "When Marnie Was There", selector: '.columnMarnie'},
 ]
- 
+
 
 //PASOS A SEGUIR CUANDO QUIERO ELIMINAR DATA REPETIDA
 const allDataGhibli= dataGhibliJs.map(({ director}) => { return ({ director }).director })//1.hago un Array con los elementos a analizar de dataJS
@@ -52,13 +51,6 @@ console.log(director); //4. festejas bailando en circulos
 
 export const filterDirector = function (name) { //function (data,directorName)
   const filterHayao = ({ director }) => ({ director }).director === name // 
-  const directors = (dataGhibliJs).filter(filterHayao)
-  return directors
-}
-
-
-export const filterPersonajes= function (name) { //function (data,directorName)
-  const filterHayao = ({ title}) => ({ title }).title === name // 
   const directors = (dataGhibliJs).filter(filterHayao)
   return directors
 }

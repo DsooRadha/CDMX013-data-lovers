@@ -34,7 +34,7 @@ body {
   color: white;
   cursor: pointer;
   background-color: #011f4ef6;
-  width: 19.755vw;
+  width: 19vw;
   height: 7vh;
   font-size: 1.2vw;
   font-family: 'Nanum Gothic';
@@ -85,8 +85,6 @@ body {
 }
 
 /*
-
-
 .dropdown:hover div a {
   background-color: #042253;
   border: solid #022c6f;
@@ -321,6 +319,7 @@ h6 {
   position: relative;
   width: 300px;
   height: 400px;
+ 
 }
 
 .card div {
