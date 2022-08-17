@@ -1,4 +1,4 @@
-import { filterDirector, directors, title,  filterMovies} from "./data.js";
+import { filterDirector, directors, } from "./data.js";
 
 dataAccess();
 function dataAccess() {
@@ -19,7 +19,8 @@ function dataAccess() {
   });
   return (dataghibli)
 }
- 
+
+
 const renderDirector = (directorName, columnDirectorSelector) => {
   const director = filterDirector(directorName)
   director.forEach(d => {
@@ -31,6 +32,7 @@ const renderDirector = (directorName, columnDirectorSelector) => {
   })
 }
 directors.forEach(director => renderDirector(director.name, director.selector))
+
 
 
 
@@ -149,376 +151,20 @@ btnHiromasa.addEventListener("click", function (e) {
 
 
 
+
 // ALINE
 
-
-const renderMovie = (movieName, columnMovieSelector) => {
-  const title = filterMovies(movieName)
-  title.forEach(m => {
-    let columnMovie = document.querySelector(columnMovieSelector);
-    let div = document.createElement('div');    //creamos un elemento div por cada elemento del array
-    div.setAttribute('id', 'titleee');    //le asignamos el id 'card' a cada div
-    div.innerHTML = `<h2> ${m.people}</h2>`;
-    columnMovie.appendChild(div);
-  })
+const prueba = document.getElementById("prueba")
+prueba.addEventListener("click", myFunction);
+function myFunction() {
+alert("hola");
 }
-title.forEach(title => renderMovie(title.name, title.selector))
-
-const btnCastle = document.getElementById("castle");
-btnCastle.addEventListener("click", function (e) {
-  e.preventDefault() 
-  document.querySelector(".gridAll").style.display = "none";
-  document.querySelector(".all").style.display = "grid";
-});
 
 
+let movies = document.getElementsByName("characters")
+            for(cadaUna of characters){
+              cadaUna.classList.add("characters");
+            }
 
 
-
-
-
-
-const btnTotoro = document.getElementById("totoro");
-btnTotoro.addEventListener("click", function (e) {e.preventDefault() 
-  document.querySelector(".gridAll").style.display = "none";
-  document.querySelector(".all").style.display = "grid";
-  document.querySelector("#imgIsao").style.display = "block"
-  document.querySelector(".columnIsao").style.display= "grid";
-  document.querySelector(".columnHayao").style.display= "none";
-  document.querySelector("#imgHayao").style.display = "none";
-  document.querySelector(".columnHiroyuki").style.display= "none";
-  document.querySelector("#imgHiroyuki").style.display = "none"
-  document.querySelector(".columnGoro").style.display= "none";
-  document.querySelector("#imgGoro").style.display = "none";
-  document.querySelector(".columnHiromasa").style.display= "none";
-  document.querySelector("#imgHiromasa").style.display = "none";
-});
-
-const btnKikis = document.getElementById("kikis");
-btnKikis.addEventListener("click", function (e) {
-  e.preventDefault() 
-  document.querySelector(".gridAll").style.display = "none";
-  document.querySelector(".all").style.display = "grid";
-  document.querySelector("#imgIsao").style.display = "none";
-  document.querySelector(".columnIsao").style.display= "none";
-  document.querySelector(".columnHayao").style.display= "none";
-  document.querySelector("#imgHayao").style.display = "none";
-  document.querySelector(".columnYoshifumi").style.display= "grid";
-  document.querySelector("#imgYoshifumi").style.display = "block"
-  document.querySelector(".columnHiroyuki").style.display= "none";
-  document.querySelector("#imgHiroyuki").style.display = "none"
-  document.querySelector(".columnGoro").style.display= "none";
-  document.querySelector("#imgGoro").style.display = "none";
-  document.querySelector(".columnHiromasa").style.display= "none";
-  document.querySelector("#imgHiromasa").style.display = "none";
-});
-
-
-const btnGrave = document.getElementById("grave");
-btnGrave.addEventListener("click", function (e) {
-  e.preventDefault() 
-  document.querySelector(".gridAll").style.display = "none";
-  document.querySelector(".all").style.display = "grid";
-  document.querySelector("#imgIsao").style.display = "none";
-  document.querySelector(".columnIsao").style.display= "none";
-  document.querySelector(".columnHayao").style.display= "none";
-  document.querySelector("#imgHayao").style.display = "none";
-  document.querySelector(".columnYoshifumi").style.display= "none";
-  document.querySelector("#imgYoshifumi").style.display = "none";
-  document.querySelector(".columnHiroyuki").style.display= "grid";
-  document.querySelector("#imgHiroyuki").style.display = "block";
-  document.querySelector(".columnGoro").style.display= "none";
-  document.querySelector("#imgGoro").style.display = "none";
-  document.querySelector(".columnHiromasa").style.display= "none";
-  document.querySelector("#imgHiromasa").style.display = "none";
-});
-
-
-const btnOnly = document.getElementById("only");
-btnOnly.addEventListener("click", function (e) {
-  e.preventDefault() 
-  document.querySelector(".gridAll").style.display = "none";
-  document.querySelector(".all").style.display = "grid";
-  document.querySelector("#imgIsao").style.display = "none";
-  document.querySelector(".columnIsao").style.display= "none";
-  document.querySelector(".columnHayao").style.display= "none";
-  document.querySelector("#imgHayao").style.display = "none";
-  document.querySelector(".columnYoshifumi").style.display= "none";
-  document.querySelector("#imgYoshifumi").style.display = "none";
-  document.querySelector(".columnHiroyuki").style.display= "none";
-  document.querySelector("#imgHiroyuki").style.display = "none";
-  document.querySelector(".columnGoro").style.display= "grid";
-  document.querySelector("#imgGoro").style.display = "block";
-  document.querySelector(".columnHiromasa").style.display= "none";
-  document.querySelector("#imgHiromasa").style.display = "none";
-});
-
-const btnPorco = document.getElementById("porco");
-btnPorco.addEventListener("click", function (e) {
-  e.preventDefault() 
-  document.querySelector(".gridAll").style.display = "none";
-  document.querySelector(".all").style.display = "grid";
-  document.querySelector("#imgIsao").style.display = "none";
-  document.querySelector(".columnIsao").style.display= "none";
-  document.querySelector(".columnHayao").style.display= "none";
-  document.querySelector("#imgHayao").style.display = "none";
-  document.querySelector(".columnYoshifumi").style.display= "none";
-  document.querySelector("#imgYoshifumi").style.display = "none";
-  document.querySelector(".columnHiroyuki").style.display= "none";
-  document.querySelector("#imgHiroyuki").style.display = "none";
-  document.querySelector(".columnGoro").style.display= "none";
-  document.querySelector("#imgGoro").style.display = "none";
-  document.querySelector(".columnHiromasa").style.display= "grid";
-  document.querySelector("#imgHiromasa").style.display = "block";
-});
-
-const btnPom = document.getElementById("pom");
-btnPom.addEventListener("click", function (e) {
-  e.preventDefault() 
-  document.querySelector(".gridAll").style.display = "none";
-  document.querySelector(".all").style.display = "grid";
-  document.querySelector("#imgIsao").style.display = "none";
-  document.querySelector(".columnIsao").style.display= "none";
-  document.querySelector(".columnHayao").style.display= "none";
-  document.querySelector("#imgHayao").style.display = "none";
-  document.querySelector(".columnYoshifumi").style.display= "none";
-  document.querySelector("#imgYoshifumi").style.display = "none";
-  document.querySelector(".columnHiroyuki").style.display= "none";
-  document.querySelector("#imgHiroyuki").style.display = "none";
-  document.querySelector(".columnGoro").style.display= "none";
-  document.querySelector("#imgGoro").style.display = "none";
-  document.querySelector(".columnHiromasa").style.display= "grid";
-  document.querySelector("#imgHiromasa").style.display = "block";
-});
-
-const btnWhisper = document.getElementById("whisper");
-btnWhisper.addEventListener("click", function (e) {
-  e.preventDefault() 
-  document.querySelector(".gridAll").style.display = "none";
-  document.querySelector(".all").style.display = "grid";
-  document.querySelector("#imgIsao").style.display = "none";
-  document.querySelector(".columnIsao").style.display= "none";
-  document.querySelector(".columnHayao").style.display= "none";
-  document.querySelector("#imgHayao").style.display = "none";
-  document.querySelector(".columnYoshifumi").style.display= "none";
-  document.querySelector("#imgYoshifumi").style.display = "none";
-  document.querySelector(".columnHiroyuki").style.display= "none";
-  document.querySelector("#imgHiroyuki").style.display = "none";
-  document.querySelector(".columnGoro").style.display= "none";
-  document.querySelector("#imgGoro").style.display = "none";
-  document.querySelector(".columnHiromasa").style.display= "grid";
-  document.querySelector("#imgHiromasa").style.display = "block";
-});
-
-
-
-const btnPrincess = document.getElementById("princess");
-btnPrincess.addEventListener("click", function (e) {
-  e.preventDefault() 
-  document.querySelector(".gridAll").style.display = "none";
-  document.querySelector(".all").style.display = "grid";
-  document.querySelector("#imgIsao").style.display = "none";
-  document.querySelector(".columnIsao").style.display= "none";
-  document.querySelector(".columnHayao").style.display= "none";
-  document.querySelector("#imgHayao").style.display = "none";
-  document.querySelector(".columnYoshifumi").style.display= "none";
-  document.querySelector("#imgYoshifumi").style.display = "none";
-  document.querySelector(".columnHiroyuki").style.display= "none";
-  document.querySelector("#imgHiroyuki").style.display = "none";
-  document.querySelector(".columnGoro").style.display= "none";
-  document.querySelector("#imgGoro").style.display = "none";
-  document.querySelector(".columnHiromasa").style.display= "grid";
-  document.querySelector("#imgHiromasa").style.display = "block";
-});
-
-const btnYamadas = document.getElementById("yamadas");
-btnYamadas.addEventListener("click", function (e) {
-  e.preventDefault() 
-  document.querySelector(".gridAll").style.display = "none";
-  document.querySelector(".all").style.display = "grid";
-  document.querySelector("#imgIsao").style.display = "none";
-  document.querySelector(".columnIsao").style.display= "none";
-  document.querySelector(".columnHayao").style.display= "none";
-  document.querySelector("#imgHayao").style.display = "none";
-  document.querySelector(".columnYoshifumi").style.display= "none";
-  document.querySelector("#imgYoshifumi").style.display = "none";
-  document.querySelector(".columnHiroyuki").style.display= "none";
-  document.querySelector("#imgHiroyuki").style.display = "none";
-  document.querySelector(".columnGoro").style.display= "none";
-  document.querySelector("#imgGoro").style.display = "none";
-  document.querySelector(".columnHiromasa").style.display= "grid";
-  document.querySelector("#imgHiromasa").style.display = "block";
-});
-
-
-
-const btnSpirited = document.getElementById("spirited");
-btnSpirited.addEventListener("click", function (e) {
-  e.preventDefault() 
-  document.querySelector(".gridAll").style.display = "none";
-  document.querySelector(".all").style.display = "grid";
-  document.querySelector("#imgIsao").style.display = "none";
-  document.querySelector(".columnIsao").style.display= "none";
-  document.querySelector(".columnHayao").style.display= "none";
-  document.querySelector("#imgHayao").style.display = "none";
-  document.querySelector(".columnYoshifumi").style.display= "none";
-  document.querySelector("#imgYoshifumi").style.display = "none";
-  document.querySelector(".columnHiroyuki").style.display= "none";
-  document.querySelector("#imgHiroyuki").style.display = "none";
-  document.querySelector(".columnGoro").style.display= "none";
-  document.querySelector("#imgGoro").style.display = "none";
-  document.querySelector(".columnHiromasa").style.display= "grid";
-  document.querySelector("#imgHiromasa").style.display = "block";
-});
-
-const btnTheCat = document.getElementById("thecat");
-btnTheCat.addEventListener("click", function (e) {
-  e.preventDefault() 
-  document.querySelector(".gridAll").style.display = "none";
-  document.querySelector(".all").style.display = "grid";
-  document.querySelector("#imgIsao").style.display = "none";
-  document.querySelector(".columnIsao").style.display= "none";
-  document.querySelector(".columnHayao").style.display= "none";
-  document.querySelector("#imgHayao").style.display = "none";
-  document.querySelector(".columnYoshifumi").style.display= "none";
-  document.querySelector("#imgYoshifumi").style.display = "none";
-  document.querySelector(".columnHiroyuki").style.display= "none";
-  document.querySelector("#imgHiroyuki").style.display = "none";
-  document.querySelector(".columnGoro").style.display= "none";
-  document.querySelector("#imgGoro").style.display = "none";
-  document.querySelector(".columnHiromasa").style.display= "grid";
-  document.querySelector("#imgHiromasa").style.display = "block";
-});
-
-const btnHowl = document.getElementById("howl");
-btnHowl.addEventListener("click", function (e) {
-  e.preventDefault() 
-  document.querySelector(".gridAll").style.display = "none";
-  document.querySelector(".all").style.display = "grid";
-  document.querySelector("#imgIsao").style.display = "none";
-  document.querySelector(".columnIsao").style.display= "none";
-  document.querySelector(".columnHayao").style.display= "none";
-  document.querySelector("#imgHayao").style.display = "none";
-  document.querySelector(".columnYoshifumi").style.display= "none";
-  document.querySelector("#imgYoshifumi").style.display = "none";
-  document.querySelector(".columnHiroyuki").style.display= "none";
-  document.querySelector("#imgHiroyuki").style.display = "none";
-  document.querySelector(".columnGoro").style.display= "none";
-  document.querySelector("#imgGoro").style.display = "none";
-  document.querySelector(".columnHiromasa").style.display= "grid";
-  document.querySelector("#imgHiromasa").style.display = "block";
-});
-
-const btnTales = document.getElementById("tales");
-btnTales.addEventListener("click", function (e) {
-  e.preventDefault() 
-  document.querySelector(".gridAll").style.display = "none";
-  document.querySelector(".all").style.display = "grid";
-  document.querySelector("#imgIsao").style.display = "none";
-  document.querySelector(".columnIsao").style.display= "none";
-  document.querySelector(".columnHayao").style.display= "none";
-  document.querySelector("#imgHayao").style.display = "none";
-  document.querySelector(".columnYoshifumi").style.display= "none";
-  document.querySelector("#imgYoshifumi").style.display = "none";
-  document.querySelector(".columnHiroyuki").style.display= "none";
-  document.querySelector("#imgHiroyuki").style.display = "none";
-  document.querySelector(".columnGoro").style.display= "none";
-  document.querySelector("#imgGoro").style.display = "none";
-  document.querySelector(".columnHiromasa").style.display= "grid";
-  document.querySelector("#imgHiromasa").style.display = "block";
-});
-
-const btnPonyo = document.getElementById("ponyo");
-btnPonyo.addEventListener("click", function (e) {
-  e.preventDefault() 
-  document.querySelector(".gridAll").style.display = "none";
-  document.querySelector(".all").style.display = "grid";
-  document.querySelector("#imgIsao").style.display = "none";
-  document.querySelector(".columnIsao").style.display= "none";
-  document.querySelector(".columnHayao").style.display= "none";
-  document.querySelector("#imgHayao").style.display = "none";
-  document.querySelector(".columnYoshifumi").style.display= "none";
-  document.querySelector("#imgYoshifumi").style.display = "none";
-  document.querySelector(".columnHiroyuki").style.display= "none";
-  document.querySelector("#imgHiroyuki").style.display = "none";
-  document.querySelector(".columnGoro").style.display= "none";
-  document.querySelector("#imgGoro").style.display = "none";
-  document.querySelector(".columnHiromasa").style.display= "grid";
-  document.querySelector("#imgHiromasa").style.display = "block";
-});
-
-const btnArrietty = document.getElementById("arrietty");
-btnAttietty.addEventListener("click", function (e) {
-  e.preventDefault() 
-  document.querySelector(".gridAll").style.display = "none";
-  document.querySelector(".all").style.display = "grid";
-  document.querySelector("#imgIsao").style.display = "none";
-  document.querySelector(".columnIsao").style.display= "none";
-  document.querySelector(".columnHayao").style.display= "none";
-  document.querySelector("#imgHayao").style.display = "none";
-  document.querySelector(".columnYoshifumi").style.display= "none";
-  document.querySelector("#imgYoshifumi").style.display = "none";
-  document.querySelector(".columnHiroyuki").style.display= "none";
-  document.querySelector("#imgHiroyuki").style.display = "none";
-  document.querySelector(".columnGoro").style.display= "none";
-  document.querySelector("#imgGoro").style.display = "none";
-  document.querySelector(".columnHiromasa").style.display= "grid";
-  document.querySelector("#imgHiromasa").style.display = "block";
-});
-
-const btnPoppyhill = document.getElementById("poppyhill");
-btnPoppyhill.addEventListener("click", function (e) {
-  e.preventDefault() 
-  document.querySelector(".gridAll").style.display = "none";
-  document.querySelector(".all").style.display = "grid";
-  document.querySelector("#imgIsao").style.display = "none";
-  document.querySelector(".columnIsao").style.display= "none";
-  document.querySelector(".columnHayao").style.display= "none";
-  document.querySelector("#imgHayao").style.display = "none";
-  document.querySelector(".columnYoshifumi").style.display= "none";
-  document.querySelector("#imgYoshifumi").style.display = "none";
-  document.querySelector(".columnHiroyuki").style.display= "none";
-  document.querySelector("#imgHiroyuki").style.display = "none";
-  document.querySelector(".columnGoro").style.display= "none";
-  document.querySelector("#imgGoro").style.display = "none";
-  document.querySelector(".columnHiromasa").style.display= "grid";
-  document.querySelector("#imgHiromasa").style.display = "block";
-});
-
-const btnTheWind = document.getElementById("thewind");
-btnTheWind.addEventListener("click", function (e) {
-  e.preventDefault() 
-  document.querySelector(".gridAll").style.display = "none";
-  document.querySelector(".all").style.display = "grid";
-  document.querySelector("#imgIsao").style.display = "none";
-  document.querySelector(".columnIsao").style.display= "none";
-  document.querySelector(".columnHayao").style.display= "none";
-  document.querySelector("#imgHayao").style.display = "none";
-  document.querySelector(".columnYoshifumi").style.display= "none";
-  document.querySelector("#imgYoshifumi").style.display = "none";
-  document.querySelector(".columnHiroyuki").style.display= "none";
-  document.querySelector("#imgHiroyuki").style.display = "none";
-  document.querySelector(".columnGoro").style.display= "none";
-  document.querySelector("#imgGoro").style.display = "none";
-  document.querySelector(".columnHiromasa").style.display= "grid";
-  document.querySelector("#imgHiromasa").style.display = "block";
-});
-
-const btnMarnie = document.getElementById("marnie");
-btnMarnie.addEventListener("click", function (e) {
-  e.preventDefault() 
-  document.querySelector(".gridAll").style.display = "none";
-  document.querySelector(".all").style.display = "grid";
-  document.querySelector("#imgIsao").style.display = "none";
-  document.querySelector(".columnIsao").style.display= "none";
-  document.querySelector(".columnHayao").style.display= "none";
-  document.querySelector("#imgHayao").style.display = "none";
-  document.querySelector(".columnYoshifumi").style.display= "none";
-  document.querySelector("#imgYoshifumi").style.display = "none";
-  document.querySelector(".columnHiroyuki").style.display= "none";
-  document.querySelector("#imgHiroyuki").style.display = "none";
-  document.querySelector(".columnGoro").style.display= "none";
-  document.querySelector("#imgGoro").style.display = "none";
-  document.querySelector(".columnHiromasa").style.display= "grid";
-  document.querySelector("#imgHiromasa").style.display = "block";
-});
+let eleccion1 = document.querySelector("button[id=castle]:click"
