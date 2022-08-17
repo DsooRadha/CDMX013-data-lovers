@@ -1,4 +1,4 @@
-import { filterDirector, directors} from "./data.js";
+import { filterDirector, directors, title,  filterMovies} from "./data.js";
 
 dataAccess();
 function dataAccess() {
@@ -157,3 +157,25 @@ btnHiromasa.addEventListener("click", function (e) {
   document.querySelector(".columnHiromasa").style.display= "grid";
   document.querySelector("#imgHiromasa").style.display = "block";
 });
+
+
+
+const renderMovie = (movieName, columnMovieSelector) => {
+  const title = filterMovies(movieName)
+  title.forEach(m => {
+    let columnMovie = document.querySelector(columnMovieSelector);
+    let div = document.createElement('div');    //creamos un elemento div por cada elemento del array
+    div.setAttribute('id', 'titleee');    //le asignamos el id 'card' a cada div
+    div.innerHTML = `<h2> ${m.people}</h2>`;
+    columnMovie.appendChild(div);
+  })
+}
+title.forEach(title => renderMovie(title.name, title.selector))
+
+const btnCastle = document.getElementById("castle");
+btnCastle.addEventListener("click", function (e) {
+  e.preventDefault() 
+  document.querySelector(".gridAll").style.display = "none";
+  document.querySelector(".all").style.display = "grid";
+});
+
