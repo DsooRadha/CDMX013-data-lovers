@@ -38,7 +38,7 @@ export const title = [
   {name: "The Tale of the Princess Kaguya", selector: '.columnTale'},
   {name: "When Marnie Was There", selector: '.columnMarnie"'},
 ]
-
+ 
 
 //PASOS A SEGUIR CUANDO QUIERO ELIMINAR DATA REPETIDA
 const allDataGhibli= dataGhibliJs.map(({ director}) => { return ({ director }).director })//1.hago un Array con los elementos a analizar de dataJS
