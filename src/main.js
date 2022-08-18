@@ -50,34 +50,23 @@ btnHayao.addEventListener("click", function (e) {
   e.preventDefault() 
   document.querySelector(".gridAll").style.display = "none";
   document.querySelector(".all").style.display = "grid";
-  document.querySelector("#imgIsao").style.display = "none";
   document.querySelector(".columnIsao").style.display= "none";
   document.querySelector(".columnHayao").style.display= "grid";
-  document.querySelector("#imgHayao").style.display = "block";
   document.querySelector(".columnYoshifumi").style.display= "none";
-  document.querySelector("#imgYoshifumi").style.display = "none";
   document.querySelector(".columnHiroyuki").style.display= "none";
-  document.querySelector("#imgHiroyuki").style.display = "none"
   document.querySelector(".columnGoro").style.display= "none";
-  document.querySelector("#imgGoro").style.display = "none";
   document.querySelector(".columnHiromasa").style.display= "none";
-  document.querySelector("#imgHiromasa").style.display = "none";
 });
 
 const btnIsao = document.getElementById("Isao");
 btnIsao.addEventListener("click", function (e) {e.preventDefault() 
   document.querySelector(".gridAll").style.display = "none";
   document.querySelector(".all").style.display = "grid";
-  document.querySelector("#imgIsao").style.display = "block"
   document.querySelector(".columnIsao").style.display= "grid";
   document.querySelector(".columnHayao").style.display= "none";
-  document.querySelector("#imgHayao").style.display = "none";
   document.querySelector(".columnHiroyuki").style.display= "none";
-  document.querySelector("#imgHiroyuki").style.display = "none"
   document.querySelector(".columnGoro").style.display= "none";
-  document.querySelector("#imgGoro").style.display = "none";
   document.querySelector(".columnHiromasa").style.display= "none";
-  document.querySelector("#imgHiromasa").style.display = "none";
 });
 
 const btnYoshifumi = document.getElementById("Yoshifumi");
@@ -85,18 +74,12 @@ btnYoshifumi.addEventListener("click", function (e) {
   e.preventDefault() 
   document.querySelector(".gridAll").style.display = "none";
   document.querySelector(".all").style.display = "grid";
-  document.querySelector("#imgIsao").style.display = "none";
   document.querySelector(".columnIsao").style.display= "none";
   document.querySelector(".columnHayao").style.display= "none";
-  document.querySelector("#imgHayao").style.display = "none";
   document.querySelector(".columnYoshifumi").style.display= "grid";
-  document.querySelector("#imgYoshifumi").style.display = "block"
   document.querySelector(".columnHiroyuki").style.display= "none";
-  document.querySelector("#imgHiroyuki").style.display = "none"
   document.querySelector(".columnGoro").style.display= "none";
-  document.querySelector("#imgGoro").style.display = "none";
   document.querySelector(".columnHiromasa").style.display= "none";
-  document.querySelector("#imgHiromasa").style.display = "none";
 });
 
 
@@ -105,18 +88,12 @@ btnHiroyuki.addEventListener("click", function (e) {
   e.preventDefault() 
   document.querySelector(".gridAll").style.display = "none";
   document.querySelector(".all").style.display = "grid";
-  document.querySelector("#imgIsao").style.display = "none";
   document.querySelector(".columnIsao").style.display= "none";
   document.querySelector(".columnHayao").style.display= "none";
-  document.querySelector("#imgHayao").style.display = "none";
   document.querySelector(".columnYoshifumi").style.display= "none";
-  document.querySelector("#imgYoshifumi").style.display = "none";
   document.querySelector(".columnHiroyuki").style.display= "grid";
-  document.querySelector("#imgHiroyuki").style.display = "block";
   document.querySelector(".columnGoro").style.display= "none";
-  document.querySelector("#imgGoro").style.display = "none";
   document.querySelector(".columnHiromasa").style.display= "none";
-  document.querySelector("#imgHiromasa").style.display = "none";
 });
 
 
@@ -125,18 +102,12 @@ btnGoro.addEventListener("click", function (e) {
   e.preventDefault() 
   document.querySelector(".gridAll").style.display = "none";
   document.querySelector(".all").style.display = "grid";
-  document.querySelector("#imgIsao").style.display = "none";
   document.querySelector(".columnIsao").style.display= "none";
   document.querySelector(".columnHayao").style.display= "none";
-  document.querySelector("#imgHayao").style.display = "none";
   document.querySelector(".columnYoshifumi").style.display= "none";
-  document.querySelector("#imgYoshifumi").style.display = "none";
   document.querySelector(".columnHiroyuki").style.display= "none";
-  document.querySelector("#imgHiroyuki").style.display = "none";
   document.querySelector(".columnGoro").style.display= "grid";
-  document.querySelector("#imgGoro").style.display = "block";
   document.querySelector(".columnHiromasa").style.display= "none";
-  document.querySelector("#imgHiromasa").style.display = "none";
 });
 
 const btnHiromasa = document.getElementById("Hiromasa");
@@ -144,16 +115,29 @@ btnHiromasa.addEventListener("click", function (e) {
   e.preventDefault() 
   document.querySelector(".gridAll").style.display = "none";
   document.querySelector(".all").style.display = "grid";
-  document.querySelector("#imgIsao").style.display = "none";
   document.querySelector(".columnIsao").style.display= "none";
   document.querySelector(".columnHayao").style.display= "none";
-  document.querySelector("#imgHayao").style.display = "none";
   document.querySelector(".columnYoshifumi").style.display= "none";
-  document.querySelector("#imgYoshifumi").style.display = "none";
   document.querySelector(".columnHiroyuki").style.display= "none";
-  document.querySelector("#imgHiroyuki").style.display = "none";
   document.querySelector(".columnGoro").style.display= "none";
-  document.querySelector("#imgGoro").style.display = "none";
   document.querySelector(".columnHiromasa").style.display= "grid";
-  document.querySelector("#imgHiromasa").style.display = "block";
 });
+
+
+const renderDirectorImage = (directorName) => {
+  const director = directors.filter(director => director.name === directorName)[0]
+  return `
+    <img id="imgHayao" src="${director.imgSrc}" alt="${director.name}" style="display: block;">
+  `;
+}
+
+const directorSpaceRightElement = document.querySelector('.spaceRigth')
+
+document.querySelectorAll('.directorNavItem').forEach(navItem => {
+  navItem.addEventListener('click', (e) => {
+    const navsito = e.target
+    const directorName = navsito.dataset.directorName
+    directorSpaceRightElement.innerHTML = ""
+    directorSpaceRightElement.innerHTML = renderDirectorImage(directorName)
+  })
+})

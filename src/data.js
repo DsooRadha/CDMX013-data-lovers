@@ -8,12 +8,12 @@ dataGhibliJs.forEach(data => {
 })
 
 export const directors = [
-  {name: "Isao Takahata", selector: '.columnIsao'},
-  {name: "Hayao Miyazaki", selector: '.columnHayao'},
-  {name: "Yoshifumi Kondō", selector: '.columnYoshifumi'},
-  {name: "Hiroyuki Morita", selector: '.columnHiroyuki'},
-  {name: "Gorō Miyazaki", selector: '.columnGoro'},
-  {name: "Hiromasa Yonebayashi", selector: '.columnHiromasa'},
+  {name: "Isao Takahata", selector: '.columnIsao', imgSrc: "./images/isao.png"},
+  {name: "Hayao Miyazaki", selector: '.columnHayao', imgSrc: "./images/hayo.png"},
+  {name: "Yoshifumi Kondō", selector: '.columnYoshifumi', imgSrc: "./images/yoshifumi.png"},
+  {name: "Hiroyuki Morita", selector: '.columnHiroyuki', imgSrc: "./images/hiroyuki.png"},
+  {name: "Gorō Miyazaki", selector: '.columnGoro', imgSrc: "./images/Goro.png"},
+  {name: "Hiromasa Yonebayashi", selector: '.columnHiromasa', imgSrc: "./images/Hiromasa.png"},
 ]
 
 export const title = [
