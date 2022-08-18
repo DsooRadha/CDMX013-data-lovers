@@ -1,6 +1,8 @@
 import { filterDirector, directors} from "./data.js";
 //import { title,  filterPersonajes} from "./data.js";
-
+import { dataGhibliJs} from "./data.js";
+//import{filterFilmsPeople} from "./data.js";
+ 
 
 dataAccess();
 function dataAccess() {
@@ -34,6 +36,20 @@ const renderDirector = (directorName, columnDirectorSelector) => {
 }
 directors.forEach(director => renderDirector(director.name, director.selector))
 
+//filterFilmsPeople()
+
+dataGhibliJs.forEach (data => {
+    const character= data.people
+    character.forEach(p=>{
+    console.log (p.name, p.img)
+    let columnCharacter = document.querySelector(".allMovies");
+    let div = document.createElement('div');    //creamos un elemento div por cada elemento del array
+    div.setAttribute('id', 'title');    //le asignamos el id 'card' a cada div
+    div.innerHTML = `<img class="poster"src="${p.img}"><h2> ${p.name}</h2><h6>${p.gender}</h6>`;
+    columnCharacter.appendChild(div);
+  })
+})
+ 
 /*
 const renderPersonajes = (filmsName, columntitleSelector) => {
   const title = filterPersonajes(filmsName)
@@ -130,8 +146,10 @@ btnHiromasa.addEventListener("click", function (e) {
 const btnFilms0 = document.getElementById("castle");
 btnFilms0.addEventListener("click", function (e) {
   e.preventDefault() 
+ 
   document.querySelector(".gridAll").style.display = "none";
   document.querySelector(".all").style.display = "grid";
+ 
 });
 
 

@@ -1,14 +1,12 @@
 import ghibli from './data/ghibli/ghibli.js';
 
-export const dataGhibliJs = (ghibli.films);
-console.log(dataGhibliJs)
+ export const dataGhibliJs = (ghibli.films);
+//console.log(dataGhibliJs)
 dataGhibliJs.forEach(data => {
   const character= data.people
   character.forEach(p=>{
- console.log(p.name + p.img)
+ console.log(data.title, p.name , p.img)
   });
-  const directores = data.director 
-  console.log (directores)
 });
 
 export const directors = [
@@ -55,18 +53,24 @@ allDataGhibli.forEach( (elemento) => {   // 3. sustituyo el elemento a iterar "a
 console.log(director); //4. festejas bailando en circulos
 
 export const filterDirector = function (name) { //function (data,directorName)
-  const filterHayao = ({ director }) => ({ director }).director === name // 
-  const directors = (dataGhibliJs).filter(filterHayao)
+  const filterAllDirectors = ({ director }) => ({ director }).director === name // 
+  const directors = (dataGhibliJs).filter(filterAllDirectors)
   return directors
 }
 
+const character= dataGhibliJs.filter(p => p.title == "Castle in the Sky")
+  character.forEach(p=>{
+   const people= p.people
+   people.forEach(character=>
+    { console.log(character.name,character.img)  })
+  })
 
-export const filterPersonajes= function (name) { //function (data,directorName)
-  const filterHayao = ({ title}) => ({ title }).title === name // 
-  const directors = (dataGhibliJs).filter(filterHayao)
-  return directors
-}
-
+/*
+  export const filterFilmsPeople= function (name){
+    const character= dataGhibliJs.filter(p => p.title == name)
+    return character
+  }
+*/
 /*ESTRUCTURA MAP
 .map (funcion (_, posicion, arrayoriginalsobreelqueseinvocalafuncion) 
 Guión BAajo si no nosinteresan los primeros parametros, los posteriores solo se omiten
