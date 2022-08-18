@@ -1,11 +1,15 @@
 import ghibli from './data/ghibli/ghibli.js';
 
-const dataGhibliJs = (ghibli.films);
+export const dataGhibliJs = (ghibli.films);
 console.log(dataGhibliJs)
 dataGhibliJs.forEach(data => {
+  const character= data.people
+  character.forEach(p=>{
+ console.log(p.name + p.img)
+  });
   const directores = data.director 
-  return directores
-})
+  console.log (directores)
+});
 
 export const directors = [
   {name: "Isao Takahata", selector: '.columnIsao', imgSrc: "./images/isao.png"},

@@ -1,4 +1,6 @@
-import { filterDirector, directors, title,  filterPersonajes} from "./data.js";
+import { filterDirector, directors} from "./data.js";
+//import { title,  filterPersonajes} from "./data.js";
+
 
 dataAccess();
 function dataAccess() {
@@ -32,18 +34,19 @@ const renderDirector = (directorName, columnDirectorSelector) => {
 }
 directors.forEach(director => renderDirector(director.name, director.selector))
 
-
-const renderPersonajes = (directorName, columnDirectorSelector) => {
-  const title = filterPersonajes(directorName)
+/*
+const renderPersonajes = (filmsName, columntitleSelector) => {
+  const title = filterPersonajes(filmsName)
   title.forEach(d => {
-    let columnDirectors = document.querySelector(columnDirectorSelector);
+    let columnCharacter = document.querySelector(columntitleSelector);
     let div = document.createElement('div');    //creamos un elemento div por cada elemento del array
     div.setAttribute('id', 'title');    //le asignamos el id 'card' a cada div
-    div.innerHTML = `<h2> ${d.title}</h2><h6>${d.release_date}</h6>`;
-    columnDirectors.appendChild(div);
+    div.innerHTML = `<h2> ${d.name}</h2><h6>${d.gender}</h6>`;
+    columnCharacter.appendChild(div);
   })
 }
-directors.forEach(director => renderPersonajes(director.name, director.selector))
+title.forEach(films => renderPersonajes(films.name, films.selector))
+*/
 
 const btnHayao = document.getElementById("Hayao");
 btnHayao.addEventListener("click", function (e) {
@@ -121,6 +124,14 @@ btnHiromasa.addEventListener("click", function (e) {
   document.querySelector(".columnHiroyuki").style.display= "none";
   document.querySelector(".columnGoro").style.display= "none";
   document.querySelector(".columnHiromasa").style.display= "grid";
+});
+
+
+const btnFilms0 = document.getElementById("castle");
+btnFilms0.addEventListener("click", function (e) {
+  e.preventDefault() 
+  document.querySelector(".gridAll").style.display = "none";
+  document.querySelector(".all").style.display = "grid";
 });
 
 
