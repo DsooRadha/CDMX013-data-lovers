@@ -34,27 +34,36 @@ const renderDirector = (directorName, columnDirectorSelector) => {
 }
 
 directors.forEach(director => renderDirector(director.name, director.selector))
-
-
-dataGhibliJs.forEach(data => {
-  const character = data.people
-  character.forEach(p => {
-    console.log(p.name, p.img)
-
-    let columnCharacter = document.querySelector(".movies");
-    let div = document.createElement('div');    //creamos un elemento div por cada elemento del array
-    div.setAttribute('id', 'title');    //le asignamos el id 'card' a cada div
-    div.innerHTML = `<img class="poster"src="${p.img}"><h2>${p.name}</h2><h2> ${p.gender}</h2>`;
-    columnCharacter.appendChild(div);
+console.log(document.getElementById("moviesGhibli").children)
+Array.from(document.getElementById("moviesGhibli").children).forEach(element => {
+  element.addEventListener("click", function (event) {
+    printCharacters(dataGhibliJs.filter(i=>i.title.toUpperCase===event.target.innerHTML))
+    console.log(event.target.innerHTML);
   })
-})
+});
 
-arrayExperimento.forEach(item =>{
-const loqueaparececuandovanalbtnTotoro = document.querySelector (".columnTotoro");
-let div = document.createElement('div');
-div.setAttribute('id', 'title'); 
-div.innerHTML = `<img class="poster"src="${item.img}"><h2>${item.name}</h2><h2> ${item.gender}</h2>`;
-loqueaparececuandovanalbtnTotoro.appendChild(div);
+function printCharacters(characters) {
+  characters.forEach(data => {
+    const character = data.people
+    character.forEach(p => {
+      console.log(p.name, p.img)
+
+      let columnCharacter = document.querySelector(".movies");
+      let div = document.createElement('div');    //creamos un elemento div por cada elemento del array
+      div.setAttribute('id', 'title');    //le asignamos el id 'card' a cada div
+      div.innerHTML = `<img class="poster"src="${p.img}"><h2>${p.name}</h2><h2> ${p.gender}</h2>`;
+      columnCharacter.appendChild(div);
+    })
+  })
+}
+printCharacters(dataGhibliJs)
+
+arrayExperimento.forEach(item => {
+  const loqueaparececuandovanalbtnTotoro = document.querySelector(".columnTotoro");
+  let div = document.createElement('div');
+  div.setAttribute('id', 'title');
+  div.innerHTML = `<img class="poster"src="${item.img}"><h2>${item.name}</h2><h2> ${item.gender}</h2>`;
+  loqueaparececuandovanalbtnTotoro.appendChild(div);
 })
 /*
 const renderPersonajes = (filmsName, columntitleSelector) => {
