@@ -164,7 +164,8 @@ body {
   color: white;
 }
 
-.ColumnTwo img {
+.ColumnTwo img,
+.movies img {
   height: calc(10.5vw - 1.7vw);
   width: calc(18vw - 0.5vw);
   object-fit: cover;
@@ -269,7 +270,7 @@ footer p {
 .columnYoshifumi div,
 .columnHiromasa div,
 .columnGoro div,
-.columnHiroyuki div {
+.columnHiroyuki div .movies div {
   background-color: #05162c;
   border-radius: 1vw;
   padding: .8vw;
@@ -277,7 +278,7 @@ footer p {
   width: 14vw;
   align-items: center;
   justify-content: center;
-  padding-top:  8vh; 
+  padding-top: 8vh;
 }
 
 
@@ -321,6 +322,7 @@ h6 {
   position: relative;
   width: 300px;
   height: 400px;
+  display: none;
 }
 
 .card div {
@@ -333,25 +335,39 @@ h6 {
   backface-visibility: hidden;
   transition: 2s;
 }
+
 .card .front {
   background-color: #288ca0;
   transform: perspective(500px) rotateY(0deg);
 }
+
 .card .back {
   background-color: #682fc4;
   transform: perspective(500px) rotateY(180deg);
 }
+
 .card:hover .front {
   transform: perspective(500px) rotateY(180deg);
 }
+
 .card:hover .back {
   transform: perspective(500px) rotateY(360deg);
 }
 
 .card div h1 {
   font-size: 100px;
-  color:aliceblue
- 
+  color: aliceblue
 }
 
 
+.movies {
+  background-color: #288ca0ab;
+  height: 400vw;
+  justify-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  column-gap: 2vw;
+  row-gap: 2vh;
+  padding: 0.8vw;
+  display: none;
+}
