@@ -1,6 +1,5 @@
-import { filterDirector, directors, dataGhibliJs, arrayExperimento } from "./data.js";
-//import { title,  filterPersonajes} from "./data.js";
-console.log(arrayExperimento)
+import { filterDirector, directors, dataGhibliJs, arrayExperimento, } from "./data.js";
+//import { titleData, filterFilmsPeople} from "./data.js";
 
 dataAccess();
 function dataAccess() {
@@ -22,6 +21,20 @@ function dataAccess() {
   return (dataghibli)
 }
 
+/*
+const renderFilms= (titleName, columMoviesSelector)=>{
+  const movies= filterFilmsPeople (titleName)
+  movies.forEach(people => {
+let columnMovies= document.querySelector(columMoviesSelector)
+  let div= document.createElement('div');
+  div.setAttribute ('id', 'title');
+  div.innerHTML= `<img class="poster"src="${people.img}"><h2>${people.name}</h2><h2> ${people.gender}</h2>`;
+  columnMovies.appendChild(div);
+})
+}
+titleData.forEach(titlefilms=>renderFilms (titlefilms.name, titlefilms.selector));
+*/
+
 const renderDirector = (directorName, columnDirectorSelector) => {
   const director = filterDirector(directorName)
   director.forEach(d => {
@@ -34,10 +47,11 @@ const renderDirector = (directorName, columnDirectorSelector) => {
 }
 
 directors.forEach(director => renderDirector(director.name, director.selector))
-console.log(document.getElementById("moviesGhibli").children)
+//console.log(document.getElementById("moviesGhibli").children)
+
 Array.from(document.getElementById("moviesGhibli").children).forEach(element => {
   element.addEventListener("click", function (event) {
-    printCharacters(dataGhibliJs.filter(i=>i.title.toUpperCase===event.target.innerHTML))
+    printCharacters(dataGhibliJs.filter(i => i.title.toUpperCase === event.target.innerHTML))
     console.log(event.target.innerHTML);
   })
 });
@@ -46,8 +60,7 @@ function printCharacters(characters) {
   characters.forEach(data => {
     const character = data.people
     character.forEach(p => {
-      console.log(p.name, p.img)
-
+      //  console.log(p.name, p.img)
       let columnCharacter = document.querySelector(".movies");
       let div = document.createElement('div');    //creamos un elemento div por cada elemento del array
       div.setAttribute('id', 'title');    //le asignamos el id 'card' a cada div

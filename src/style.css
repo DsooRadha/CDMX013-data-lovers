@@ -213,7 +213,7 @@ footer p {
   font-size: 2vh;
 }
 
-.all {
+.all, .movies {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 36vw;
@@ -223,7 +223,7 @@ footer p {
   display: none;
 }
 
-.spaceRigth {
+.spaceRigth, .review {
   grid-column: 1/2;
   margin-left: 5vw;
 }
@@ -359,7 +359,6 @@ h6 {
   color: aliceblue
 }
 
-
 .movies {
   background-color: #288ca0ab;
   height: 400vw;
@@ -370,4 +369,19 @@ h6 {
   row-gap: 2vh;
   padding: 0.8vw;
   display: none;
+}
+
+.columnTotoro{
+  background-color: #042253;
+  margin: 1.5vw;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  column-gap: 2vw;
+  row-gap: 2vh;
+  display: grid;
+  padding: 2vw;
+  border-radius: 1vw;
+  overflow: auto;
+  height: 60vh;
+  display: grid;
 }

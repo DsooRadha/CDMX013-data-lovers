@@ -1,16 +1,21 @@
 import ghibli from './data/ghibli/ghibli.js';
+
+const dataPeople= []
+console.log(dataPeople)
 const allTitlesMovies = [];
-console.log(allTitlesMovies);
+//console.log(allTitlesMovies);
 export const dataGhibliJs = (ghibli.films);
 //console.log(dataGhibliJs)
 dataGhibliJs.forEach(data => {
   const character = data.people
+dataPeople.push(character)
   character.forEach(p => {
-    console.log(data.title, p.name, p.img)
     const titleMovies = data.title
     allTitlesMovies.push(titleMovies)
+    return data.title, p.name, p.img
   });
 });
+
 
 export const directors = [
   { name: "Isao Takahata", selector: '.columnIsao', imgSrc: "./images/isao.png" },
@@ -21,7 +26,7 @@ export const directors = [
   { name: "Hiromasa Yonebayashi", selector: '.columnHiromasa', imgSrc: "./images/Hiromasa.png" },
 ]
 
-export const title = [
+export const titleData = [
   { name: "Castle in the Sky", selector: '.columnCastle' },
   { name: "My Neighbor Totoro", selector: '.columnTotoro' },
   { name: "Kiki's Delivery Service", selector: '.columnKikis' },
@@ -44,7 +49,6 @@ export const title = [
   { name: "When Marnie Was There", selector: '.columnMarnie"' },
 ]
 
-
 //PASOS A SEGUIR CUANDO QUIERO ELIMINAR DATA REPETIDA
 const allDataGhibli = dataGhibliJs.map(({ director }) => { return ({ director }).director })//1.hago un Array con los elementos a analizar de dataJS
 const director = [];            // 2. creo un array vacio donde llegaran los datos ya sin repetir 
@@ -53,7 +57,7 @@ allDataGhibli.forEach((elemento) => {   // 3. sustituyo el elemento a iterar "al
     director.push(elemento);
   }
 });
-console.log(director); //4. festejas bailando en circulos
+//console.log(director); //4. festejas bailando en circulos
 
 export const filterDirector = function (name) { //function (data,directorName)
   const filterAllDirectors = ({ director }) => ({ director }).director === name // 
@@ -66,17 +70,25 @@ const character = dataGhibliJs.filter(p => p.title == "My Neighbor Totoro")
 character.forEach(p => {
   const people = p.people
   people.forEach(character => {
-    console.log(character)
+   // console.log(character)
     arrayExperimento.push(character)
   })
 })
 
-/*
-  export const filterFilmsPeople= function (name){
-    const character= dataGhibliJs.filter(p => p.title == name)
-    return character
-  }
-*/
+export const arrayAllPeople=[];
+  export const filterFilmsPeople= function (titleFilms){
+    const character= dataGhibliJs.filter(p => p.title == titleFilms)
+    character.forEach(p => {
+      const people = p.people
+      people.forEach(character => {
+       // console.log(character)
+        arrayAllPeople.push(character)
+    
+      })
+    })};
+
+    console.log(arrayAllPeople)
+
 /*ESTRUCTURA MAP
 .map (funcion (_, posicion, arrayoriginalsobreelqueseinvocalafuncion) 
 Guión BAajo si no nosinteresan los primeros parametros, los posteriores solo se omiten
@@ -86,7 +98,7 @@ return(titleDirector)
  */
 
 //OPERACIONES CON RT DE FILMS- PROMEDIO DE RT ,MAX Y MIN 
-
+/*
 const allRt = dataGhibliJs.map(x => Number(x.rt_score));
 
 const minRt = Math.min(...allRt);
@@ -97,7 +109,7 @@ console.log(maxRt)
 const acumular = (acumulador, numero) => acumulador + numero
 let totalAverageRt = (allRt.reduce(acumular)) / allRt.length
 console.log(totalAverageRt);
-
+*/
 /*
 function print MinMax(peliculas){
   let min peliculas[0] == 3
