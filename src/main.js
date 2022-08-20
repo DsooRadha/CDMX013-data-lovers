@@ -1,4 +1,4 @@
-import { filterDirector, directors, dataGhibliJs, arrayExperimento, } from "./data.js";
+import { filterDirector, directors, dataGhibliJs, arrayTotoro, arrayCastleSky } from "./data.js";
 //import { titleData, filterFilmsPeople} from "./data.js";
 
 dataAccess();
@@ -45,17 +45,9 @@ const renderDirector = (directorName, columnDirectorSelector) => {
     columnDirectors.appendChild(div);
   })
 }
-
 directors.forEach(director => renderDirector(director.name, director.selector))
+
 //console.log(document.getElementById("moviesGhibli").children)
-
-Array.from(document.getElementById("moviesGhibli").children).forEach(element => {
-  element.addEventListener("click", function (event) {
-    printCharacters(dataGhibliJs.filter(i => i.title.toUpperCase === event.target.innerHTML))
-    console.log(event.target.innerHTML);
-  })
-});
-
 function printCharacters(characters) {
   characters.forEach(data => {
     const character = data.people
@@ -71,13 +63,22 @@ function printCharacters(characters) {
 }
 printCharacters(dataGhibliJs)
 
-arrayExperimento.forEach(item => {
-  const loqueaparececuandovanalbtnTotoro = document.querySelector(".columnTotoro");
+arrayTotoro.forEach(item => {
+  const btnTotoro = document.querySelector(".columnTotoro");
   let div = document.createElement('div');
   div.setAttribute('id', 'title');
   div.innerHTML = `<img class="poster"src="${item.img}"><h2>${item.name}</h2><h2> ${item.gender}</h2>`;
-  loqueaparececuandovanalbtnTotoro.appendChild(div);
+  btnTotoro.appendChild(div);
 })
+
+arrayCastleSky.forEach(item => {
+  const btnCastleSky = document.querySelector(".columnCastle");
+  let div = document.createElement('div');
+  div.setAttribute('id', 'title');
+  div.innerHTML = `<img class="poster"src="${item.img}"><h2>${item.name}</h2><h2> ${item.gender}</h2>`;
+  btnCastleSky.appendChild(div);
+})
+
 /*
 const renderPersonajes = (filmsName, columntitleSelector) => {
   const title = filterPersonajes(filmsName)
@@ -92,6 +93,19 @@ const renderPersonajes = (filmsName, columntitleSelector) => {
 title.forEach(films => renderPersonajes(films.name, films.selector))
 */
 
+const btnMovies = document.getElementById("movies");
+btnMovies.addEventListener("click", function (e) {
+  e.preventDefault()
+  document.querySelector(".gridAll").style.display = "grid";
+  document.querySelector(".columnIsao").style.display = "none";
+  document.querySelector(".columnHayao").style.display = "grid";
+  document.querySelector(".columnYoshifumi").style.display = "none";
+  document.querySelector(".columnHiroyuki").style.display = "none";
+  document.querySelector(".columnGoro").style.display = "none";
+  document.querySelector(".columnHiromasa").style.display = "none";
+  document.querySelector(".startingScreen").style.display = "none"
+});
+
 const btnHayao = document.getElementById("Hayao");
 btnHayao.addEventListener("click", function (e) {
   e.preventDefault()
@@ -103,6 +117,9 @@ btnHayao.addEventListener("click", function (e) {
   document.querySelector(".columnHiroyuki").style.display = "none";
   document.querySelector(".columnGoro").style.display = "none";
   document.querySelector(".columnHiromasa").style.display = "none";
+  document.querySelector(".startingScreen").style.display = "none"
+  document.querySelector(".startingScreen").style.display = "none"
+
 });
 
 const btnIsao = document.getElementById("Isao");
@@ -115,7 +132,9 @@ btnIsao.addEventListener("click", function (e) {
   document.querySelector(".columnHiroyuki").style.display = "none";
   document.querySelector(".columnGoro").style.display = "none";
   document.querySelector(".columnHiromasa").style.display = "none";
+  document.querySelector(".startingScreen").style.display = "none"
 });
+
 
 const btnYoshifumi = document.getElementById("Yoshifumi");
 btnYoshifumi.addEventListener("click", function (e) {
@@ -128,6 +147,7 @@ btnYoshifumi.addEventListener("click", function (e) {
   document.querySelector(".columnHiroyuki").style.display = "none";
   document.querySelector(".columnGoro").style.display = "none";
   document.querySelector(".columnHiromasa").style.display = "none";
+  document.querySelector(".startingScreen").style.display = "none"
 });
 
 
@@ -142,6 +162,7 @@ btnHiroyuki.addEventListener("click", function (e) {
   document.querySelector(".columnHiroyuki").style.display = "grid";
   document.querySelector(".columnGoro").style.display = "none";
   document.querySelector(".columnHiromasa").style.display = "none";
+  document.querySelector(".startingScreen").style.display = "none"
 });
 
 
@@ -156,6 +177,7 @@ btnGoro.addEventListener("click", function (e) {
   document.querySelector(".columnHiroyuki").style.display = "none";
   document.querySelector(".columnGoro").style.display = "grid";
   document.querySelector(".columnHiromasa").style.display = "none";
+  document.querySelector(".startingScreen").style.display = "none"
 });
 
 const btnHiromasa = document.getElementById("Hiromasa");
@@ -169,29 +191,21 @@ btnHiromasa.addEventListener("click", function (e) {
   document.querySelector(".columnHiroyuki").style.display = "none";
   document.querySelector(".columnGoro").style.display = "none";
   document.querySelector(".columnHiromasa").style.display = "grid";
+  document.querySelector(".startingScreen").style.display = "none"
 });
 
-const btnFilms0 = document.getElementById("castle");
+const btnFilms0 = document.getElementById("prueba");
 btnFilms0.addEventListener("click", function (e) {
   e.preventDefault()
   document.querySelector(".gridAll").style.display = "none";
   document.querySelector(".all").style.display = "none";
   document.querySelector(".movies").style.display = "grid";
-});
-
-
-const btnFilms1 = document.getElementById("totoro");
-btnFilms1.addEventListener("click", function (e) {
-  e.preventDefault()
-  document.querySelector(".gridAll").style.display = "none";
-  document.querySelector(".all").style.display = "none";
-  document.querySelector(".columTotoro").style.display = "grid";
+  document.querySelector(".startingScreen").style.display = "none"
 });
 
 const renderDirectorImage = (directorName) => {
   const director = directors.filter(director => director.name === directorName)[0]
-  return `
-    <img id="imgHayao" src="${director.imgSrc}" alt="${director.name}" style="display: block;">`;
+  return `<img id="imgHayao" src="${director.imgSrc}" alt="${director.name}" style="display: block;">`;
 }
 
 const directorSpaceRightElement = document.querySelector('.spaceRigth')

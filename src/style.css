@@ -1,15 +1,16 @@
+
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&family=Poiret+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
 
 html,
 body {
-  background-image: url("https://i1.wp.com/caps.pictures/198/6-castleinthesky/full/castleinthesky-disneyscreencaps.com-414.jpg");
+  background-image: url('https://fotografias.lasexta.com/clipping/cmsimages02/2022/07/28/8161B05D-A059-47C1-99CD-EDD97B20D078/consejos-fotografiar-estrellas_98.jpg?crop=2121,1193,x0,y110&width=1900&height=1069&optimize=high&format=webply');
   background-size: cover;
 }
 
 .header {
-  background: #011f4ef6;
+  background: #032869f9;
   height: 7vw;
   background-image: url("./images/studio-ghibli_0.png");
   background-size: 17vw;
@@ -20,6 +21,41 @@ body {
   opacity: 0.9;
   align-items: center;
   padding-left: 0.3vw;
+  z-index: 1;
+}
+
+.startingScreen {
+  display: flex;
+  font-size: 1.4vw;
+  align-items: center;
+  color: rgb(251, 244, 224);
+  font-family: 'Patrick Hand', cursive;
+  height: 72vh;
+}
+
+.startingScreen:before {
+  content: "";
+  width: 100%;
+  height: 72%;
+  background-color: #040610f4;
+  position: absolute;
+  opacity: 0.5;
+}
+
+.startingScreen img {
+  width: 80%;
+  align-self: flex-end;
+  position: relative;
+  opacity: 0.8;
+}
+
+.initialText {
+  padding: 8vw;
+  align-items: rigth;
+  flex-direction: column;
+  position: relative;
+  justify-self: end;
+  text-align: right
 }
 
 .dropdown {
@@ -34,11 +70,12 @@ body {
   color: white;
   cursor: pointer;
   background-color: #011f4ef6;
-  width: 19.755vw;
+  width: 24.75vw;
   height: 7vh;
   font-size: 1.2vw;
   font-family: 'Nanum Gothic';
   align-items: center;
+  flex-grow: 1;
 }
 
 .dropdown:hover button {
@@ -57,7 +94,6 @@ body {
   opacity: 0;
   transition: 0.5s;
   margin-left: 0vw;
-
 }
 
 .dropdown:hover div {
@@ -76,7 +112,6 @@ body {
   border-radius: 1vw;
   font-size: 1vw;
   font-family: 'Nanum Gothic';
-
 }
 
 .dropdown div a:hover {
@@ -84,67 +119,24 @@ body {
   color: #fff;
 }
 
-/*
 
-
-.dropdown:hover div a {
-  background-color: #042253;
-  border: solid #022c6f;
-  color: #ffffff;
-  padding: 1vh 1vw;
-  width: 21.5vw;
-  font-size: 1.2vw;
-  cursor: pointer;
-  font-family: 'Nanum Gothic';
-  font-weight: bold;
-  height: 5vh;
-  text-align: center;
-  justify-content: center;
-  align-self: center;
-}
-*/
 .gridAll {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 36vw;
-  background-image: url("./images/894d5e8ee8190a41c4baaaed35bf3597.png");
-  background-position: 0, 0;
-  background-size: 48vw;
-  background-repeat: no-repeat;
-  position: relative;
-  opacity: 0.8;
-}
-
-
-.ColumnOne {
-  grid-column: 1/2;
-  margin-bottom: 4vh;
-  align-self: flex-end;
-  height: 23vh;
-  width: 20vw;
-  border-radius: 2vw;
-  background-color: #001c47f1;
-  color: #ffffff;
-  justify-self: center;
-  text-align: center;
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
-  padding: 3vw;
-  max-height: 27vh;
+  height: 72vh;
+  display: none;
+  background-color: #0c00088d;
 }
 
 .ColumnTwo {
   text-align: center;
   grid-column: 2/4;
   display: grid;
-  grid-template-columns: repeat(2, 21vw);
+  grid-template-columns: repeat(3, 22vw);
   overflow: auto;
   background-color: transparent;
   margin: 2vw;
   grid-column-gap: 9vw;
   grid-row-gap: -1vw;
-  margin-left: 8vw;
+
 }
 
 .ColumnTwo div {
@@ -189,7 +181,7 @@ footer {
   font-size: 1.2vw;
   text-align: center;
   color: rgb(171, 186, 199);
-  background: #011f4ef6;
+  background: #032869f9;
   font-family: 'PT Sans Narrow', sans-serif;
   padding: 0.6vh;
   height: 2.7vw;
@@ -207,23 +199,20 @@ footer p {
   font-size: 2.5vh;
 }
 
-.ColumnOne p {
-  line-height: 4vh;
-  font-family: 'Nanum Gothic', sans-serif;
-  font-size: 2vh;
-}
-
-.all, .movies {
+.all,
+.movies {
   display: grid;
+  background-image: url('https://img.freepik.com/foto-gratis/textura-pared-estuco-azul-marino-relieve-decorativo-abstracto-grunge-fondo-color-rugoso-gran-angular_1258-28311.jpg?w=996&t=st=1660962693~exp=1660963293~hmac=734584586b6f5226671f5f1180b5d5a9ae70296c5428f2dfa2e6e71d7f715db8');
+  background-size: contain;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 36vw;
-  background-size: 40vw;
-  background-repeat: no-repeat;
   position: relative;
   display: none;
+  height: 72vh;
 }
 
-.spaceRigth, .review {
+.spaceRigth,
+.review {
   grid-column: 1/2;
   margin-left: 5vw;
 }
@@ -271,7 +260,7 @@ footer p {
 .columnHiromasa div,
 .columnGoro div,
 .columnHiroyuki div .movies div {
-  background-color: #05162c;
+  background-color: #013c81c8;
   border-radius: 1vw;
   padding: .8vw;
   height: 10vh;
@@ -371,7 +360,8 @@ h6 {
   display: none;
 }
 
-.columnTotoro{
+.columnTotoro,
+.columnCastle {
   background-color: #042253;
   margin: 1.5vw;
   grid-template-columns: repeat(3, 1fr);

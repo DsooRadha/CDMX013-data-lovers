@@ -27,26 +27,26 @@ export const directors = [
 ]
 
 export const titleData = [
-  { name: "Castle in the Sky", selector: '.columnCastle' },
-  { name: "My Neighbor Totoro", selector: '.columnTotoro' },
-  { name: "Kiki's Delivery Service", selector: '.columnKikis' },
-  { name: "Grave of the Fireflies", selector: '.columnGrave' },
-  { name: "Only Yesterday", selector: '.columnOnly' },
-  { name: "Porco Rosso", selector: '.columnPorco' },
-  { name: "Pom Poko", selector: '.columnPom' },
-  { name: "Whisper of the Heart", selector: '.columnWhispe' },
-  { name: "Princess Mononoke", selector: '.columnPrincess' },
-  { name: "My Neighbors the Yamadas", selector: '.columnYamadas' },
-  { name: "Spirited Away", selector: '.columnSpirited' },
-  { name: "The Cat Returns", selector: '.columnTheCat' },
-  { name: "Howl's Moving Castle", selector: '.columnHowl"' },
-  { name: "Tales from Earthsea", selector: '.columnTales' },
-  { name: "Ponyo on the Cliff by the Sea", selector: '.columnPonyo' },
-  { name: "The Secret World of Arrietty", selector: '.columnArrietty' },
-  { name: "From Up on Poppy Hill", selector: '.columnPoppyhill' },
-  { name: "The Wind Rises", selector: '.columnThewind' },
-  { name: "The Tale of the Princess Kaguya", selector: '.columnTale' },
-  { name: "When Marnie Was There", selector: '.columnMarnie"' },
+  { name: 'Castle in the Sky', selector: '.columnCastle'},
+  { name: 'My Neighbor Totoro', selector: '.columnTotoro'},
+  { name: "Kiki's Delivery Service", selector: '.columnKikis'},
+  { name: 'Grave of the Fireflies', selector: '.columnGrave'},
+  { name: 'Only Yesterday', selector: '.columnOnly'},
+  { name: 'Porco Rosso', selector: '.columnPorco'},
+  { name: 'Pom Poko', selector: '.columnPom'},
+  { name: 'Whisper of the Heart', selector: '.columnWhispe'},
+  { name: 'Princess Mononoke', selector: '.columnPrincess'},
+  { name: 'My Neighbors the Yamadas', selector: '.columnYamadas'},
+  { name: 'Spirited Away', selector: '.columnSpirited'},
+  { name: 'The Cat Returns', selector: '.columnTheCat'},
+  { name: "Howl's Moving Castle", selector: '.columnHowl'},
+  { name: 'Tales from Earthsea', selector: '.columnTales'},
+  { name: 'Ponyo on the Cliff by the Sea', selector: '.columnPonyo'},
+  { name: 'The Secret World of Arrietty', selector: '.columnArrietty'},
+  { name: 'From Up on Poppy Hill', selector: '.columnPoppyhill'},
+  { name: 'The Wind Rises', selector: '.columnThewind'},
+  { name: 'The Tale of the Princess Kaguya', selector: '.columnTale'},
+  { name: 'When Marnie Was There', selector: '.columnMarnie'},
 ]
 
 //PASOS A SEGUIR CUANDO QUIERO ELIMINAR DATA REPETIDA
@@ -65,15 +65,70 @@ export const filterDirector = function (name) { //function (data,directorName)
   return directors
 }
 
-export const arrayExperimento = []
+export const arrayTotoro = []
 const character = dataGhibliJs.filter(p => p.title == "My Neighbor Totoro")
 character.forEach(p => {
   const people = p.people
   people.forEach(character => {
-   // console.log(character)
-    arrayExperimento.push(character)
+    arrayTotoro.push(character)
   })
 })
+
+export const arrayCastleSky = []
+ const castle= dataGhibliJs.filter(c => c.title === 'Castle in the Sky')
+castle.forEach(c => {
+  const people = c.people
+  people.forEach(character => {
+    arrayCastleSky.push(character)
+  })
+})
+
+
+export const arrayKiki = []
+ const kiki= dataGhibliJs.filter(c => c.title === "Kiki's Delivery Service")
+kiki.forEach(c => {
+  const people = c.people
+  people.forEach(character => {
+    arrayKiki.push(character)
+  })
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 export const arrayAllPeople=[];
   export const filterFilmsPeople= function (titleFilms){
@@ -86,8 +141,7 @@ export const arrayAllPeople=[];
     
       })
     })};
-
-    console.log(arrayAllPeople)
+  //  console.log(arrayAllPeople)
 
 /*ESTRUCTURA MAP
 .map (funcion (_, posicion, arrayoriginalsobreelqueseinvocalafuncion) 
@@ -123,3 +177,4 @@ function print MinMax(peliculas){
   retorno min max
 }
 */
+
