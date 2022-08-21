@@ -1,18 +1,15 @@
 import ghibli from './data/ghibli/ghibli.js';
 
-const dataPeople= []
-console.log(dataPeople)
 const allTitlesMovies = [];
-//console.log(allTitlesMovies);
+console.log(allTitlesMovies);
+
 export const dataGhibliJs = (ghibli.films);
-//console.log(dataGhibliJs)
 dataGhibliJs.forEach(data => {
   const character = data.people
-dataPeople.push(character)
+  const titleMovies = data.title
+  allTitlesMovies.push(titleMovies)
   character.forEach(p => {
-    const titleMovies = data.title
-    allTitlesMovies.push(titleMovies)
-    return data.title, p.name, p.img
+    console.log([data.title, p.name, p.img])
   });
 });
 
@@ -27,37 +24,27 @@ export const directors = [
 ]
 
 export const titleData = [
-  { name: 'Castle in the Sky', selector: '.columnCastle'},
-  { name: 'My Neighbor Totoro', selector: '.columnTotoro'},
-  { name: "Kiki's Delivery Service", selector: '.columnKikis'},
-  { name: 'Grave of the Fireflies', selector: '.columnGrave'},
-  { name: 'Only Yesterday', selector: '.columnOnly'},
-  { name: 'Porco Rosso', selector: '.columnPorco'},
-  { name: 'Pom Poko', selector: '.columnPom'},
-  { name: 'Whisper of the Heart', selector: '.columnWhispe'},
-  { name: 'Princess Mononoke', selector: '.columnPrincess'},
-  { name: 'My Neighbors the Yamadas', selector: '.columnYamadas'},
-  { name: 'Spirited Away', selector: '.columnSpirited'},
-  { name: 'The Cat Returns', selector: '.columnTheCat'},
-  { name: "Howl's Moving Castle", selector: '.columnHowl'},
-  { name: 'Tales from Earthsea', selector: '.columnTales'},
-  { name: 'Ponyo on the Cliff by the Sea', selector: '.columnPonyo'},
-  { name: 'The Secret World of Arrietty', selector: '.columnArrietty'},
-  { name: 'From Up on Poppy Hill', selector: '.columnPoppyhill'},
-  { name: 'The Wind Rises', selector: '.columnThewind'},
-  { name: 'The Tale of the Princess Kaguya', selector: '.columnTale'},
-  { name: 'When Marnie Was There', selector: '.columnMarnie'},
+  { name: 'Castle in the Sky', selector: '.columnCastle' },
+  { name: 'My Neighbor Totoro', selector: '.columnTotoro' },
+  { name: "Kiki's Delivery Service", selector: '.columnKikis' },
+  { name: 'Grave of the Fireflies', selector: '.columnGrave' },
+  { name: 'Only Yesterday', selector: '.columnOnly' },
+  { name: 'Porco Rosso', selector: '.columnPorco' },
+  { name: 'Pom Poko', selector: '.columnPom' },
+  { name: 'Whisper of the Heart', selector: '.columnWhispe' },
+  { name: 'Princess Mononoke', selector: '.columnPrincess' },
+  { name: 'My Neighbors the Yamadas', selector: '.columnYamadas' },
+  { name: 'Spirited Away', selector: '.columnSpirited' },
+  { name: 'The Cat Returns', selector: '.columnTheCat' },
+  { name: "Howl's Moving Castle", selector: '.columnHowl' },
+  { name: 'Tales from Earthsea', selector: '.columnTales' },
+  { name: 'Ponyo on the Cliff by the Sea', selector: '.columnPonyo' },
+  { name: 'The Secret World of Arrietty', selector: '.columnArrietty' },
+  { name: 'From Up on Poppy Hill', selector: '.columnPoppyhill' },
+  { name: 'The Wind Rises', selector: '.columnThewind' },
+  { name: 'The Tale of the Princess Kaguya', selector: '.columnTale' },
+  { name: 'When Marnie Was There', selector: '.columnMarnie' },
 ]
-
-//PASOS A SEGUIR CUANDO QUIERO ELIMINAR DATA REPETIDA
-const allDataGhibli = dataGhibliJs.map(({ director }) => { return ({ director }).director })//1.hago un Array con los elementos a analizar de dataJS
-const director = [];            // 2. creo un array vacio donde llegaran los datos ya sin repetir 
-allDataGhibli.forEach((elemento) => {   // 3. sustituyo el elemento a iterar "allDirector" 
-  if (!director.includes(elemento)) {
-    director.push(elemento);
-  }
-});
-//console.log(director); //4. festejas bailando en circulos
 
 export const filterDirector = function (name) { //function (data,directorName)
   const filterAllDirectors = ({ director }) => ({ director }).director === name // 
@@ -75,7 +62,7 @@ character.forEach(p => {
 })
 
 export const arrayCastleSky = []
- const castle= dataGhibliJs.filter(c => c.title === 'Castle in the Sky')
+const castle = dataGhibliJs.filter(c => c.title === 'Castle in the Sky')
 castle.forEach(c => {
   const people = c.people
   people.forEach(character => {
@@ -84,67 +71,36 @@ castle.forEach(c => {
 })
 
 
-export const arrayKiki = []
- const kiki= dataGhibliJs.filter(c => c.title === "Kiki's Delivery Service")
-kiki.forEach(c => {
-  const people = c.people
-  people.forEach(character => {
-    arrayKiki.push(character)
+;
+
+
+
+export const filterFilmsPeople = function (allTitlesMovies) {
+  const character = dataGhibliJs.filter(p => p.title === allTitlesMovies)
+  character.forEach(p => {
+    const people = p.people
+    people.forEach(character => {
+      return character
+  
+    })
   })
-})
+};
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-export const arrayAllPeople=[];
-  export const filterFilmsPeople= function (titleFilms){
-    const character= dataGhibliJs.filter(p => p.title == titleFilms)
-    character.forEach(p => {
-      const people = p.people
-      people.forEach(character => {
-       // console.log(character)
-        arrayAllPeople.push(character)
-    
-      })
-    })};
+//PASOS A SEGUIR CUANDO QUIERO ELIMINAR DATA REPETIDA
+const allDataGhibli = dataGhibliJs.map(({ director }) => { return ({ director }).director })//1.hago un Array con los elementos a analizar de dataJS
+const director = [];            // 2. creo un array vacio donde llegaran los datos ya sin repetir 
+allDataGhibli.forEach((elemento) => {   // 3. sustituyo el elemento a iterar "allDirector" 
+  if (!director.includes(elemento)) {
+    director.push(elemento);
+  }
+});
+//console.log(director); //4. festejas bailando en circulos
   //  console.log(arrayAllPeople)
 
 /*ESTRUCTURA MAP
-.map (funcion (_, posicion, arrayoriginalsobreelqueseinvocalafuncion) 
+.map (funcion (_, posicion, arrayoriginalsobreelqueseinvocalafuncion)
 Guión BAajo si no nosinteresan los primeros parametros, los posteriores solo se omiten
  .map (funcion (numero, posicion, arrayoriginalsobreelqueseinvocalafuncion){})
   const titleDirector = directors.map(({ title }) => { return ({ title }).title })
@@ -176,5 +132,11 @@ function print MinMax(peliculas){
   ])
   retorno min max
 }
+
+const characterFemme = data.filter(function(el){
+  return el.age<25 &&
+  el.height>=170 ;
+});
+console.log(extract);
 */
 
