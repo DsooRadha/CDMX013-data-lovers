@@ -1,7 +1,6 @@
 import ghibli from './data/ghibli/ghibli.js';
 
 const allcharacters = [];
-console.log(allcharacters);
 
 export const dataGhibliJs = (ghibli.films);
 dataGhibliJs.forEach(data => {
@@ -26,15 +25,35 @@ export const filterDirector = function (name) { //function (data,directorName)
   return directors
 }
 
-export const peopleMale=allcharacters.filter(p=>p.gender == 'Male')
-console.log(peopleMale)
-
-export const peopleFemale=allcharacters.filter(p=>p.gender == 'Female')
-console.log(peopleFemale)
- peopleFemale.sort ()
-
 export const peopleUnspecified=allcharacters.filter(p=>p.gender !== 'Female' && p.gender !== 'Male' )
 console.log(peopleUnspecified)
+
+const filteringByGender=(propiedad,valor)=>{
+const data= allcharacters.filter(p=>p[propiedad] == valor)
+return data
+}
+
+export const male= filteringByGender('gender', 'Male')
+
+export const female= filteringByGender('gender', 'Female')
+console.log(female.sort())
+
+
+console.log(male)
+male.sort ((o1,o2 )=>{
+  if (o1.name < o2.name){
+    return -1
+  } else if (o1.name > o2.name){
+    return 1
+  } else {
+    return 0;
+  }
+})
+console.log(male)
+
+
+//console.log(male.sort(a,b)=> a.name<b.name)
+//let printData=()
 
 
 /*
@@ -112,3 +131,4 @@ const characterFemme = data.filter(function(el){
 console.log(extract);
 */
 
+    

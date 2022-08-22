@@ -1,15 +1,14 @@
-import { filterDirector, directors, dataGhibliJs, peopleMale, peopleFemale, peopleUnspecified} from "./data.js";
-//import { titleData, filterFilmsPeople, arrayCastleSky, arrayTotoro} from "./data.js";
-//const gridAll=document.querySelector(".gridAll");
+import { filterDirector, directors, dataGhibliJs, peopleUnspecified, male, female} from "./data.js";
+//import { titleData, filterFilmsPeople,} from "./data.js";
+
 const column2 = document.querySelector('.ColumnTwo');
 const columnCharacters = document.querySelector(".allCharacters");
 const columnMale = document.querySelector(".male");
 const columnFemale = document.querySelector(".female");
 const columnUnspecified= document.querySelector(".unspecified")
 
-dataAccess();
-function dataAccess() {
-
+dataAccess()
+ function dataAccess() {
   const dataghibli = fetch("data/ghibli/ghibli.json").then(res => {
     res.json()
       .then(data => {
@@ -83,7 +82,6 @@ function printCharacters(dataGhibliJs) {
 printCharacters(dataGhibliJs)
 
 /*
-
 console.log(document.getElementById("gender").children)
 Array.from(document.getElementById("gender").children).forEach(element => {
   element.addEventListener("click", function (event) {
@@ -94,7 +92,7 @@ Array.from(document.getElementById("gender").children).forEach(element => {
 */
 
 
-const maleCharacters= peopleMale.forEach(item => {
+const maleCharacters= male.forEach(item => {
   const card = document.createElement('div');
   card.className = "card";
   const img = document.createElement('img');
@@ -105,9 +103,9 @@ const maleCharacters= peopleMale.forEach(item => {
   card.append(img, name)
   columnMale.appendChild(card);
 })
-maleCharacters
 
-const femaleCharacters= peopleFemale.forEach(item => {
+
+const femaleCharacters= female.forEach(item => {
   const card = document.createElement('div');
   card.className = "card";
   const img = document.createElement('img');
