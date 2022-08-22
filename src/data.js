@@ -31,10 +31,11 @@ console.log(peopleMale)
 
 export const peopleFemale=allcharacters.filter(p=>p.gender == 'Female')
 console.log(peopleFemale)
-
+ peopleFemale.sort ()
 
 export const peopleUnspecified=allcharacters.filter(p=>p.gender !== 'Female' && p.gender !== 'Male' )
 console.log(peopleUnspecified)
+
 
 /*
 const allcharacterImgGenderName = [];

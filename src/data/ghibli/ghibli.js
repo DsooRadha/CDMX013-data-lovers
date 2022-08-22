@@ -510,7 +510,7 @@ export default {
         {
           "id": "227c01a6-4e29-4582-bc4b-35106a704ab0",
           "name": "Mrs. Yokokawa",
-          "img": "https://static.wikia.nocookie.net/studio-ghibli/images/3/39/SeitaMother.png",
+          "img": "https://cdn.myanimelist.net/images/characters/6/423031.jpg",
           "gender": "Female",
           "age": "Adult",
           "eye_color": "Black",
@@ -520,7 +520,7 @@ export default {
         {
           "id": "023306e3-9fc6-4d1d-b681-d4649dcbfff9",
           "name": "Kiyoshi Yokokawa",
-          "img": "https://static.wikia.nocookie.net/studio-ghibli/images/f/f6/SeitaFather3.jpg",
+          "img": "https://static.wikia.nocookie.net/studio-ghibli/images/6/65/Seita_Father_2.jpg/revision/latest/scale-to-width-down/250?cb=20110701065005",
           "gender": "Male",
           "age": "40",
           "eye_color": "Black",
@@ -530,7 +530,7 @@ export default {
         {
           "id": "0e18b23d-1f21-4a83-a6de-f01147624875",
           "name": "Seita's Aunt",
-          "img": "https://static.wikia.nocookie.net/studio-ghibli/images/0/09/SeitaAunt.jpg",
+          "img": "https://cdn.anisearch.es/images/character/cover/full/7/7483.webp",
           "gender": "Female",
           "age": "Elder",
           "eye_color": "Black",
@@ -574,7 +574,7 @@ export default {
         {
           "id": "52ed5cad-2464-481f-9786-8533b8de95ff",
           "name": "Mr. Okajima",
-          "img": "https://static.wikia.nocookie.net/studio-ghibli/images/5/58/Mr._Okajima.png",
+          "img": "https://cdn.personalitylist.com/avatars/215189.png",
           "gender": "Male",
           "age": "Middle age",
           "eye_color": "Black",
@@ -2223,7 +2223,7 @@ export default {
         {
           "id": "a21fbdd5-16bc-4931-80d0-3ce89ffce778",
           "name": "Sutemaru",
-          "img": "https://static.wikia.nocookie.net/studio-ghibli/images/3/37/Sutemaru.PNG",
+          "img": "https://gonerealwild.com/images/characters/sutemaru-67369.jpg",
           "gender": "Male",
           "age": "Adult",
           "eye_color": "Black",
@@ -2233,7 +2233,7 @@ export default {
         {
           "id": "4c697b7d-4f64-4ac9-ae29-e155eb1693f3",
           "name": "Ishitsukuri",
-          "img": "https://static.wikia.nocookie.net/studio-ghibli/images/5/5c/Ghibli-kaguya-ishitsukuri.jpg",
+          "img": "https://cdn.myanimelist.net/r/360x360/images/characters/4/280602.jpg?s=b55ccf04a98b534601c3416f9e131438",
           "gender": "Male",
           "age": "Adult",
           "eye_color": "Black",
@@ -2273,7 +2273,7 @@ export default {
         {
           "id": "942fb1029-b51f-4100-8bee-86547c09b0ff",
           "name": "Inbe no Akita",
-          "img": "https://static.wikia.nocookie.net/studio-ghibli/images/1/1c/Ghibli-kaguya-akita.jpg",
+          "img": "https://gonerealwild.com/images/characters/inbe-no-akita-67372.jpg?t=1422167985",
           "gender": "Male",
           "age": "Elder",
           "eye_color": "Black",
@@ -2329,7 +2329,7 @@ export default {
         {
           "id": "28d07ace-c309-48c6-b48e-ae2ece3a238c",
           "name": "Anna Sasaki",
-          "img": "https://static.wikia.nocookie.net/studio-ghibli/images/a/ae/Anna.png",
+          "img": "https://i.pinimg.com/474x/4e/43/ba/4e43bafb4758a2f77a2d01e6daa20ea8.jpg",
           "gender": "Female",
           "age": "12",
           "eye_color": "Blue",

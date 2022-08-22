@@ -1,9 +1,11 @@
-import { filterDirector, directors, dataGhibliJs, peopleMale} from "./data.js";
+import { filterDirector, directors, dataGhibliJs, peopleMale, peopleFemale, peopleUnspecified} from "./data.js";
 //import { titleData, filterFilmsPeople, arrayCastleSky, arrayTotoro} from "./data.js";
 //const gridAll=document.querySelector(".gridAll");
 const column2 = document.querySelector('.ColumnTwo');
 const columnCharacters = document.querySelector(".allCharacters");
 const columnMale = document.querySelector(".male");
+const columnFemale = document.querySelector(".female");
+const columnUnspecified= document.querySelector(".unspecified")
 
 dataAccess();
 function dataAccess() {
@@ -104,7 +106,35 @@ const maleCharacters= peopleMale.forEach(item => {
   columnMale.appendChild(card);
 })
 maleCharacters
+
+const femaleCharacters= peopleFemale.forEach(item => {
+  const card = document.createElement('div');
+  card.className = "card";
+  const img = document.createElement('img');
+  img.src = item.img
+  const name = document.createElement('h2')
+  name.textContent = item.name
+
+  card.append(img, name)
+  columnFemale.appendChild(card);
+})
+femaleCharacters
+
+const unspecifiedCharacters= peopleUnspecified.forEach(item => {
+  const card = document.createElement('div');
+  card.className = "card";
+  const img = document.createElement('img');
+  img.src = item.img
+  const name = document.createElement('h2')
+  name.textContent = item.name
+
+  card.append(img, name)
+  columnUnspecified.appendChild(card);
+})
+unspecifiedCharacters
+
 /*
+
 const renderPersonajes = (filmsName, columntitleSelector) => {
   const title = filterPersonajes(filmsName)
   title.forEach(d => {
@@ -203,6 +233,7 @@ btnGoro.addEventListener("click", function (e) {
   document.querySelector(".columnHiromasa").style.display = "none";
   document.querySelector(".startingScreen").style.display = "none";
   document.querySelector(".allPeopleMovies").style.display = "none";
+
 });
 
 const btnHiromasa = document.getElementById("Hiromasa");
@@ -218,6 +249,7 @@ btnHiromasa.addEventListener("click", function (e) {
   document.querySelector(".columnHiromasa").style.display = "grid";
   document.querySelector(".startingScreen").style.display = "none";
   document.querySelector(".allPeopleMovies").style.display = "none";
+
 });
 
 const btnAAllCharacters = document.getElementById("allCharacters");
@@ -228,6 +260,9 @@ btnAAllCharacters.addEventListener("click", function (e) {
   document.querySelector(".allPeopleMovies").style.display = "grid";
   document.querySelector(".startingScreen").style.display = "none";
   document.querySelector(".male").style.display = "none";
+  document.querySelector('.allCharacters').style.display = "grid";
+  document.querySelector(".female").style.display = "none";
+  document.querySelector(".unspecified").style.display = "none";
 });
 
 const btnMaleCharacters= document.getElementById("male");
@@ -235,11 +270,39 @@ btnMaleCharacters.addEventListener("click", function (e) {
   e.preventDefault()
   document.querySelector(".gridAll").style.display = "none";
   document.querySelector(".all").style.display = "none";
-  document.querySelector(".allPeopleMovies").style.display = "none";
+  document.querySelector(".allPeopleMovies").style.display = "grid";
   document.querySelector(".startingScreen").style.display = "none";
   document.querySelector(".male").style.display = "grid";
+  document.querySelector('.allCharacters').style.display = "none";
+  document.querySelector(".female").style.display = "none";
+  document.querySelector(".unspecified").style.display = "none";
 });
 
+const btnFemaleCharacters= document.getElementById("female");
+btnFemaleCharacters.addEventListener("click", function (e) {
+  e.preventDefault()
+  document.querySelector(".gridAll").style.display = "none";
+  document.querySelector(".all").style.display = "none";
+  document.querySelector(".allPeopleMovies").style.display = "grid";
+  document.querySelector(".startingScreen").style.display = "none";
+  document.querySelector(".male").style.display = "none";
+  document.querySelector('.allCharacters').style.display = "none";
+  document.querySelector(".female").style.display = "grid";
+  document.querySelector(".unspecified").style.display = "none";
+});
+
+const btnUnspecifiedCharacters= document.getElementById("s/a");
+btnUnspecifiedCharacters.addEventListener("click", function (e) {
+  e.preventDefault()
+  document.querySelector(".gridAll").style.display = "none";
+  document.querySelector(".all").style.display = "none";
+  document.querySelector(".allPeopleMovies").style.display = "grid";
+  document.querySelector(".startingScreen").style.display = "none";
+  document.querySelector(".male").style.display = "none";
+  document.querySelector('.allCharacters').style.display = "none";
+  document.querySelector(".female").style.display = "none";
+  document.querySelector(".unspecified").style.display = "grid";
+});
 
 const renderDirectorImage = (directorName) => {
   const director = directors.filter(director => director.name === directorName)[0]
