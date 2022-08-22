@@ -1,18 +1,15 @@
 import ghibli from './data/ghibli/ghibli.js';
 
-const allTitlesMovies = [];
-console.log(allTitlesMovies);
+const allcharacters = [];
+console.log(allcharacters);
 
 export const dataGhibliJs = (ghibli.films);
 dataGhibliJs.forEach(data => {
   const character = data.people
-  const titleMovies = data.title
-  allTitlesMovies.push(titleMovies)
   character.forEach(p => {
-    console.log([data.title, p.name, p.img])
+    allcharacters.push(p)
   });
 });
-
 
 export const directors = [
   { name: "Isao Takahata", selector: '.columnIsao', imgSrc: "./images/isao.png" },
@@ -23,56 +20,33 @@ export const directors = [
   { name: "Hiromasa Yonebayashi", selector: '.columnHiromasa', imgSrc: "./images/Hiromasa.png" },
 ]
 
-export const titleData = [
-  { name: 'Castle in the Sky', selector: '.columnCastle' },
-  { name: 'My Neighbor Totoro', selector: '.columnTotoro' },
-  { name: "Kiki's Delivery Service", selector: '.columnKikis' },
-  { name: 'Grave of the Fireflies', selector: '.columnGrave' },
-  { name: 'Only Yesterday', selector: '.columnOnly' },
-  { name: 'Porco Rosso', selector: '.columnPorco' },
-  { name: 'Pom Poko', selector: '.columnPom' },
-  { name: 'Whisper of the Heart', selector: '.columnWhispe' },
-  { name: 'Princess Mononoke', selector: '.columnPrincess' },
-  { name: 'My Neighbors the Yamadas', selector: '.columnYamadas' },
-  { name: 'Spirited Away', selector: '.columnSpirited' },
-  { name: 'The Cat Returns', selector: '.columnTheCat' },
-  { name: "Howl's Moving Castle", selector: '.columnHowl' },
-  { name: 'Tales from Earthsea', selector: '.columnTales' },
-  { name: 'Ponyo on the Cliff by the Sea', selector: '.columnPonyo' },
-  { name: 'The Secret World of Arrietty', selector: '.columnArrietty' },
-  { name: 'From Up on Poppy Hill', selector: '.columnPoppyhill' },
-  { name: 'The Wind Rises', selector: '.columnThewind' },
-  { name: 'The Tale of the Princess Kaguya', selector: '.columnTale' },
-  { name: 'When Marnie Was There', selector: '.columnMarnie' },
-]
-
 export const filterDirector = function (name) { //function (data,directorName)
   const filterAllDirectors = ({ director }) => ({ director }).director === name // 
   const directors = (dataGhibliJs).filter(filterAllDirectors)
   return directors
 }
 
-export const arrayTotoro = []
-const character = dataGhibliJs.filter(p => p.title == "My Neighbor Totoro")
-character.forEach(p => {
-  const people = p.people
-  people.forEach(character => {
-    arrayTotoro.push(character)
-  })
-})
+export const peopleMale=allcharacters.filter(p=>p.gender == 'Male')
+console.log(peopleMale)
 
-export const arrayCastleSky = []
-const castle = dataGhibliJs.filter(c => c.title === 'Castle in the Sky')
-castle.forEach(c => {
-  const people = c.people
-  people.forEach(character => {
-    arrayCastleSky.push(character)
-  })
-})
+export const peopleFemale=allcharacters.filter(p=>p.gender == 'Female')
+console.log(peopleFemale)
 
 
-;
+export const peopleUnspecified=allcharacters.filter(p=>p.gender !== 'Female' && p.gender !== 'Male' )
+console.log(peopleUnspecified)
 
+/*
+const allcharacterImgGenderName = [];
+console.log(allcharacterImgGenderName);
+
+export const dataGhibliJs = (ghibli.films);
+dataGhibliJs.forEach(data => {
+  const character = data.people
+  character.forEach(p => {
+    allcharacterImgGenderName.push([p.gender, p.name, p.img])
+  });
+});*/
 
 
 export const filterFilmsPeople = function (allTitlesMovies) {
@@ -81,12 +55,9 @@ export const filterFilmsPeople = function (allTitlesMovies) {
     const people = p.people
     people.forEach(character => {
       return character
-  
     })
   })
 };
-
-
 
 //PASOS A SEGUIR CUANDO QUIERO ELIMINAR DATA REPETIDA
 const allDataGhibli = dataGhibliJs.map(({ director }) => { return ({ director }).director })//1.hago un Array con los elementos a analizar de dataJS

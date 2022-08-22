@@ -125,7 +125,7 @@ body {
   background-color: #0c00088d;
 }
 
-.ColumnTwo {
+.ColumnTwo, .allCharacters, .male{
   text-align: center;
   grid-column: 2/4;
   display: grid;
@@ -138,7 +138,7 @@ body {
 
 }
 
-.ColumnTwo div {
+.ColumnTwo div, .allCharacters div, .male div {
   margin: 1vw;
   text-align: center;
   display: grid;
@@ -155,7 +155,7 @@ body {
   color: white;
 }
 
-.ColumnTwo img{
+.ColumnTwo img, .allCharacters img, .male img{
   height: calc(10.5vw - 1.7vw);
   width: calc(18vw - 0.5vw);
   object-fit: cover;
@@ -200,8 +200,7 @@ footer {
   height: 72vh;
 }
 
-.spaceRigth,
-.films {
+.spaceRigth {
   grid-column: 1/2;
   margin-left: 5vw;
 }
@@ -221,7 +220,7 @@ footer {
 .allDirectors {
   grid-column: 2/4;
   overflow: auto;
-  background-color: #022660df;
+  background-color: #052558fa;
   padding: 3vw;
   margin: 4vw;
   border-radius: 2vw;
@@ -250,7 +249,7 @@ footer {
 .columnGoro div,
 .columnHiroyuki div
 {
-  background-color: #013c81c8;
+  background-color: #021a4bf8;
   border-radius: 1vw;
   padding: .8vw;
   height: 10vh;
@@ -281,7 +280,7 @@ h6 {
   margin-top: -2vh;
 }
 
-.ColumnTwo h3 {
+.ColumnTwo h3, .allCharacters h2,  .male h2{
   text-align: center;
   justify-items: center;
   text-transform: uppercase;
@@ -293,46 +292,13 @@ h6 {
   margin-top: -4.5vh;
 }
 
-.allCharacter div,
-.columnTotoro div {
-  background-color: #013c81c8;
-  border-radius: 1vw;
-  padding: .8vw;
-  height: 22vh;
-  width: 12vw;
-  align-items: center;
-  justify-content: center;
+.allCharacters div, .male div {
+  background-color: #9c4c75da;
 }
 
-.columnTotoro,
-.allCharacter{
-  background-color: #042253;
-  margin: 5vw;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 1fr;
-  column-gap: 5vw;
-  row-gap: 2vh;
-  display: grid;
-  padding: 2vw;
-  border-radius: 1vw;
-  overflow: auto;
-  height: 60vh;
-  justify-items: center;
-  align-items: center;
-}
-
-.moviesAll {
-  height: 72vh;
+.allPeopleMovies {
+  height: 70vh;
   display: none;
-}
-
-
-.moviesAll img {
-  height: calc(12vw - 1.7vw);
-  width: calc(8vw - 0.5vw);
-  object-fit: cover;
-  border-radius: 2vh;
-  margin: 0.2vw;
 }
 
 

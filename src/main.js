@@ -1,9 +1,9 @@
-import { filterDirector, directors, dataGhibliJs, arrayTotoro} from "./data.js";
-//import { titleData, filterFilmsPeople, arrayCastleSky} from "./data.js";
+import { filterDirector, directors, dataGhibliJs, peopleMale} from "./data.js";
+//import { titleData, filterFilmsPeople, arrayCastleSky, arrayTotoro} from "./data.js";
 //const gridAll=document.querySelector(".gridAll");
 const column2 = document.querySelector('.ColumnTwo');
-const columnCharacter = document.querySelector(".allCharacter");
-const columnTotoro = document.querySelector(".columnTotoro");
+const columnCharacters = document.querySelector(".allCharacters");
+const columnMale = document.querySelector(".male");
 
 dataAccess();
 function dataAccess() {
@@ -72,33 +72,38 @@ function printCharacters(dataGhibliJs) {
           img.src = p.img;
           const name = document.createElement('h2')
           name.textContent = p.name;
-          const gender = document.createElement('h2')
-          gender.textContent = p.gender;
           
-          card.append(img, name, gender)
-          columnCharacter.appendChild(card);
+          card.append(img, name)
+          columnCharacters.appendChild(card);
     })
   })
 }
 printCharacters(dataGhibliJs)
 
-/*const columnTotoro=document.querySelector(".columnTotoro")
-columnTotoro.innerHTML=''*/
+/*
 
-const totoro= arrayTotoro.forEach(item => {
+console.log(document.getElementById("gender").children)
+Array.from(document.getElementById("gender").children).forEach(element => {
+  element.addEventListener("click", function (event) {
+    printCharacters(dataGhibliJs.filter(i=>i.people.gender. toUpperCase===event.target.innerHTML))
+    console.log(event.target.innerHTML);
+  })
+});
+*/
+
+
+const maleCharacters= peopleMale.forEach(item => {
   const card = document.createElement('div');
   card.className = "card";
   const img = document.createElement('img');
   img.src = item.img
   const name = document.createElement('h2')
   name.textContent = item.name
-  const gender = document.createElement('h2')
-  gender.textContent = item.gender
-  
-  card.append(img, name, gender)
-  columnTotoro.appendChild(card);
+
+  card.append(img, name)
+  columnMale.appendChild(card);
 })
-totoro
+maleCharacters
 /*
 const renderPersonajes = (filmsName, columntitleSelector) => {
   const title = filterPersonajes(filmsName)
@@ -119,7 +124,7 @@ btnMovies.addEventListener("click", function (e) {
   document.querySelector(".gridAll").style.display = "grid";
   document.querySelector(".all").style.display = "none"
   document.querySelector(".startingScreen").style.display = "none";
-  document.querySelector(".moviesAll").style.display = "none";
+  document.querySelector(".allPeopleMovies").style.display = "none";
 });
 
 const btnHayao = document.getElementById("Hayao");
@@ -134,7 +139,7 @@ btnHayao.addEventListener("click", function (e) {
   document.querySelector(".columnGoro").style.display = "none";
   document.querySelector(".columnHiromasa").style.display = "none";
   document.querySelector(".startingScreen").style.display = "none";
-  document.querySelector(".moviesAll").style.display = "none";
+  document.querySelector(".allPeopleMovies").style.display = "none";
 
 });
 
@@ -149,7 +154,7 @@ btnIsao.addEventListener("click", function (e) {
   document.querySelector(".columnGoro").style.display = "none";
   document.querySelector(".columnHiromasa").style.display = "none";
   document.querySelector(".startingScreen").style.display = "none";
-  document.querySelector(".moviesAll").style.display = "none";
+  document.querySelector(".allPeopleMovies").style.display = "none";
 });
 
 
@@ -165,7 +170,7 @@ btnYoshifumi.addEventListener("click", function (e) {
   document.querySelector(".columnGoro").style.display = "none";
   document.querySelector(".columnHiromasa").style.display = "none";
   document.querySelector(".startingScreen").style.display = "none";
-  document.querySelector(".moviesAll").style.display = "none";
+  document.querySelector(".allPeopleMovies").style.display = "none";
 });
 
 
@@ -181,7 +186,7 @@ btnHiroyuki.addEventListener("click", function (e) {
   document.querySelector(".columnGoro").style.display = "none";
   document.querySelector(".columnHiromasa").style.display = "none";
   document.querySelector(".startingScreen").style.display = "none";
-  document.querySelector(".moviesAll").style.display = "none";
+  document.querySelector(".allPeopleMovies").style.display = "none";
 });
 
 
@@ -197,7 +202,7 @@ btnGoro.addEventListener("click", function (e) {
   document.querySelector(".columnGoro").style.display = "grid";
   document.querySelector(".columnHiromasa").style.display = "none";
   document.querySelector(".startingScreen").style.display = "none";
-  document.querySelector(".moviesAll").style.display = "none";
+  document.querySelector(".allPeopleMovies").style.display = "none";
 });
 
 const btnHiromasa = document.getElementById("Hiromasa");
@@ -212,17 +217,29 @@ btnHiromasa.addEventListener("click", function (e) {
   document.querySelector(".columnGoro").style.display = "none";
   document.querySelector(".columnHiromasa").style.display = "grid";
   document.querySelector(".startingScreen").style.display = "none";
-  document.querySelector(".moviesAll").style.display = "none";
+  document.querySelector(".allPeopleMovies").style.display = "none";
 });
 
-const btnFilms0 = document.getElementById("prueba");
-btnFilms0.addEventListener("click", function (e) {
+const btnAAllCharacters = document.getElementById("allCharacters");
+btnAAllCharacters.addEventListener("click", function (e) {
   e.preventDefault()
   document.querySelector(".gridAll").style.display = "none";
   document.querySelector(".all").style.display = "none";
-  document.querySelector(".moviesAll").style.display = "grid";
+  document.querySelector(".allPeopleMovies").style.display = "grid";
   document.querySelector(".startingScreen").style.display = "none";
+  document.querySelector(".male").style.display = "none";
 });
+
+const btnMaleCharacters= document.getElementById("male");
+btnMaleCharacters.addEventListener("click", function (e) {
+  e.preventDefault()
+  document.querySelector(".gridAll").style.display = "none";
+  document.querySelector(".all").style.display = "none";
+  document.querySelector(".allPeopleMovies").style.display = "none";
+  document.querySelector(".startingScreen").style.display = "none";
+  document.querySelector(".male").style.display = "grid";
+});
+
 
 const renderDirectorImage = (directorName) => {
   const director = directors.filter(director => director.name === directorName)[0]
