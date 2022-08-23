@@ -26,21 +26,17 @@ export const filterDirector = function (name) { //function (data,directorName)
 }
 
 export const peopleUnspecified=allcharacters.filter(p=>p.gender !== 'Female' && p.gender !== 'Male' )
-console.log(peopleUnspecified)
 
-const filteringByGender=(propiedad,valor)=>{
+const filtering=(propiedad,valor)=>{
 const data= allcharacters.filter(p=>p[propiedad] == valor)
 return data
 }
 
-export const male= filteringByGender('gender', 'Male')
+export const male= filtering('gender', 'Male')
+export const female= filtering('gender', 'Female')
+export const directorsFiltering= filtering('hair_color', 'White') 
 
-export const female= filteringByGender('gender', 'Female')
-console.log(female.sort())
-
-
-console.log(male)
-male.sort ((o1,o2 )=>{
+male.sort ((o1,o2 )=>{ o1
   if (o1.name < o2.name){
     return -1
   } else if (o1.name > o2.name){
@@ -51,6 +47,17 @@ male.sort ((o1,o2 )=>{
 })
 console.log(male)
 
+
+console.log(female)
+female.sort((o1,o2 )=>{
+  if (o1.name > o2.name){
+    return -1
+  } else if (o1.name < o2.name){
+    return 1
+  } else {
+    return 0;
+  }
+})
 
 //console.log(male.sort(a,b)=> a.name<b.name)
 //let printData=()

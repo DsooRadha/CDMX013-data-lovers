@@ -103,7 +103,7 @@ const maleCharacters= male.forEach(item => {
   card.append(img, name)
   columnMale.appendChild(card);
 })
-
+maleCharacters
 
 const femaleCharacters= female.forEach(item => {
   const card = document.createElement('div');
