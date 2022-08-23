@@ -12,7 +12,7 @@ it('filtra segun el genero indicado', () => {
         gender:'n/a'
     },
  ];
-    expect(filtering('gender', 'Male')).toStrictEqual([
+    expect(filtering('gender', 'Female')).toStrictEqual([
     {
         gender:'Male'
     },

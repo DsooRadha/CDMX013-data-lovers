@@ -1,4 +1,4 @@
-import { filterDirector, directors, dataGhibliJs, peopleUnspecified, male, female, allcharacters } from "./data.js";
+import { filterDirector, directors, peopleUnspecified, male, female, allcharacters} from "./data.js";
 //import { titleData, filterFilmsPeople,} from "./data.js";
 
 const column2 = document.querySelector('.ColumnTwo');
@@ -12,7 +12,6 @@ function dataAccess() {
   const dataghibli = fetch("data/ghibli/ghibli.json").then(res => {
     res.json()
       .then(data => {
-        //console.log(dataaaa)
         const dataAll = data.films
         dataAll.forEach(p => {
           const card = document.createElement('div');
@@ -29,20 +28,6 @@ function dataAccess() {
   });
   return (dataghibli)
 }
-
-/*
-const renderFilms= (titleName, columMoviesSelector)=>{
-  const movies= filterFilmsPeople (titleName)
-  movies.forEach(people => {
-let columnMovies= document.querySelector(columMoviesSelector)
-  let div= document.createElement('div');
-  div.setAttribute ('id', 'title');
-  div.innerHTML= `<img class="poster"src="${people.img}"><h2>${people.name}</h2><h2> ${people.gender}</h2>`;
-  columnMovies.appendChild(div);
-})
-}
-titleData.forEach(titlefilms=>renderFilms (titlefilms.name, titlefilms.selector));
-*/
 
 const renderDirector = (directorName, columnDirectorSelector) => {
   // gridAll.innerHTML=''
@@ -63,24 +48,6 @@ const renderDirector = (directorName, columnDirectorSelector) => {
 }
 directors.forEach(director => renderDirector(director.name, director.selector))
 
-function printCharacters(dataGhibliJs) {
-  dataGhibliJs.forEach(data => {
-    const character = data.people
-    character.forEach(p => {
-      const card = document.createElement('div');
-      card.className = "card";
-      const img = document.createElement('img');
-      img.src = p.img;
-      const name = document.createElement('h2')
-      name.textContent = p.name;
-
-      card.append(img, name)
-      columnCharacters.appendChild(card);
-    })
-  })
-}
-printCharacters(dataGhibliJs)
-
 function showGender(item) {
   const card = document.createElement('div');
   card.className = "card";
@@ -96,7 +63,7 @@ function showGender(item) {
 male.map(showGender).forEach(element => columnMale.append(element))
 female.map(showGender).forEach(element => columnFemale.append(element))
 peopleUnspecified.map(showGender).forEach(element => columnUnspecified.append(element))
-
+allcharacters.map(showGender).forEach(element => columnCharacters.append(element))
 
 const btnMovies = document.getElementById("movies");
 btnMovies.addEventListener("click", function (e) {
@@ -269,5 +236,4 @@ document.querySelectorAll('.directorNavItem').forEach(navItem => {
     directorSpaceRightElement.innerHTML = renderDirectorImage(directorName)
   })
 })
-
 

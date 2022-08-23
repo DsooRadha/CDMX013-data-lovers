@@ -2,7 +2,6 @@ import ghibli from './data/ghibli/ghibli.js';
 
 export const allcharacters = [];
 
-
 export const dataGhibliJs = (ghibli.films);
 dataGhibliJs.forEach(data => {
   const character = data.people
@@ -10,6 +9,28 @@ dataGhibliJs.forEach(data => {
     allcharacters.push(p)
   });
 });
+
+
+export const dataFetch=[]
+dataFetch.forEach(p=>{
+  console.log(p.title)
+})
+
+
+dataAccess()
+function dataAccess() {
+  const dataghibli = fetch("data/ghibli/ghibli.json").then(res => {
+    res.json()
+      .then(data => {
+        const dataAll = data.films
+        dataFetch.push(dataAll)
+      })
+    })
+  return dataghibli
+}
+
+
+
 
 export const directors = [
   { name: "Isao Takahata", selector: '.columnIsao', imgSrc: "./images/isao.png" },
