@@ -1,14 +1,14 @@
-import { filterDirector, directors, dataGhibliJs, peopleUnspecified, male, female} from "./data.js";
+import { filterDirector, directors, dataGhibliJs, peopleUnspecified, male, female, allcharacters } from "./data.js";
 //import { titleData, filterFilmsPeople,} from "./data.js";
 
 const column2 = document.querySelector('.ColumnTwo');
 const columnCharacters = document.querySelector(".allCharacters");
 const columnMale = document.querySelector(".male");
 const columnFemale = document.querySelector(".female");
-const columnUnspecified= document.querySelector(".unspecified")
+const columnUnspecified = document.querySelector(".unspecified")
 
 dataAccess()
- function dataAccess() {
+function dataAccess() {
   const dataghibli = fetch("data/ghibli/ghibli.json").then(res => {
     res.json()
       .then(data => {
@@ -51,14 +51,14 @@ const renderDirector = (directorName, columnDirectorSelector) => {
     const columnDirectors = document.querySelector(columnDirectorSelector);
 
     const card = document.createElement('div');
-          card.className = "card";
-          const title = document.createElement('h2')
-          title.textContent = d.title;
-          const date = document.createElement('h6')
-          date.textContent = d.release_date;
-          
-          card.append(title,date)
-          columnDirectors.appendChild(card);
+    card.className = "card";
+    const title = document.createElement('h2')
+    title.textContent = d.title;
+    const date = document.createElement('h6')
+    date.textContent = d.release_date;
+
+    card.append(title, date)
+    columnDirectors.appendChild(card);
   })
 }
 directors.forEach(director => renderDirector(director.name, director.selector))
@@ -67,32 +67,21 @@ function printCharacters(dataGhibliJs) {
   dataGhibliJs.forEach(data => {
     const character = data.people
     character.forEach(p => {
-          const card = document.createElement('div');
-          card.className = "card";
-          const img = document.createElement('img');
-          img.src = p.img;
-          const name = document.createElement('h2')
-          name.textContent = p.name;
-          
-          card.append(img, name)
-          columnCharacters.appendChild(card);
+      const card = document.createElement('div');
+      card.className = "card";
+      const img = document.createElement('img');
+      img.src = p.img;
+      const name = document.createElement('h2')
+      name.textContent = p.name;
+
+      card.append(img, name)
+      columnCharacters.appendChild(card);
     })
   })
 }
 printCharacters(dataGhibliJs)
 
-/*
-console.log(document.getElementById("gender").children)
-Array.from(document.getElementById("gender").children).forEach(element => {
-  element.addEventListener("click", function (event) {
-    printCharacters(dataGhibliJs.filter(i=>i.people.gender. toUpperCase===event.target.innerHTML))
-    console.log(event.target.innerHTML);
-  })
-});
-*/
-
-
-const maleCharacters= male.forEach(item => {
+function showGender(item) {
   const card = document.createElement('div');
   card.className = "card";
   const img = document.createElement('img');
@@ -101,50 +90,13 @@ const maleCharacters= male.forEach(item => {
   name.textContent = item.name
 
   card.append(img, name)
-  columnMale.appendChild(card);
-})
-maleCharacters
-
-const femaleCharacters= female.forEach(item => {
-  const card = document.createElement('div');
-  card.className = "card";
-  const img = document.createElement('img');
-  img.src = item.img
-  const name = document.createElement('h2')
-  name.textContent = item.name
-
-  card.append(img, name)
-  columnFemale.appendChild(card);
-})
-femaleCharacters
-
-const unspecifiedCharacters= peopleUnspecified.forEach(item => {
-  const card = document.createElement('div');
-  card.className = "card";
-  const img = document.createElement('img');
-  img.src = item.img
-  const name = document.createElement('h2')
-  name.textContent = item.name
-
-  card.append(img, name)
-  columnUnspecified.appendChild(card);
-})
-unspecifiedCharacters
-
-/*
-
-const renderPersonajes = (filmsName, columntitleSelector) => {
-  const title = filterPersonajes(filmsName)
-  title.forEach(d => {
-    let columnCharacter = document.querySelector(columntitleSelector);
-    let div = document.createElement('div');    //creamos un elemento div por cada elemento del array
-    div.setAttribute('id', 'title');    //le asignamos el id 'card' a cada div
-    div.innerHTML = `<h2> ${d.name}</h2><h6>${d.gender}</h6>`;
-    columnCharacter.appendChild(div);
-  })
+  return (card);
 }
-title.forEach(films => renderPersonajes(films.name, films.selector))
-*/
+
+male.map(showGender).forEach(element => columnMale.append(element))
+female.map(showGender).forEach(element => columnFemale.append(element))
+peopleUnspecified.map(showGender).forEach(element => columnUnspecified.append(element))
+
 
 const btnMovies = document.getElementById("movies");
 btnMovies.addEventListener("click", function (e) {
@@ -263,7 +215,7 @@ btnAAllCharacters.addEventListener("click", function (e) {
   document.querySelector(".unspecified").style.display = "none";
 });
 
-const btnMaleCharacters= document.getElementById("male");
+const btnMaleCharacters = document.getElementById("male");
 btnMaleCharacters.addEventListener("click", function (e) {
   e.preventDefault()
   document.querySelector(".gridAll").style.display = "none";
@@ -276,7 +228,7 @@ btnMaleCharacters.addEventListener("click", function (e) {
   document.querySelector(".unspecified").style.display = "none";
 });
 
-const btnFemaleCharacters= document.getElementById("female");
+const btnFemaleCharacters = document.getElementById("female");
 btnFemaleCharacters.addEventListener("click", function (e) {
   e.preventDefault()
   document.querySelector(".gridAll").style.display = "none";
@@ -289,7 +241,7 @@ btnFemaleCharacters.addEventListener("click", function (e) {
   document.querySelector(".unspecified").style.display = "none";
 });
 
-const btnUnspecifiedCharacters= document.getElementById("s/a");
+const btnUnspecifiedCharacters = document.getElementById("s/a");
 btnUnspecifiedCharacters.addEventListener("click", function (e) {
   e.preventDefault()
   document.querySelector(".gridAll").style.display = "none";

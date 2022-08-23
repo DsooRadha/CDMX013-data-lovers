@@ -1,6 +1,7 @@
 import ghibli from './data/ghibli/ghibli.js';
 
-const allcharacters = [];
+export const allcharacters = [];
+
 
 export const dataGhibliJs = (ghibli.films);
 dataGhibliJs.forEach(data => {
@@ -37,11 +38,15 @@ export const female= filtering('gender', 'Female')
 export const directorsFiltering= filtering('hair_color', 'White') 
 
 male.sort ((o1,o2 )=>o1.name>o2.name ? 1:-1);
-console.log(male)
+
 
 female.sort((o1,o2 )=>o1.name<o2.name ?1:-1);
-console.log(female)
+
 /*
+const rtMovies= dataGhibliJs.map(rt=> ({
+  titleAndRt: ${dataGhibliJs.title} ${dataGhibliJs.rt_score}
+}))
+
 female.sort((o1,o2 )=>{
   if (o1.name > o2.name){
     return -1
@@ -90,13 +95,6 @@ allDataGhibli.forEach((elemento) => {   // 3. sustituyo el elemento a iterar "al
 //console.log(director); //4. festejas bailando en circulos
   //  console.log(arrayAllPeople)
 
-/*ESTRUCTURA MAP
-.map (funcion (_, posicion, arrayoriginalsobreelqueseinvocalafuncion)
-Guión BAajo si no nosinteresan los primeros parametros, los posteriores solo se omiten
- .map (funcion (numero, posicion, arrayoriginalsobreelqueseinvocalafuncion){})
-  const titleDirector = directors.map(({ title }) => { return ({ title }).title })
-return(titleDirector)
- */
 
 //OPERACIONES CON RT DE FILMS- PROMEDIO DE RT ,MAX Y MIN 
 /*
