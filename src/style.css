@@ -69,7 +69,7 @@ body {
   color: white;
   cursor: pointer;
   background-color: #011f4ef6;
-  width: 24.75vw;
+  width: 24.51vw;
   height: 7vh;
   font-size: 1.2vw;
   font-family: 'Nanum Gothic';
@@ -319,14 +319,9 @@ h6 {
   display: none;
 }
 
-@media only screen and (max-width: 600px)and (max-width: 780px) {
-  .header {
-    background: #036953f9;
-  }
-
-  .startingScreen img {
-    display: none;
-  }
+@media only screen and (max-width: 780px) {
+  body {
+    background-color: red;
+ }
 }
 
-@media only screen and (max-width: 992px) and (max-width: 1200px) {}
