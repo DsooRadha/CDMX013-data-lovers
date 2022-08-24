@@ -10,12 +10,10 @@ dataGhibliJs.forEach(data => {
   });
 });
 
-
 export const dataFetch=[]
 dataFetch.forEach(p=>{
   console.log(p.title)
 })
-
 
 dataAccess()
 function dataAccess() {
@@ -28,9 +26,6 @@ function dataAccess() {
     })
   return dataghibli
 }
-
-
-
 
 export const directors = [
   { name: "Isao Takahata", selector: '.columnIsao', imgSrc: "./images/isao.png" },
@@ -56,10 +51,8 @@ return data
 
 export const male= filtering('gender', 'Male')
 export const female= filtering('gender', 'Female')
-export const directorsFiltering= filtering('hair_color', 'White') 
 
 male.sort ((o1,o2 )=>o1.name>o2.name ? 1:-1);
-
 
 female.sort((o1,o2 )=>o1.name<o2.name ?1:-1);
 
@@ -78,32 +71,6 @@ female.sort((o1,o2 )=>{
   }
 })
 */
-//console.log(male.sort(a,b)=> a.name<b.name)
-//let printData=()
-
-
-/*
-const allcharacterImgGenderName = [];
-console.log(allcharacterImgGenderName);
-
-export const dataGhibliJs = (ghibli.films);
-dataGhibliJs.forEach(data => {
-  const character = data.people
-  character.forEach(p => {
-    allcharacterImgGenderName.push([p.gender, p.name, p.img])
-  });
-});*/
-
-
-export const filterFilmsPeople = function (allTitlesMovies) {
-  const character = dataGhibliJs.filter(p => p.title === allTitlesMovies)
-  character.forEach(p => {
-    const people = p.people
-    people.forEach(character => {
-      return character
-    })
-  })
-};
 
 //PASOS A SEGUIR CUANDO QUIERO ELIMINAR DATA REPETIDA
 const allDataGhibli = dataGhibliJs.map(({ director }) => { return ({ director }).director })//1.hago un Array con los elementos a analizar de dataJS
@@ -114,8 +81,6 @@ allDataGhibli.forEach((elemento) => {   // 3. sustituyo el elemento a iterar "al
   }
 });
 //console.log(director); //4. festejas bailando en circulos
-  //  console.log(arrayAllPeople)
-
 
 //OPERACIONES CON RT DE FILMS- PROMEDIO DE RT ,MAX Y MIN 
 /*

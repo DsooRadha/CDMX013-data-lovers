@@ -1,5 +1,4 @@
 import { filterDirector, directors, peopleUnspecified, male, female, allcharacters} from "./data.js";
-//import { titleData, filterFilmsPeople,} from "./data.js";
 
 const column2 = document.querySelector('.ColumnTwo');
 const columnCharacters = document.querySelector(".allCharacters");
