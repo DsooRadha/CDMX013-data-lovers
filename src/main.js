@@ -5,6 +5,7 @@ const columnCharacters = document.querySelector(".allCharacters");
 const columnMale = document.querySelector(".male");
 const columnFemale = document.querySelector(".female");
 const columnUnspecified = document.querySelector(".unspecified")
+  //const columnDirectorsss= document.querySelector("allDirectors");
 
 dataAccess()
 function dataAccess() {
@@ -86,7 +87,7 @@ btnHayao.addEventListener("click", function (e) {
   document.querySelector(".columnHiromasa").style.display = "none";
   document.querySelector(".startingScreen").style.display = "none";
   document.querySelector(".allPeopleMovies").style.display = "none";
-
+//columnDirectorsss.innerHTML = ''
 });
 
 const btnIsao = document.getElementById("Isao");
