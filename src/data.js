@@ -55,6 +55,13 @@ export const filtering=(propiedad,valor)=>{
 const data= allcharacters.filter(p=>p[propiedad] == valor)
 return data
 }
+/*
+export const filtering=(allCharacters,propiedad,valor)=>{
+return allCharacters.filter(p=>p[propiedad] == valor)
+}
+
+*/
+
 
 export const male= filtering('gender', 'Male')
 export const female= filtering('gender', 'Female')
