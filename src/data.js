@@ -1,15 +1,22 @@
 import ghibli from './data/ghibli/ghibli.js';
 
 export const allcharacters = [];
+console.log(allcharacters)
+export const alltitle=[];
+
 
 export const dataGhibliJs = (ghibli.films);
 dataGhibliJs.forEach(data => {
+  const films= data.title
+  alltitle.push(films)
   const character = data.people
   character.forEach(p => {
     allcharacters.push(p)
   });
 });
 
+
+/*
 export const dataFetch=[]
 dataFetch.forEach(p=>{
   console.log(p.title)
@@ -26,7 +33,7 @@ function dataAccess() {
     })
   return dataghibli
 }
-
+*/
 export const directors = [
   { name: "Isao Takahata", selector: '.columnIsao', imgSrc: "./images/isao.png" },
   { name: "Hayao Miyazaki", selector: '.columnHayao', imgSrc: "./images/hayo.png" },
@@ -80,6 +87,16 @@ allDataGhibli.forEach((elemento) => {   // 3. sustituyo el elemento a iterar "al
     director.push(elemento);
   }
 });
+
+//did you know
+const datosCuriosos1= allcharacters.length 
+const datosCuriosos2= alltitle.length
+//const diyouKnow3=
+console.log(datosCuriosos2)
+console.log(datosCuriosos1)
+
+
+
 //console.log(director); //4. festejas bailando en circulos
 
 //OPERACIONES CON RT DE FILMS- PROMEDIO DE RT ,MAX Y MIN 

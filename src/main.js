@@ -1,10 +1,11 @@
-import { filterDirector, directors, peopleUnspecified, male, female, allcharacters} from "./data.js";
+import { filterDirector, directors, peopleUnspecified, male, female, allcharacters, filtering} from "./data.js";
 
 const column2 = document.querySelector('.ColumnTwo');
 const columnCharacters = document.querySelector(".allCharacters");
 const columnMale = document.querySelector(".male");
 const columnFemale = document.querySelector(".female");
 const columnUnspecified = document.querySelector(".unspecified")
+//const spaceCharacters= document.querySelector
   //const columnDirectorsss= document.querySelector("allDirectors");
 
 dataAccess()
@@ -49,6 +50,7 @@ const renderDirector = (directorName, columnDirectorSelector) => {
 directors.forEach(director => renderDirector(director.name, director.selector))
 
 function showGender(item) {
+ // allPeopleMovies.innerHTML=''
   const card = document.createElement('div');
   card.className = "card";
   const img = document.createElement('img');
