@@ -1,12 +1,16 @@
-import { filterDirector, directors, peopleUnspecified, male, female, allcharacters, filtering} from "./data.js";
+import { filterDirector, directors, peopleUnspecified, allcharacters, filtering} from "./data.js";
 
 const column2 = document.querySelector('.ColumnTwo');
 const columnCharacters = document.querySelector(".allCharacters");
 const columnMale = document.querySelector(".male");
 const columnFemale = document.querySelector(".female");
 const columnUnspecified = document.querySelector(".unspecified")
-//const spaceCharacters= document.querySelector
   //const columnDirectorsss= document.querySelector("allDirectors");
+  // const allPeopleMovies= document.querySelector('.allPeopleMovies')
+
+
+const female= filtering('gender', 'Female').sort((o1,o2 )=>o1.name<o2.name ?1:-1);
+const male= filtering('gender', 'Male').sort ((o1,o2 )=>o1.name>o2.name ? 1:-1);
 
 dataAccess()
 function dataAccess() {
@@ -49,8 +53,9 @@ const renderDirector = (directorName, columnDirectorSelector) => {
 }
 directors.forEach(director => renderDirector(director.name, director.selector))
 
+
 function showGender(item) {
- // allPeopleMovies.innerHTML=''
+ 
   const card = document.createElement('div');
   card.className = "card";
   const img = document.createElement('img');
@@ -66,6 +71,7 @@ male.map(showGender).forEach(element => columnMale.append(element))
 female.map(showGender).forEach(element => columnFemale.append(element))
 peopleUnspecified.map(showGender).forEach(element => columnUnspecified.append(element))
 allcharacters.map(showGender).forEach(element => columnCharacters.append(element))
+
 
 const btnMovies = document.getElementById("movies");
 btnMovies.addEventListener("click", function (e) {

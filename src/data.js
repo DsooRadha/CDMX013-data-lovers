@@ -1,10 +1,8 @@
 import ghibli from './data/ghibli/ghibli.js';
 
 export const allcharacters = [];
-console.log(allcharacters)
 export const alltitle=[];
-
-
+//ACESO A LA DATA JS Y EXTRAIGO CHARACTERS AND TITLE
 export const dataGhibliJs = (ghibli.films);
 dataGhibliJs.forEach(data => {
   const films= data.title
@@ -15,13 +13,11 @@ dataGhibliJs.forEach(data => {
   });
 });
 
-
 /*
 export const dataFetch=[]
 dataFetch.forEach(p=>{
   console.log(p.title)
 })
-
 dataAccess()
 function dataAccess() {
   const dataghibli = fetch("data/ghibli/ghibli.json").then(res => {
@@ -55,21 +51,16 @@ export const filtering=(propiedad,valor)=>{
 const data= allcharacters.filter(p=>p[propiedad] == valor)
 return data
 }
+
 /*
+const female= filtering('gender', 'Female')
+const male= filtering('gender', 'Male')
+  male.sort ((o1,o2 )=>o1.name>o2.name ? 1:-1);
+  female.sort((o1,o2 )=>o1.name<o2.name ?1:-1);
 export const filtering=(allCharacters,propiedad,valor)=>{
 return allCharacters.filter(p=>p[propiedad] == valor)
 }
-
 */
-
-
-export const male= filtering('gender', 'Male')
-export const female= filtering('gender', 'Female')
-
-male.sort ((o1,o2 )=>o1.name>o2.name ? 1:-1);
-
-female.sort((o1,o2 )=>o1.name<o2.name ?1:-1);
-
 /*
 const rtMovies= dataGhibliJs.map(rt=> ({
   titleAndRt: ${dataGhibliJs.title} ${dataGhibliJs.rt_score}
