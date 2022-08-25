@@ -29,13 +29,13 @@ body {
   align-items: center;
   color: rgb(251, 244, 224);
   font-family: 'Patrick Hand', cursive;
-  height: 72vh;
+  
 }
 
 .startingScreen:before {
   content: "";
   width: 100%;
-  height: 72%;
+  height: 70.6%;
   background-color: #040610f4;
   position: absolute;
   opacity: 0.5;
@@ -43,9 +43,9 @@ body {
 
 .startingScreen img {
   width: 40vw;
-  align-self: flex-end;
   position: relative;
   opacity: 0.8;
+  margin-top: 4vh
 }
 
 .initialText {
@@ -190,8 +190,7 @@ body {
 footer {
   color: rgb(222, 232, 240);
   background: #032869d1;
-
-  height: 3vw;
+  height: 7vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -200,6 +199,9 @@ footer {
   text-transform: uppercase;
   font-family: 'Patrick Hand', cursive;
   font-size: 1.4vw;
+  bottom: 0;
+  width: 100%;
+  position: absolute;
 }
 
 .all {

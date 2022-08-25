@@ -1,16 +1,9 @@
-import { filterDirector, directors, peopleUnspecified, allcharacters, filtering} from "./data.js";
+import { dataGhibliJs, directors, peopleUnspecified, allcharacters, filtering, orderAZ, orderZA } from "./data.js";
 
 const column2 = document.querySelector('.ColumnTwo');
-const columnCharacters = document.querySelector(".allCharacters");
-const columnMale = document.querySelector(".male");
-const columnFemale = document.querySelector(".female");
-const columnUnspecified = document.querySelector(".unspecified")
-  //const columnDirectorsss= document.querySelector("allDirectors");
-  // const allPeopleMovies= document.querySelector('.allPeopleMovies')
 
-
-const female= filtering('gender', 'Female').sort((o1,o2 )=>o1.name<o2.name ?1:-1);
-const male= filtering('gender', 'Male').sort ((o1,o2 )=>o1.name>o2.name ? 1:-1);
+//const columnDirectorsss= document.querySelector("allDirectors");
+// const allPeopleMovies= document.querySelector('.allPeopleMovies')
 
 dataAccess()
 function dataAccess() {
@@ -36,8 +29,8 @@ function dataAccess() {
 
 const renderDirector = (directorName, columnDirectorSelector) => {
   // gridAll.innerHTML=''
-  const director = filterDirector(directorName)
-  director.forEach(d => {
+  const movies = filtering(dataGhibliJs, 'director', directorName)
+  movies.forEach(d => {
     const columnDirectors = document.querySelector(columnDirectorSelector);
 
     const card = document.createElement('div');
@@ -55,7 +48,7 @@ directors.forEach(director => renderDirector(director.name, director.selector))
 
 
 function showGender(item) {
- 
+
   const card = document.createElement('div');
   card.className = "card";
   const img = document.createElement('img');
@@ -66,11 +59,19 @@ function showGender(item) {
   card.append(img, name)
   return (card);
 }
-
-male.map(showGender).forEach(element => columnMale.append(element))
-female.map(showGender).forEach(element => columnFemale.append(element))
-peopleUnspecified.map(showGender).forEach(element => columnUnspecified.append(element))
-allcharacters.map(showGender).forEach(element => columnCharacters.append(element))
+window.addEventListener('load', () => {
+  const columnCharacters = document.querySelector(".allCharacters");
+  const columnMale = document.querySelector(".male");
+  const columnFemale = document.querySelector(".female");
+  const columnUnspecified = document.querySelector(".unspecified")
+  const female = orderAZ(filtering(allcharacters, 'gender', 'Female'))
+  const male = orderZA(filtering(allcharacters, 'gender', 'Male'))
+  orderAZ(peopleUnspecified)
+  male.map(showGender).forEach(element => columnMale.append(element))
+  female.map(showGender).forEach(element => columnFemale.append(element))
+  peopleUnspecified.map(showGender).forEach(element => columnUnspecified.append(element))
+  allcharacters.map(showGender).forEach(element => columnCharacters.append(element))
+})
 
 
 const btnMovies = document.getElementById("movies");
@@ -95,7 +96,7 @@ btnHayao.addEventListener("click", function (e) {
   document.querySelector(".columnHiromasa").style.display = "none";
   document.querySelector(".startingScreen").style.display = "none";
   document.querySelector(".allPeopleMovies").style.display = "none";
-//columnDirectorsss.innerHTML = ''
+  //columnDirectorsss.innerHTML = ''
 });
 
 const btnIsao = document.getElementById("Isao");
