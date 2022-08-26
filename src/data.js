@@ -2,6 +2,9 @@ import ghibli from './data/ghibli/ghibli.js';
 
 export const allcharacters = [];
 export const alltitle = [];
+export const diyouKnow1 = allcharacters.length
+export const diyouKnow2 = alltitle.length
+
 //ACESO A LA DATA JS Y EXTRAIGO CHARACTERS AND TITLE
 export const dataGhibliJs = (ghibli.films);
 dataGhibliJs.forEach(data => {
@@ -13,23 +16,31 @@ dataGhibliJs.forEach(data => {
   });
 });
 
-/*
-export const dataFetch=[]
-dataFetch.forEach(p=>{
-  console.log(p.title)
-})
+
+
+const dataFetch = []
 dataAccess()
 function dataAccess() {
   const dataghibli = fetch("data/ghibli/ghibli.json").then(res => {
     res.json()
       .then(data => {
         const dataAll = data.films
-        dataFetch.push(dataAll)
+        dataAll.forEach(x => {
+          const huOne=[x.title, x.poster]
+          dataFetch.push(huOne)
+        })
+       
       })
     })
   return dataghibli
 }
-*/
+
+//console.log(dataFetch)
+for(const movie of dataFetch){
+  console.log(movie)
+}
+  
+
 export const directors = [
   { name: "Isao Takahata", selector: '.columnIsao', imgSrc: "./images/isao.png" },
   { name: "Hayao Miyazaki", selector: '.columnHayao', imgSrc: "./images/hayo.png" },
@@ -46,8 +57,7 @@ export const filtering=(allCharacters,propiedad,valor)=>{
 
 export const orderAZ = (x) => x.sort((o1, o2) => o1.name > o2.name ? 1 : -1);
 export const orderZA = (x) => x.sort((o1, o2) => o1.name < o2.name ? 1 : -1);
+ 
 
-export const diyouKnow1 = allcharacters.length
-export const diyouKnow2 = alltitle.length
 
 

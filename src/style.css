@@ -154,7 +154,7 @@ body {
   align-items: flex-start;
   justify-content: center;
   cursor: pointer;
-  background-color: #2aa89c;
+  background-color: #2aa89baf;
   border-radius: 1vw;
 }
 
@@ -320,6 +320,7 @@ h6 {
   height: 72vh;
   display: none;
 }
+
 
 @media (max-width: 800px) {
   .header {

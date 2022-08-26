@@ -1,16 +1,15 @@
+
+//import { Chart } from "chart.js";
 import { dataGhibliJs, directors, peopleUnspecified, allcharacters, filtering, orderAZ, orderZA } from "./data.js";
 
-const column2 = document.querySelector('.ColumnTwo');
-
-//const columnDirectorsss= document.querySelector("allDirectors");
-// const allPeopleMovies= document.querySelector('.allPeopleMovies')
-
+//--------------------FETCH-----------------AllMoviesZA
 dataAccess()
 function dataAccess() {
+  const column2 = document.querySelector('.ColumnTwo');
   const dataghibli = fetch("data/ghibli/ghibli.json").then(res => {
     res.json()
       .then(data => {
-        const dataAll = data.films
+        const dataAll = orderZA(data.films)
         dataAll.forEach(p => {
           const card = document.createElement('div');
           card.className = "card";
@@ -26,9 +25,9 @@ function dataAccess() {
   });
   return (dataghibli)
 }
-
+//--------------------DIRECTOR-----------------title and Date
 const renderDirector = (directorName, columnDirectorSelector) => {
-  // gridAll.innerHTML=''
+
   const movies = filtering(dataGhibliJs, 'director', directorName)
   movies.forEach(d => {
     const columnDirectors = document.querySelector(columnDirectorSelector);
@@ -46,7 +45,7 @@ const renderDirector = (directorName, columnDirectorSelector) => {
 }
 directors.forEach(director => renderDirector(director.name, director.selector))
 
-
+//--------------------GENDER-----------------SHOW
 function showGender(item) {
 
   const card = document.createElement('div');
@@ -59,6 +58,7 @@ function showGender(item) {
   card.append(img, name)
   return (card);
 }
+//--------------------DIRECTOR-----------------title and Date
 window.addEventListener('load', () => {
   const columnCharacters = document.querySelector(".allCharacters");
   const columnMale = document.querySelector(".male");
@@ -66,14 +66,14 @@ window.addEventListener('load', () => {
   const columnUnspecified = document.querySelector(".unspecified")
   const female = orderAZ(filtering(allcharacters, 'gender', 'Female'))
   const male = orderZA(filtering(allcharacters, 'gender', 'Male'))
-  orderAZ(peopleUnspecified)
+  const other = orderAZ(peopleUnspecified)
   male.map(showGender).forEach(element => columnMale.append(element))
   female.map(showGender).forEach(element => columnFemale.append(element))
-  peopleUnspecified.map(showGender).forEach(element => columnUnspecified.append(element))
+  other.map(showGender).forEach(element => columnUnspecified.append(element))
   allcharacters.map(showGender).forEach(element => columnCharacters.append(element))
 })
 
-
+//--------------------DOM-----------------
 const btnMovies = document.getElementById("movies");
 btnMovies.addEventListener("click", function (e) {
   e.preventDefault()
@@ -96,7 +96,6 @@ btnHayao.addEventListener("click", function (e) {
   document.querySelector(".columnHiromasa").style.display = "none";
   document.querySelector(".startingScreen").style.display = "none";
   document.querySelector(".allPeopleMovies").style.display = "none";
-  //columnDirectorsss.innerHTML = ''
 });
 
 const btnIsao = document.getElementById("Isao");
@@ -113,7 +112,6 @@ btnIsao.addEventListener("click", function (e) {
   document.querySelector(".allPeopleMovies").style.display = "none";
 });
 
-
 const btnYoshifumi = document.getElementById("Yoshifumi");
 btnYoshifumi.addEventListener("click", function (e) {
   e.preventDefault()
@@ -128,7 +126,6 @@ btnYoshifumi.addEventListener("click", function (e) {
   document.querySelector(".startingScreen").style.display = "none";
   document.querySelector(".allPeopleMovies").style.display = "none";
 });
-
 
 const btnHiroyuki = document.getElementById("Hiroyuki");
 btnHiroyuki.addEventListener("click", function (e) {
@@ -145,7 +142,6 @@ btnHiroyuki.addEventListener("click", function (e) {
   document.querySelector(".allPeopleMovies").style.display = "none";
 });
 
-
 const btnGoro = document.getElementById("Goro");
 btnGoro.addEventListener("click", function (e) {
   e.preventDefault()
@@ -159,7 +155,6 @@ btnGoro.addEventListener("click", function (e) {
   document.querySelector(".columnHiromasa").style.display = "none";
   document.querySelector(".startingScreen").style.display = "none";
   document.querySelector(".allPeopleMovies").style.display = "none";
-
 });
 
 const btnHiromasa = document.getElementById("Hiromasa");
@@ -175,7 +170,6 @@ btnHiromasa.addEventListener("click", function (e) {
   document.querySelector(".columnHiromasa").style.display = "grid";
   document.querySelector(".startingScreen").style.display = "none";
   document.querySelector(".allPeopleMovies").style.display = "none";
-
 });
 
 const btnAAllCharacters = document.getElementById("allCharacters");
@@ -220,15 +214,26 @@ btnFemaleCharacters.addEventListener("click", function (e) {
 const btnUnspecifiedCharacters = document.getElementById("s/a");
 btnUnspecifiedCharacters.addEventListener("click", function (e) {
   e.preventDefault()
-  document.querySelector(".gridAll").style.display = "none";
-  document.querySelector(".all").style.display = "none";
-  document.querySelector(".allPeopleMovies").style.display = "grid";
-  document.querySelector(".startingScreen").style.display = "none";
-  document.querySelector(".male").style.display = "none";
-  document.querySelector('.allCharacters').style.display = "none";
-  document.querySelector(".female").style.display = "none";
-  document.querySelector(".unspecified").style.display = "grid";
+  manejoDom([".allPeopleMovies", ".unspecified"],[".gridAll",".all",".startingScreen",".male",'.allCharacters',".female"])
+  // document.querySelector(".gridAll").style.display = "none";
+  // document.querySelector(".all").style.display = "none";
+  // document.querySelector(".allPeopleMovies").style.display = "grid";
+  // document.querySelector(".startingScreen").style.display = "none";
+  // document.querySelector(".male").style.display = "none";
+  // document.querySelector('.allCharacters').style.display = "none";
+  // document.querySelector(".female").style.display = "none";
+  // document.querySelector(".unspecified").style.display = "grid";
 });
+
+function manejoDom(clasesMostrar, classOcultar){ 
+  for ( let i=0; i<classOcultar.length; i++){
+    document.querySelector(i).style.display='none';
+  }
+
+  for ( let i=0; i<clasesMostrar.length; i++){
+    document.querySelector(i).style.display='grid';
+  }
+}
 
 const renderDirectorImage = (directorName) => {
   const director = directors.filter(director => director.name === directorName)[0]
@@ -246,3 +251,17 @@ document.querySelectorAll('.directorNavItem').forEach(navItem => {
   })
 })
 
+/*
+const graphCharacters=document.getElementById('graphCharacters')
+const chart= new Chart(graphCharacters, {type: 'doughnut',data})
+  
+  const data={
+labels: ['MUJERES', 'HOMBRES', 'SIN ESPECIFICAR'],
+    datasets: [{
+      label: 'PERSONAJES',
+      data: [30, 5, 31],
+      backgroundColor: ['rgb(255, 99, 132)','rgb(54, 162, 235)','rgb(255, 205, 86)'],
+    }]
+  }
+
+*/
