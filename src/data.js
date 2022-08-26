@@ -5,6 +5,8 @@ export const alltitle = [];
 export const diyouKnow1 = allcharacters.length
 export const diyouKnow2 = alltitle.length
 
+
+
 //ACESO A LA DATA JS Y EXTRAIGO CHARACTERS AND TITLE
 export const dataGhibliJs = (ghibli.films);
 dataGhibliJs.forEach(data => {
@@ -15,31 +17,6 @@ dataGhibliJs.forEach(data => {
     allcharacters.push(p)
   });
 });
-
-
-
-const dataFetch = []
-dataAccess()
-function dataAccess() {
-  const dataghibli = fetch("data/ghibli/ghibli.json").then(res => {
-    res.json()
-      .then(data => {
-        const dataAll = data.films
-        dataAll.forEach(x => {
-          const huOne=[x.title, x.poster]
-          dataFetch.push(huOne)
-        })
-       
-      })
-    })
-  return dataghibli
-}
-
-//console.log(dataFetch)
-for(const movie of dataFetch){
-  console.log(movie)
-}
-  
 
 export const directors = [
   { name: "Isao Takahata", selector: '.columnIsao', imgSrc: "./images/isao.png" },

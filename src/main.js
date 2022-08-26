@@ -74,166 +74,72 @@ window.addEventListener('load', () => {
 })
 
 //--------------------DOM-----------------
+function handlingDom(clasesMostrar, classOcultar){ 
+  for ( let i=0; i<clasesMostrar.length; i++){
+    document.querySelector(clasesMostrar[i]).style.display='grid';
+   }
+
+   for ( let i=0; i<classOcultar.length; i++){
+    document.querySelector(classOcultar[i]).style.display='none';
+   }
+}
+
 const btnMovies = document.getElementById("movies");
-btnMovies.addEventListener("click", function (e) {
-  e.preventDefault()
-  document.querySelector(".gridAll").style.display = "grid";
-  document.querySelector(".all").style.display = "none"
-  document.querySelector(".startingScreen").style.display = "none";
-  document.querySelector(".allPeopleMovies").style.display = "none";
+btnMovies.addEventListener ("click", ()=> {
+  handlingDom([".gridAll"],[".all",".startingScreen",".allPeopleMovies"])
 });
 
 const btnHayao = document.getElementById("Hayao");
-btnHayao.addEventListener("click", function (e) {
-  e.preventDefault()
-  document.querySelector(".gridAll").style.display = "none";
-  document.querySelector(".all").style.display = "grid";
-  document.querySelector(".columnIsao").style.display = "none";
-  document.querySelector(".columnHayao").style.display = "grid";
-  document.querySelector(".columnYoshifumi").style.display = "none";
-  document.querySelector(".columnHiroyuki").style.display = "none";
-  document.querySelector(".columnGoro").style.display = "none";
-  document.querySelector(".columnHiromasa").style.display = "none";
-  document.querySelector(".startingScreen").style.display = "none";
-  document.querySelector(".allPeopleMovies").style.display = "none";
+btnHayao.addEventListener("click", ()=> {
+  handlingDom([".all", ".columnHayao"],[".gridAll",".columnIsao",".columnGoro",".columnHiromasa",".columnYoshifumi",".columnHiroyuki",".startingScreen",".allPeopleMovies"])
 });
 
 const btnIsao = document.getElementById("Isao");
-btnIsao.addEventListener("click", function (e) {
-  e.preventDefault()
-  document.querySelector(".gridAll").style.display = "none";
-  document.querySelector(".all").style.display = "grid";
-  document.querySelector(".columnIsao").style.display = "grid";
-  document.querySelector(".columnHayao").style.display = "none";
-  document.querySelector(".columnHiroyuki").style.display = "none";
-  document.querySelector(".columnGoro").style.display = "none";
-  document.querySelector(".columnHiromasa").style.display = "none";
-  document.querySelector(".startingScreen").style.display = "none";
-  document.querySelector(".allPeopleMovies").style.display = "none";
+btnIsao.addEventListener("click", ()=> {
+  handlingDom([".all", ".columnIsao"],[".gridAll",".columnGoro",".columnHiromasa",".columnYoshifumi",".columnHayao",".columnHiroyuki",".startingScreen",".allPeopleMovies"])
 });
 
 const btnYoshifumi = document.getElementById("Yoshifumi");
-btnYoshifumi.addEventListener("click", function (e) {
-  e.preventDefault()
-  document.querySelector(".gridAll").style.display = "none";
-  document.querySelector(".all").style.display = "grid";
-  document.querySelector(".columnIsao").style.display = "none";
-  document.querySelector(".columnHayao").style.display = "none";
-  document.querySelector(".columnYoshifumi").style.display = "grid";
-  document.querySelector(".columnHiroyuki").style.display = "none";
-  document.querySelector(".columnGoro").style.display = "none";
-  document.querySelector(".columnHiromasa").style.display = "none";
-  document.querySelector(".startingScreen").style.display = "none";
-  document.querySelector(".allPeopleMovies").style.display = "none";
+btnYoshifumi.addEventListener("click", ()=> {
+  handlingDom([".all", ".columnYoshifumi"],[".gridAll",".columnGoro",".columnHiromasa",".columnIsao",".columnHayao",".columnHiroyuki",".startingScreen",".allPeopleMovies"])
 });
 
 const btnHiroyuki = document.getElementById("Hiroyuki");
-btnHiroyuki.addEventListener("click", function (e) {
-  e.preventDefault()
-  document.querySelector(".gridAll").style.display = "none";
-  document.querySelector(".all").style.display = "grid";
-  document.querySelector(".columnIsao").style.display = "none";
-  document.querySelector(".columnHayao").style.display = "none";
-  document.querySelector(".columnYoshifumi").style.display = "none";
-  document.querySelector(".columnHiroyuki").style.display = "grid";
-  document.querySelector(".columnGoro").style.display = "none";
-  document.querySelector(".columnHiromasa").style.display = "none";
-  document.querySelector(".startingScreen").style.display = "none";
-  document.querySelector(".allPeopleMovies").style.display = "none";
+btnHiroyuki.addEventListener("click", ()=> {
+  handlingDom([".all", ".columnHiroyuki"],[".gridAll",".columnGoro",".columnHiromasa",".columnIsao",".columnYoshifumi",".columnHayao",".startingScreen",".allPeopleMovies"])
 });
 
 const btnGoro = document.getElementById("Goro");
-btnGoro.addEventListener("click", function (e) {
-  e.preventDefault()
-  document.querySelector(".gridAll").style.display = "none";
-  document.querySelector(".all").style.display = "grid";
-  document.querySelector(".columnIsao").style.display = "none";
-  document.querySelector(".columnHayao").style.display = "none";
-  document.querySelector(".columnYoshifumi").style.display = "none";
-  document.querySelector(".columnHiroyuki").style.display = "none";
-  document.querySelector(".columnGoro").style.display = "grid";
-  document.querySelector(".columnHiromasa").style.display = "none";
-  document.querySelector(".startingScreen").style.display = "none";
-  document.querySelector(".allPeopleMovies").style.display = "none";
+btnGoro.addEventListener("click", ()=> {
+  handlingDom([".all", ".columnGoro"],[".gridAll",".columnHiromasa",".columnIsao",".columnYoshifumi",".columnHayao",".startingScreen",".allPeopleMovies",".columnHiroyuki"])
 });
 
 const btnHiromasa = document.getElementById("Hiromasa");
-btnHiromasa.addEventListener("click", function (e) {
-  e.preventDefault()
-  document.querySelector(".gridAll").style.display = "none";
-  document.querySelector(".all").style.display = "grid";
-  document.querySelector(".columnIsao").style.display = "none";
-  document.querySelector(".columnHayao").style.display = "none";
-  document.querySelector(".columnYoshifumi").style.display = "none";
-  document.querySelector(".columnHiroyuki").style.display = "none";
-  document.querySelector(".columnGoro").style.display = "none";
-  document.querySelector(".columnHiromasa").style.display = "grid";
-  document.querySelector(".startingScreen").style.display = "none";
-  document.querySelector(".allPeopleMovies").style.display = "none";
+btnHiromasa.addEventListener("click", ()=> {
+  handlingDom([".all", ".columnHiromasa"],[".gridAll",".columnIsao",".columnYoshifumi",".columnHayao",".startingScreen",".allPeopleMovies",".columnGoro",".columnHiroyuki"])
 });
 
 const btnAAllCharacters = document.getElementById("allCharacters");
-btnAAllCharacters.addEventListener("click", function (e) {
-  e.preventDefault()
-  document.querySelector(".gridAll").style.display = "none";
-  document.querySelector(".all").style.display = "none";
-  document.querySelector(".allPeopleMovies").style.display = "grid";
-  document.querySelector(".startingScreen").style.display = "none";
-  document.querySelector(".male").style.display = "none";
-  document.querySelector('.allCharacters').style.display = "grid";
-  document.querySelector(".female").style.display = "none";
-  document.querySelector(".unspecified").style.display = "none";
+btnAAllCharacters.addEventListener("click", ()=> {
+  handlingDom([".allPeopleMovies", ".allCharacters"],[".gridAll",".all",".startingScreen",".female",'.male',".unspecified"])
 });
 
 const btnMaleCharacters = document.getElementById("male");
-btnMaleCharacters.addEventListener("click", function (e) {
-  e.preventDefault()
-  document.querySelector(".gridAll").style.display = "none";
-  document.querySelector(".all").style.display = "none";
-  document.querySelector(".allPeopleMovies").style.display = "grid";
-  document.querySelector(".startingScreen").style.display = "none";
-  document.querySelector(".male").style.display = "grid";
-  document.querySelector('.allCharacters').style.display = "none";
-  document.querySelector(".female").style.display = "none";
-  document.querySelector(".unspecified").style.display = "none";
+btnMaleCharacters.addEventListener("click",()=> {
+  handlingDom([".allPeopleMovies", ".male"],[".gridAll",".all",".startingScreen",".female",'.allCharacters',".unspecified"])
 });
 
 const btnFemaleCharacters = document.getElementById("female");
-btnFemaleCharacters.addEventListener("click", function (e) {
-  e.preventDefault()
-  document.querySelector(".gridAll").style.display = "none";
-  document.querySelector(".all").style.display = "none";
-  document.querySelector(".allPeopleMovies").style.display = "grid";
-  document.querySelector(".startingScreen").style.display = "none";
-  document.querySelector(".male").style.display = "none";
-  document.querySelector('.allCharacters').style.display = "none";
-  document.querySelector(".female").style.display = "grid";
-  document.querySelector(".unspecified").style.display = "none";
+btnFemaleCharacters.addEventListener("click", ()=> {
+  handlingDom([".allPeopleMovies", ".female"],[".gridAll",".all",".startingScreen",".male",'.allCharacters',".unspecified"])
 });
 
 const btnUnspecifiedCharacters = document.getElementById("s/a");
-btnUnspecifiedCharacters.addEventListener("click", function (e) {
-  e.preventDefault()
-  manejoDom([".allPeopleMovies", ".unspecified"],[".gridAll",".all",".startingScreen",".male",'.allCharacters',".female"])
-  // document.querySelector(".gridAll").style.display = "none";
-  // document.querySelector(".all").style.display = "none";
-  // document.querySelector(".allPeopleMovies").style.display = "grid";
-  // document.querySelector(".startingScreen").style.display = "none";
-  // document.querySelector(".male").style.display = "none";
-  // document.querySelector('.allCharacters').style.display = "none";
-  // document.querySelector(".female").style.display = "none";
-  // document.querySelector(".unspecified").style.display = "grid";
+btnUnspecifiedCharacters.addEventListener("click",  ()=> {
+  handlingDom([".allPeopleMovies", ".unspecified"],[".gridAll",".all",".startingScreen",".male",'.allCharacters',".female"])
 });
 
-function manejoDom(clasesMostrar, classOcultar){ 
-  for ( let i=0; i<classOcultar.length; i++){
-    document.querySelector(i).style.display='none';
-  }
-
-  for ( let i=0; i<clasesMostrar.length; i++){
-    document.querySelector(i).style.display='grid';
-  }
-}
+//-----------------DIRECTORES DOM----------------
 
 const renderDirectorImage = (directorName) => {
   const director = directors.filter(director => director.name === directorName)[0]
@@ -251,17 +157,16 @@ document.querySelectorAll('.directorNavItem').forEach(navItem => {
   })
 })
 
-/*
-const graphCharacters=document.getElementById('graphCharacters')
-const chart= new Chart(graphCharacters, {type: 'doughnut',data})
+// const graphCharacters=document.getElementById('graphCharacters')
+// const chart= new Chart(graphCharacters, {type: 'doughnut',data})
   
-  const data={
-labels: ['MUJERES', 'HOMBRES', 'SIN ESPECIFICAR'],
-    datasets: [{
-      label: 'PERSONAJES',
-      data: [30, 5, 31],
-      backgroundColor: ['rgb(255, 99, 132)','rgb(54, 162, 235)','rgb(255, 205, 86)'],
-    }]
-  }
+//   const data={
+// labels: ['MUJERES', 'HOMBRES', 'SIN ESPECIFICAR'],
+//     datasets: [{
+//       label: 'PERSONAJES',
+//       data: [30, 5, 31],
+//       backgroundColor: ['rgb(255, 99, 132)','rgb(54, 162, 235)','rgb(255, 205, 86)'],
+//     }]
+//   }
 
-*/
+
