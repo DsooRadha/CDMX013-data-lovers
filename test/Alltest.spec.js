@@ -1,80 +1,109 @@
-import {filtering, orderAZ, orderZA} from '../src/data.js';
+import { filtering, orderAZ, orderZA, orderNumbers} from '../src/data.js';
 //import {allcharacters} from '../src/data.js';
 
-describe('filtrarporgenero', ()=> {
+describe('filtrarporgenero', () => {
 
-it('filtra segun el genero indicado', () => {
+    it('filtra segun el genero indicado', () => {
 
- const data = [
-    {
-        gender: 'Female'
-    },
-    {
-        gender: 'Male'
-    },
-    {
-        gender:'n/a'
-    },
- ];
-    expect(filtering(data, 'gender', 'Male')).toStrictEqual([
-    {
-        gender:'Male'
-    },
-]);  
-  });})
+        const data = [
+            {
+                gender: 'Female'
+            },
+            {
+                gender: 'Male'
+            },
+            {
+                gender: 'n/a'
+            },
+        ];
+        expect(filtering(data, 'gender', 'Male')).toStrictEqual([
+            {
+                gender: 'Male'
+            },
+        ]);
+    });
+})
 
-  describe("orderAZ ordena de la AZ", () => {
+describe("orderAZ ordena de la AZ", () => {
     it('ordena los nombres de la AZ', () => {
 
         const data = [
-           {
-               name: 'Pazu'
-           },
-           {
-               name: 'Totoro'
-           },
-           {
-               name:'Abso'
-           },
+            {
+                name: 'Pazu'
+            },
+            {
+                name: 'Totoro'
+            },
+            {
+                name: 'Abso'
+            },
         ];
-           expect(orderAZ(data, 'name')).toStrictEqual([
+        expect(orderAZ(data, 'name')).toStrictEqual([
             {
-                name: 'Abso' 
+                name: 'Abso'
             },
             {
-                name: 'Pazu' 
+                name: 'Pazu'
             },
             {
-                name:'Totoro'
+                name: 'Totoro'
             },
-       ]);  
-         });})
+        ]);
+    });
+})
 
-         describe("orderZA ordena de la AZ", () => {
-            it('ordena los nombres de la AZ', () => {
-        
-                const data = [
-                   {
-                       name: 'Pazu'
-                   },
-                   {
-                       name: 'Totoro'
-                   },
-                   {
-                       name:'Abso'
-                   },
-                ];
-                   expect(orderZA(data, 'name')).toStrictEqual([
-                    {
-                        name:'Totoro'
-                        
-                    },
-                    {
-                        name: 'Pazu' 
-                    },
-                    {
-                        name: 'Abso' 
-                    },
-               ]);  
-                 });})
-               
+describe("orderZA ordena de la AZ", () => {
+    it('ordena los nombres de la AZ', () => {
+
+        const data = [
+            {
+                name: 'Pazu'
+            },
+            {
+                name: 'Totoro'
+            },
+            {
+                name: 'Abso'
+            },
+        ];
+        expect(orderZA(data, 'name')).toStrictEqual([
+            {
+                name: 'Totoro'
+
+            },
+            {
+                name: 'Pazu'
+            },
+            {
+                name: 'Abso'
+            },
+        ]);
+    });
+})
+describe("orderNumbers, organiza numeros de menor a mayor", () => {
+    it('ordena los release_date de menor a mayor', () => {
+
+        const data = [
+            {
+                release_date: '2004'
+            },
+            {
+                release_date: '2014'
+            },
+            {
+                release_date: '1986'
+            },
+        ];
+        expect(orderNumbers(data, 'release_date')).toStrictEqual([
+            {
+                release_date: '1986'
+            },
+            {
+                release_date: '2004'
+            },
+            {
+                release_date: '2014'
+            },
+        ]);
+    });
+})

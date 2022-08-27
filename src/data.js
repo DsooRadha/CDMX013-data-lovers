@@ -2,21 +2,22 @@ import ghibli from './data/ghibli/ghibli.js';
 
 export const allcharacters = [];
 export const alltitle = [];
-export const diyouKnow1 = allcharacters.length
-export const diyouKnow2 = alltitle.length
-
-
-
+export const allrt=[];
 //ACESO A LA DATA JS Y EXTRAIGO CHARACTERS AND TITLE
 export const dataGhibliJs = (ghibli.films);
+
 dataGhibliJs.forEach(data => {
   const films = data.title
   alltitle.push(films)
+  const rt=(data.rt_score +' ' + data.title)
+  allrt.push(rt)
+ //console.log(data.vehicles, data.title)
   const character = data.people
   character.forEach(p => {
     allcharacters.push(p)
   });
 });
+
 
 export const directors = [
   { name: "Isao Takahata", selector: '.columnIsao', imgSrc: "./images/isao.png" },
@@ -28,13 +29,25 @@ export const directors = [
 ]
 export const peopleUnspecified = allcharacters.filter(p => p.gender !== 'Female' && p.gender !== 'Male')
 
-export const filtering=(allCharacters,propiedad,valor)=>{
-  return allCharacters.filter(p=>p[propiedad] == valor)
-  }
+export const filtering = (allCharacters, propiedad, valor) => {
+  return allCharacters.filter(p => p[propiedad] == valor)
+}
+
+// const human= filtering (allcharacters, 'specie', 'Human')
+// const eye_Color= filtering (allcharacters, 'eye_color', 'Grey')
+// const hair_color= filtering (allcharacters, 'hair_color', 'Brown')
+// console.log(hair_color)
+// export const didyouKnow1 = allcharacters.length
+// export const didyouKnow2 = alltitle.length
+//const location= filtering (dataGhibliJs, 'specie', 'Human')
+ //
+ 
+
+// console.log(dataGhibliJs)
+// console.log(peopleUnspecified.length)
 
 export const orderAZ = (x) => x.sort((o1, o2) => o1.name > o2.name ? 1 : -1);
 export const orderZA = (x) => x.sort((o1, o2) => o1.name < o2.name ? 1 : -1);
- 
+export const orderNumbers = (x) => x.sort((o1, o2) => o1.release_date - o2.release_date);
 
-
-
+console.log(orderNumbers(dataGhibliJs))

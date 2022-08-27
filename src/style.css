@@ -29,7 +29,6 @@ body {
   align-items: center;
   color: rgb(251, 244, 224);
   font-family: 'Patrick Hand', cursive;
-  
 }
 
 .startingScreen:before {
@@ -68,7 +67,7 @@ body {
   color: white;
   cursor: pointer;
   background-color: #011f4edf;
-  width: 24.511vw;
+  width: 19.55vw;
   height: 7vh;
   font-size: 1.2vw;
   font-family: 'Nanum Gothic';
@@ -211,7 +210,7 @@ footer {
   grid-template-rows: 36vw;
   position: relative;
   display: none;
-  height: 72vh;
+  background-color: #0c00088d;
 }
 
 .spaceRigth {
@@ -316,9 +315,16 @@ h6 {
   background-color: #9c4c75da;
 }
 
-.allPeopleMovies {
+.allPeopleMovies,.didyouKnow {
   height: 72vh;
   display: none;
+  background-color: #00040c8d;
+}
+
+.didyouKnow{
+  height: 72vh;
+  background-color: #01081f8d;
+  display: block;
 }
 
 
