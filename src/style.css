@@ -321,13 +321,24 @@ h6 {
   background-color: #00040c8d;
 }
 
-.didYouKnow{
+.didyouKnow{
   height: 72vh;
-  background-color: #01081fa2;
-  display: grid
+  background-color: #020a238f;
+  display: grid;
+  color:aliceblue;
+  font-family: 'Patrick Hand';
+  font-size: 3vh;
+  padding: 2vw;
+
 }
 
-
+.didyouKnow div{
+  background-color: #042253;
+  border-radius: 2vw;
+  padding-left: 3vw;
+  padding-right:3vw ;
+  margin:1vw ;
+}
 @media (max-width: 800px) {
   .header {
     height: 12vh;
