@@ -315,16 +315,16 @@ h6 {
   background-color: #9c4c75da;
 }
 
-.allPeopleMovies,.didyouKnow {
+.allPeopleMovies{
   height: 72vh;
   display: none;
   background-color: #00040c8d;
 }
 
-.didyouKnow{
+.didYouKnow{
   height: 72vh;
-  background-color: #01081f8d;
-  display: block;
+  background-color: #01081fa2;
+  display: grid
 }
 
 

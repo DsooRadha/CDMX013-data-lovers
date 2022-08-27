@@ -86,62 +86,61 @@ function handlingDom(clasesMostrar, classOcultar) {
 }
 
 const btnMovies = document.getElementById("movies");
-btnMovies.addEventListener("click", () => {
-  handlingDom([".gridAll"], [".all", ".startingScreen", ".allPeopleMovies"])
+btnMovies.addEventListener ("click", ()=> {
+  handlingDom([".gridAll"],[".all",".startingScreen",".allPeopleMovies"])
 });
 
 const btnHayao = document.getElementById("Hayao");
-btnHayao.addEventListener("click", () => {
-  handlingDom([".all", ".columnHayao"], [".gridAll", ".columnIsao", ".columnGoro", ".columnHiromasa", ".columnYoshifumi", ".columnHiroyuki", ".startingScreen", ".allPeopleMovies"])
-});
+btnHayao.addEventListener("click", ()=> {
+  handlingDom([".all", ".columnHayao"],[".gridAll",".columnIsao",".columnGoro",".columnHiromasa",".columnYoshifumi",".columnHiroyuki",".startingScreen",".allPeopleMovies"]
+  )});
 
 const btnIsao = document.getElementById("Isao");
-btnIsao.addEventListener("click", () => {
-  handlingDom([".all", ".columnIsao"], [".gridAll", ".columnGoro", ".columnHiromasa", ".columnYoshifumi", ".columnHayao", ".columnHiroyuki", ".startingScreen", ".allPeopleMovies"])
+btnIsao.addEventListener("click", ()=> {
+  handlingDom([".all", ".columnIsao"],[".gridAll",".columnGoro",".columnHiromasa",".columnYoshifumi",".columnHayao",".columnHiroyuki",".startingScreen",".allPeopleMovies"])
 });
 
 const btnYoshifumi = document.getElementById("Yoshifumi");
-btnYoshifumi.addEventListener("click", () => {
-  handlingDom([".all", ".columnYoshifumi"], [".gridAll", ".columnGoro", ".columnHiromasa", ".columnIsao", ".columnHayao", ".columnHiroyuki", ".startingScreen", ".allPeopleMovies"])
+btnYoshifumi.addEventListener("click", ()=> {
+  handlingDom([".all", ".columnYoshifumi"],[".gridAll",".columnGoro",".columnHiromasa",".columnIsao",".columnHayao",".columnHiroyuki",".startingScreen",".allPeopleMovies"])
 });
 
 const btnHiroyuki = document.getElementById("Hiroyuki");
-btnHiroyuki.addEventListener("click", () => {
-  handlingDom([".all", ".columnHiroyuki"], [".gridAll", ".columnGoro", ".columnHiromasa", ".columnIsao", ".columnYoshifumi", ".columnHayao", ".startingScreen", ".allPeopleMovies"])
+btnHiroyuki.addEventListener("click", ()=> {
+  handlingDom([".all", ".columnHiroyuki"],[".gridAll",".columnGoro",".columnHiromasa",".columnIsao",".columnYoshifumi",".columnHayao",".startingScreen",".allPeopleMovies"])
 });
 
 const btnGoro = document.getElementById("Goro");
-btnGoro.addEventListener("click", () => {
-  handlingDom([".all", ".columnGoro"], [".gridAll", ".columnHiromasa", ".columnIsao", ".columnYoshifumi", ".columnHayao", ".startingScreen", ".allPeopleMovies", ".columnHiroyuki"])
+btnGoro.addEventListener("click", ()=> {
+  handlingDom([".all", ".columnGoro"],[".gridAll",".columnHiromasa",".columnIsao",".columnYoshifumi",".columnHayao",".startingScreen",".allPeopleMovies",".columnHiroyuki"])
 });
 
 const btnHiromasa = document.getElementById("Hiromasa");
-btnHiromasa.addEventListener("click", () => {
-  handlingDom([".all", ".columnHiromasa"], [".gridAll", ".columnIsao", ".columnYoshifumi", ".columnHayao", ".startingScreen", ".allPeopleMovies", ".columnGoro", ".columnHiroyuki"])
+btnHiromasa.addEventListener("click", ()=> {
+  handlingDom([".all", ".columnHiromasa"],[".gridAll",".columnIsao",".columnYoshifumi",".columnHayao",".startingScreen",".allPeopleMovies",".columnGoro",".columnHiroyuki"])
 });
 
-const btnAAllCharacters = document.getElementById("allCharacters");
-btnAAllCharacters.addEventListener("click", () => {
-  handlingDom([".allPeopleMovies", ".allCharacters"], [".gridAll", ".all", ".startingScreen", ".female", '.male', ".unspecified"])
+const btnAllCharacters = document.getElementById("allCharacters");
+btnAllCharacters.addEventListener("click", ()=> {
+  handlingDom([".allPeopleMovies", ".allCharacters"],[".gridAll",".all",".startingScreen",".female",'.male',".unspecified"])
 });
 
 const btnMaleCharacters = document.getElementById("male");
-btnMaleCharacters.addEventListener("click", () => {
-  handlingDom([".allPeopleMovies", ".male"], [".gridAll", ".all", ".startingScreen", ".female", '.allCharacters', ".unspecified"])
+btnMaleCharacters.addEventListener("click",()=> {
+  handlingDom([".allPeopleMovies", ".male"],[".gridAll",".all",".startingScreen",".female",'.allCharacters',".unspecified"])
 });
 
 const btnFemaleCharacters = document.getElementById("female");
-btnFemaleCharacters.addEventListener("click", () => {
-  handlingDom([".allPeopleMovies", ".female"], [".gridAll", ".all", ".startingScreen", ".male", '.allCharacters', ".unspecified"])
+btnFemaleCharacters.addEventListener("click", ()=> {
+  handlingDom([".allPeopleMovies", ".female"],[".gridAll",".all",".startingScreen",".male",'.allCharacters',".unspecified"])
 });
 
 const btnUnspecifiedCharacters = document.getElementById("s/a");
-btnUnspecifiedCharacters.addEventListener("click", () => {
-  handlingDom([".allPeopleMovies", ".unspecified"], [".gridAll", ".all", ".startingScreen", ".male", '.allCharacters', ".female"])
+btnUnspecifiedCharacters.addEventListener("click",  ()=> {
+  handlingDom([".allPeopleMovies", ".unspecified"],[".gridAll",".all",".startingScreen",".male",'.allCharacters',".female"])
 });
 
 //-----------------DIRECTORES DOM----------------
-
 const renderDirectorImage = (directorName) => {
   const director = directors.filter(director => director.name === directorName)[0]
   return `<img id="imgHayao" src="${director.imgSrc}" alt="${director.name}" style="display: block;">`;
@@ -157,18 +156,6 @@ document.querySelectorAll('.directorNavItem').forEach(navItem => {
     directorSpaceRightElement.innerHTML = renderDirectorImage(directorName)
   })
 })
-
-// const graphCharacters=document.getElementById('graphCharacters')
-// const chart= new Chart(graphCharacters, {type: 'doughnut',data})
-
-//   const data={
-// labels: ['MUJERES', 'HOMBRES', 'SIN ESPECIFICAR'],
-//     datasets: [{
-//       label: 'PERSONAJES',
-//       data: [30, 5, 31],
-//       backgroundColor: ['rgb(255, 99, 132)','rgb(54, 162, 235)','rgb(255, 205, 86)'],
-//     }]
-//   }
 
 const formulario = document.querySelector('#formulario');
 const boton = document.querySelector('#boton');

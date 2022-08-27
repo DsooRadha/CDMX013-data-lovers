@@ -18,7 +18,6 @@ dataGhibliJs.forEach(data => {
   });
 });
 
-
 export const directors = [
   { name: "Isao Takahata", selector: '.columnIsao', imgSrc: "./images/isao.png" },
   { name: "Hayao Miyazaki", selector: '.columnHayao', imgSrc: "./images/hayo.png" },
@@ -40,9 +39,6 @@ export const filtering = (allCharacters, propiedad, valor) => {
 // export const didyouKnow1 = allcharacters.length
 // export const didyouKnow2 = alltitle.length
 //const location= filtering (dataGhibliJs, 'specie', 'Human')
- //
- 
-
 // console.log(dataGhibliJs)
 // console.log(peopleUnspecified.length)
 
@@ -50,4 +46,4 @@ export const orderAZ = (x) => x.sort((o1, o2) => o1.name > o2.name ? 1 : -1);
 export const orderZA = (x) => x.sort((o1, o2) => o1.name < o2.name ? 1 : -1);
 export const orderNumbers = (x) => x.sort((o1, o2) => o1.release_date - o2.release_date);
 
-console.log(orderNumbers(dataGhibliJs))
+//console.log(orderNumbers(dataGhibliJs))
