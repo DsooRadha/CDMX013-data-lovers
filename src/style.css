@@ -9,7 +9,7 @@ body {
 }
 
 .header {
-  background: #0e023bf9;
+  background: #1e086df9;
   height: 7vw;
   background-image: url("./images/studio-ghibli_0.png");
   background-size: 17vw;
@@ -43,7 +43,7 @@ body {
 .startingScreen img {
   width: 40vw;
   position: relative;
-  opacity: 0.65;
+  opacity: 0.75;
   margin-top: 4vh
 }
 
@@ -66,8 +66,8 @@ body {
   padding: 8px 16px;
   color: white;
   cursor: pointer;
-  background-color: #0e023be4;
-  width: 24.494vw;
+  background-color: #180757e1;
+  width: 20vw;
   height: 7vh;
   font-size: 1.2vw;
   font-family: 'Nanum Gothic';
@@ -77,12 +77,12 @@ body {
 }
 
 .dropdown:hover button {
-  background-color: #24023be4;
+  background-color: #1d052cac;
   color: white;
 }
 
 .dropdown div {
-  background-color: #0e023be4;
+  background-color: #180757d8;
   z-index: 1;
   visibility: hidden;
   position: absolute;
@@ -112,9 +112,18 @@ body {
 }
 
 .dropdown div a:hover {
-  background-color: #24023be4;
+  background-color: #290b3b6d;
   color: #fff;
 }
+
+#home{
+width: 8vw;
+height: 13vh;
+background-image:  url("./images/homedatalovers.png" );
+background-size: 85%;
+
+}
+
 
 .gridAll {
   height: 72vh;
@@ -185,7 +194,7 @@ body {
 
 footer {
   color: rgb(222, 232, 240);
-  background: #0e023bf9;
+  background: #180757cb;
   height: 7vh;
   display: flex;
   align-items: center;
