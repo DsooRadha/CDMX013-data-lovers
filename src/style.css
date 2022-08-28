@@ -9,7 +9,7 @@ body {
 }
 
 .header {
-  background: #1e086df9;
+  background: #180757e1;
   height: 7vw;
   background-image: url("./images/studio-ghibli_0.png");
   background-size: 17vw;
@@ -66,8 +66,8 @@ body {
   padding: 8px 16px;
   color: white;
   cursor: pointer;
-  background-color: #180757e1;
-  width: 20vw;
+  background-color: #180757cc;
+  width: 19.55vw;
   height: 7vh;
   font-size: 1.2vw;
   font-family: 'Nanum Gothic';
@@ -119,9 +119,10 @@ body {
 #home{
 width: 8vw;
 height: 13vh;
-background-image:  url("./images/homedatalovers.png" );
-background-size: 85%;
-
+background-image:  url("./images/flame.png" );
+background-size: cover;
+border-radius: 1.5vw;
+background-repeat: no-repeat;
 }
 
 
@@ -327,7 +328,7 @@ h6 {
   background-color: #00040c8d;
 }
 
-.didyouKnow{
+.didyouKnow, .spaceSearch{
   height: 72vh;
   background-color: #020a238f;
   display: grid;

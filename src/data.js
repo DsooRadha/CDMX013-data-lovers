@@ -44,3 +44,18 @@ export const orderNumbers = (x) => x.sort((o1, o2) => o1.release_date - o2.relea
 // console.log(dataGhibliJs)
 // console.log(peopleUnspecified.length)
 //console.log(orderNumbers(dataGhibliJs))
+const formulario = document.querySelector('#formulario');
+export const search = () => {
+  const texto = formulario.value.toLowerCase()
+  for (let dataGhibli of dataGhibliJs) {
+    let title = dataGhibli.title.toLowerCase()
+    if (title.indexOf(texto) !== -1) {
+      resultado.innerHTML +=
+        `<li>${dataGhibli.title}-${dataGhibli.poster} </li>`
+    }
+  }
+  if(resultado.innerHTML=== ''){
+    resultado.innerHTML +=`<li>No se ha encontrado su busqueda...</li>`
+  }
+}
+const resultado = document.querySelector('#resultado');

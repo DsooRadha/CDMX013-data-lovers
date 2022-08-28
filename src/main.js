@@ -1,6 +1,6 @@
 
 //import { Chart } from "chart.js";
-import { dataGhibliJs, directors, peopleUnspecified, allcharacters, filtering, orderAZ, orderZA } from "./data.js";
+import { dataGhibliJs, directors, peopleUnspecified, allcharacters, filtering, orderAZ, orderZA, search } from "./data.js";
 
 //--------------------FETCH-----------------AllMoviesZA
 dataAccess()
@@ -145,6 +145,11 @@ btnDidYouKnow.addEventListener("click",()=>{
   handlingDom([".didyouKnow"],[".gridAll",".all",".startingScreen",".male",'.allCharacters',".female",".allPeopleMovies", ".unspecified"])
 })
 
+const btnSearch=document.getElementById("search");
+btnSearch.addEventListener("click",()=>{
+  handlingDom([".spaceSearch"],[".gridAll",".all",".didyouKnow",".startingScreen",".male",'.allCharacters',".female",".allPeopleMovies", ".unspecified"])
+})
+
 //-----------------DIRECTORES DOM----------------
 const renderDirectorImage = (directorName) => {
   const director = directors.filter(director => director.name === directorName)[0]
@@ -162,22 +167,8 @@ document.querySelectorAll('.directorNavItem').forEach(navItem => {
   })
 })
 
-const formulario = document.querySelector('#formulario');
+
 const boton = document.querySelector('#boton');
-const resultado = document.querySelector('#resultado');
-const filtrar = () => {
-  //resultado.innerHTML='';
-  //console.log(formulario.value);
-  const texto = formulario.value.toLowerCase()
-  for (let dataGhibli of dataGhibliJs) {
-    let title = dataGhibli.title.toLowerCase()
-    if (title.indexOf(texto) !== -1) {
-      resultado.innerHTML +=
-        `<li>${dataGhibli.title}-${dataGhibli.poster} </li>`
-    }
-  }
-  if(resultado.innerHTML=== ''){
-    resultado.innerHTML +=`<li>No se ha encontrado su busqueda...</li>`
-  }
-}
-boton.addEventListener('click', filtrar) 
+
+
+boton.addEventListener('click', search) 
