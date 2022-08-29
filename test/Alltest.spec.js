@@ -1,4 +1,4 @@
-import { filtering, orderAZ, orderZA, orderNumbers} from '../src/data.js';
+import { filtering, orderAZ, orderZA, orderNumbers, search} from '../src/data.js';
 //import {allcharacters} from '../src/data.js';
 
 describe('filtrarporgenero', () => {
@@ -103,6 +103,59 @@ describe("orderNumbers, organiza numeros de menor a mayor", () => {
             },
             {
                 release_date: '2014'
+            },
+        ]);
+    });
+})
+
+describe("orderAZ ordena de la AZ", () => {
+    it('ordena los nombres de la AZ', () => {
+
+        const data = [
+            {
+                name: 'Pazu'
+            },
+            {
+                name: 'Totoro'
+            },
+            {
+                name: 'Abso'
+            },
+        ];
+        expect(orderAZ(data, 'name')).toStrictEqual([
+            {
+                name: 'Abso'
+            },
+            {
+                name: 'Pazu'
+            },
+            {
+                name: 'Totoro'
+            },
+        ]);
+    });
+})
+
+describe("busca filtrando en la data", () => {
+    it('muestra todo lo que concida con el valor dado', () => {
+
+        const data = [
+            {
+                title: "The Secret World"
+            },
+            {
+                title: "My Neighbors the Yamadas"
+            },
+            {
+                title: 'Castle in the Sky'
+            },
+        ];
+        expect(search(data, 'a')).toStrictEqual([
+            {
+                title: "My Neighbors the Yamadas"
+            },
+            {
+                title: 'Castle in the Sky'
             },
         ]);
     });
