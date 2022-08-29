@@ -44,18 +44,31 @@ export const orderNumbers = (x) => x.sort((o1, o2) => o1.release_date - o2.relea
 // console.log(dataGhibliJs)
 // console.log(peopleUnspecified.length)
 //console.log(orderNumbers(dataGhibliJs))
-const formulario = document.querySelector('#formulario');
+
+const spaceSearch = document.querySelector('#formulario');
 export const search = () => {
-  const texto = formulario.value.toLowerCase()
-  for (let dataGhibli of dataGhibliJs) {
+  const texto = spaceSearch.value.toLowerCase()
+  result.innerHTML = ""
+   for (let dataGhibli of dataGhibliJs) {
     let title = dataGhibli.title.toLowerCase()
     if (title.indexOf(texto) !== -1) {
-      resultado.innerHTML +=
-        `<li>${dataGhibli.title}-${dataGhibli.poster} </li>`
+     result.innerHTML +=
+      `<div class = "card">
+        <img src="${dataGhibli.poster}"><h4> ${dataGhibli.title}</h4>
+        </div>`
+    }
+   }
+  for (let characters of allcharacters) {
+    let title = characters.name.toLowerCase()
+    if (title.indexOf(texto) !== -1) {
+      result.innerHTML +=
+      `<div class = "card">
+        <img src="${characters.img}"><h4> ${characters.name}</h4>
+        </div>`
     }
   }
-  if(resultado.innerHTML=== ''){
-    resultado.innerHTML +=`<li>No se ha encontrado su busqueda...</li>`
-  }
+  if(result.innerHTML==='' ||result.innerHTML===[0-9]){
+    result.innerHTML +=`<h4>No se ha encontrado su busqueda...</h4>`
 }
-const resultado = document.querySelector('#resultado');
+}
+const result = document.querySelector('#result');

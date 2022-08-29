@@ -29,6 +29,7 @@ function dataAccess() {
 const renderDirector = (directorName, columnDirectorSelector) => {
 
   const movies = filtering(dataGhibliJs, 'director', directorName)
+  
   movies.forEach(d => {
     const columnDirectors = document.querySelector(columnDirectorSelector);
 
@@ -58,7 +59,7 @@ function showGender(item) {
   card.append(img, name)
   return (card);
 }
-//--------------------DIRECTOR-----------------title and Date
+
 window.addEventListener('load', () => {
   const columnCharacters = document.querySelector(".allCharacters");
   const columnMale = document.querySelector(".male");
@@ -87,62 +88,62 @@ function handlingDom(clasesMostrar, classOcultar) {
 
 const btnMovies = document.getElementById("movies");
 btnMovies.addEventListener ("click", ()=> {
-  handlingDom([".gridAll"],[".all",".startingScreen",".allPeopleMovies",".didyouKnow"])
+  handlingDom([".gridAll"],[".all",".startingScreen",".allPeopleMovies",".didyouKnow",".spaceSearch"])
 });
 
 const btnHayao = document.getElementById("Hayao");
 btnHayao.addEventListener("click", ()=> {
-  handlingDom([".all", ".columnHayao"],[".gridAll",".didyouKnow",".columnIsao",".columnGoro",".columnHiromasa",".columnYoshifumi",".columnHiroyuki",".startingScreen",".allPeopleMovies"]
+  handlingDom([".all", ".columnHayao"],[".gridAll",".didyouKnow",".spaceSearch",".columnIsao",".columnGoro",".columnHiromasa",".columnYoshifumi",".columnHiroyuki",".startingScreen",".allPeopleMovies"]
   )});
 
 const btnIsao = document.getElementById("Isao");
 btnIsao.addEventListener("click", ()=> {
-  handlingDom([".all", ".columnIsao"],[".gridAll",".columnGoro",".columnHiromasa",".didyouKnow",".columnYoshifumi",".columnHayao",".columnHiroyuki",".startingScreen",".allPeopleMovies"])
+  handlingDom([".all", ".columnIsao"],[".gridAll",".columnGoro",".spaceSearch",".columnHiromasa",".didyouKnow",".columnYoshifumi",".columnHayao",".columnHiroyuki",".startingScreen",".allPeopleMovies"])
 });
 
 const btnYoshifumi = document.getElementById("Yoshifumi");
 btnYoshifumi.addEventListener("click", ()=> {
-  handlingDom([".all", ".columnYoshifumi"],[".gridAll",".columnGoro",".columnHiromasa",".didyouKnow",".columnIsao",".columnHayao",".columnHiroyuki",".startingScreen",".allPeopleMovies"])
+  handlingDom([".all", ".columnYoshifumi"],[".gridAll",".spaceSearch",".columnGoro",".columnHiromasa",".didyouKnow",".columnIsao",".columnHayao",".columnHiroyuki",".startingScreen",".allPeopleMovies"])
 });
 
 const btnHiroyuki = document.getElementById("Hiroyuki");
 btnHiroyuki.addEventListener("click", ()=> {
-  handlingDom([".all", ".columnHiroyuki"],[".gridAll",".columnGoro",".columnHiromasa",".didyouKnow",".columnIsao",".columnYoshifumi",".columnHayao",".startingScreen",".allPeopleMovies"])
+  handlingDom([".all", ".columnHiroyuki"],[".gridAll",".spaceSearch",".columnGoro",".columnHiromasa",".didyouKnow",".columnIsao",".columnYoshifumi",".columnHayao",".startingScreen",".allPeopleMovies"])
 });
 
 const btnGoro = document.getElementById("Goro");
 btnGoro.addEventListener("click", ()=> {
-  handlingDom([".all", ".columnGoro"],[".gridAll",".columnHiromasa",".columnIsao",".didyouKnow",".columnYoshifumi",".columnHayao",".startingScreen",".allPeopleMovies",".columnHiroyuki"])
+  handlingDom([".all", ".columnGoro"],[".gridAll",".spaceSearch",".columnHiromasa",".columnIsao",".didyouKnow",".columnYoshifumi",".columnHayao",".startingScreen",".allPeopleMovies",".columnHiroyuki"])
 });
 
 const btnHiromasa = document.getElementById("Hiromasa");
 btnHiromasa.addEventListener("click", ()=> {
-  handlingDom([".all", ".columnHiromasa"],[".gridAll",".columnIsao",".columnYoshifumi",".didyouKnow",".columnHayao",".startingScreen",".allPeopleMovies",".columnGoro",".columnHiroyuki"])
+  handlingDom([".all", ".columnHiromasa"],[".gridAll",".spaceSearch",".columnIsao",".columnYoshifumi",".didyouKnow",".columnHayao",".startingScreen",".allPeopleMovies",".columnGoro",".columnHiroyuki"])
 });
 
 const btnAllCharacters = document.getElementById("allCharacters");
 btnAllCharacters.addEventListener("click", ()=> {
-  handlingDom([".allPeopleMovies", ".allCharacters"],[".gridAll",".all",".didyouKnow",".startingScreen",".female",'.male',".unspecified"])
+  handlingDom([".allPeopleMovies", ".allCharacters"],[".spaceSearch",".gridAll",".all",".didyouKnow",".startingScreen",".female",'.male',".unspecified"])
 });
 
 const btnMaleCharacters = document.getElementById("male");
 btnMaleCharacters.addEventListener("click",()=> {
-  handlingDom([".allPeopleMovies", ".male"],[".gridAll",".all",".startingScreen",".didyouKnow",".female",'.allCharacters',".unspecified"])
+  handlingDom([".allPeopleMovies", ".male"],[".gridAll",".all",".spaceSearch",".startingScreen",".didyouKnow",".female",'.allCharacters',".unspecified"])
 });
 
 const btnFemaleCharacters = document.getElementById("female");
 btnFemaleCharacters.addEventListener("click", ()=> {
-  handlingDom([".allPeopleMovies", ".female"],[".gridAll",".all",".startingScreen",".didyouKnow",".male",'.allCharacters',".unspecified"])
+  handlingDom([".allPeopleMovies", ".female"],[".gridAll",".all",".spaceSearch",".startingScreen",".didyouKnow",".male",'.allCharacters',".unspecified"])
 });
 
 const btnUnspecifiedCharacters = document.getElementById("s/a");
 btnUnspecifiedCharacters.addEventListener("click",  ()=> {
-  handlingDom([".allPeopleMovies", ".unspecified"],[".gridAll",".all",".didyouKnow",".startingScreen",".male",'.allCharacters',".female"])
+  handlingDom([".allPeopleMovies", ".unspecified"],[".gridAll",".all",".didyouKnow",".spaceSearch",".startingScreen",".male",'.allCharacters',".female"])
 });
 
 const btnDidYouKnow=document.getElementById("didYouKnow");
 btnDidYouKnow.addEventListener("click",()=>{
-  handlingDom([".didyouKnow"],[".gridAll",".all",".startingScreen",".male",'.allCharacters',".female",".allPeopleMovies", ".unspecified"])
+  handlingDom([".didyouKnow"],[".gridAll",".all",".startingScreen",".spaceSearch",".male",'.allCharacters',".female",".allPeopleMovies", ".unspecified"])
 })
 
 const btnSearch=document.getElementById("search");
@@ -168,7 +169,5 @@ document.querySelectorAll('.directorNavItem').forEach(navItem => {
 })
 
 
-const boton = document.querySelector('#boton');
-
-
-boton.addEventListener('click', search) 
+const btn = document.querySelector('#boton');
+btn.addEventListener('click', search) 
