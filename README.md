@@ -28,6 +28,7 @@ Studio Ghibli tiene una contribución en el pensar diferente, cuestionar los rol
 ### Diseño de la Interfaz de Usuario
 #### Prototipo de baja fidelidad
 
+[]
 Durante tu trabajo deberás haber hecho e iterado bocetos (_sketches_) de tu
 solución usando papel y lápiz. Te recomendamos tomar fotos de todas las
 iteraciones que hagas, que las subas a tu repositorio y las menciones en tu
