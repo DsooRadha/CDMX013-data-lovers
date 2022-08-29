@@ -127,13 +127,15 @@ body {
   margin-left: 3vw;
 }
 
-#btn{
-    width: 3vw;
-    height: 3vw;
-    background-image: url("./images/iconmonstr-magnifier-4-240.png");
-    background-size: cover;
+#btn {
+    width: 6vw;
+    align-self: center;
+    height: 4vw;
+    background-color: #46045350;
+    font-family: 'Nanum Gothic';
+    color: aliceblue;
     border-radius: 1vw;
-    background-repeat: no-repeat;
+    cursor: pointer;
 }
 
 .gridAll {
@@ -253,7 +255,7 @@ footer {
 .allDirectors {
   grid-column: 2/4;
   overflow: auto;
-  background-color: #07238b4d;
+  background-color: #236bc84d;
   padding: 3vw;
   margin: 4vw;
   border-radius: 2vw;
@@ -508,13 +510,11 @@ h6 {
   .female div,
   .unspecified div {
     grid-template-rows: 18vh;
-
   }
 
   .unspecified div {
     height: 20vh;
   }
-
 
   .ColumnTwo img,
   .allCharacters img,
