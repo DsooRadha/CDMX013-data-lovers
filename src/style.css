@@ -147,13 +147,11 @@ body {
   margin: 2vw;
   grid-column-gap: 9vw;
   grid-row-gap: -1vw;
-
 }
 
 #result{
   height: 50vh;
-  background-color: #060214a2;
-  border-radius: 2vw;
+  margin-top: -2vh;
 }
 
 .ColumnTwo div,
@@ -428,6 +426,18 @@ h6 {
 
 #result div{
   height: 25vh;
+}
+
+#formSearch{
+  border-radius: 1vw;
+  height: 2vw;
+  width: 30vw;
+  margin-top: 2vh;
+  background-color: #18026f97;
+  color: aliceblue;
+  font-family: 'Patrick Hand';
+  font-size: 2.5vh;
+  padding: 0.8vw;
 }
 
 @media (max-width: 800px) {

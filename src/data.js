@@ -45,7 +45,9 @@ export const orderNumbers = (x) => x.sort((o1, o2) => o1.release_date - o2.relea
 // console.log(peopleUnspecified.length)
 //console.log(orderNumbers(dataGhibliJs))
 
-const spaceSearch = document.querySelector('#formulario');
+
+
+const spaceSearch = document.querySelector('#formSearch');
 export const search = () => {
   const texto = spaceSearch.value.toLowerCase()
   result.innerHTML = ""
@@ -58,12 +60,12 @@ export const search = () => {
         </div>`
     }
    }
-  for (let characters of allcharacters) {
-    let title = characters.name.toLowerCase()
+  for (let character of allcharacters) {
+    let title = character.name.toLowerCase()
     if (title.indexOf(texto) !== -1) {
       result.innerHTML +=
       `<div class = "card">
-        <img src="${characters.img}"><h4> ${characters.name}</h4>
+        <img src="${character.img}"><h4> ${character.name}</h4>
         </div>`
     }
   }
