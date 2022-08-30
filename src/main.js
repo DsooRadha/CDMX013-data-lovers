@@ -1,6 +1,6 @@
 
 //import { Chart } from "chart.js";
-import { dataGhibliJs, directors, peopleUnspecified, allcharacters, filtering, orderAZ, orderZA, search } from "./data.js";
+import { dataGhibliJs, directors, peopleUnspecified, allcharacters, filtering, orderAZ, orderZA, search} from "./data.js";
 
 //--------------------FETCH-----------------AllMoviesZA
 dataAccess()
@@ -29,7 +29,7 @@ function dataAccess() {
 const renderDirector = (directorName, columnDirectorSelector) => {
 
   const movies = filtering(dataGhibliJs, 'director', directorName)
-  
+
   movies.forEach(d => {
     const columnDirectors = document.querySelector(columnDirectorSelector);
 
@@ -87,68 +87,69 @@ function handlingDom(clasesMostrar, classOcultar) {
 }
 
 const btnMovies = document.getElementById("movies");
-btnMovies.addEventListener ("click", ()=> {
-  handlingDom([".gridAll"],[".all",".startingScreen",".allPeopleMovies",".didyouKnow",".spaceSearch"])
+btnMovies.addEventListener("click", () => {
+  handlingDom([".gridAll"], [".all", ".startingScreen", ".allPeopleMovies", ".didyouKnow", ".spaceSearch"])
 });
 
 const btnHayao = document.getElementById("Hayao");
-btnHayao.addEventListener("click", ()=> {
-  handlingDom([".all", ".columnHayao"],[".gridAll",".didyouKnow",".spaceSearch",".columnIsao",".columnGoro",".columnHiromasa",".columnYoshifumi",".columnHiroyuki",".startingScreen",".allPeopleMovies"]
-  )});
+btnHayao.addEventListener("click", () => {
+  handlingDom([".all", ".columnHayao"], [".gridAll", ".didyouKnow", ".spaceSearch", ".columnIsao", ".columnGoro", ".columnHiromasa", ".columnYoshifumi", ".columnHiroyuki", ".startingScreen", ".allPeopleMovies"]
+  )
+});
 
 const btnIsao = document.getElementById("Isao");
-btnIsao.addEventListener("click", ()=> {
-  handlingDom([".all", ".columnIsao"],[".gridAll",".columnGoro",".spaceSearch",".columnHiromasa",".didyouKnow",".columnYoshifumi",".columnHayao",".columnHiroyuki",".startingScreen",".allPeopleMovies"])
+btnIsao.addEventListener("click", () => {
+  handlingDom([".all", ".columnIsao"], [".gridAll", ".columnGoro", ".spaceSearch", ".columnHiromasa", ".didyouKnow", ".columnYoshifumi", ".columnHayao", ".columnHiroyuki", ".startingScreen", ".allPeopleMovies"])
 });
 
 const btnYoshifumi = document.getElementById("Yoshifumi");
-btnYoshifumi.addEventListener("click", ()=> {
-  handlingDom([".all", ".columnYoshifumi"],[".gridAll",".spaceSearch",".columnGoro",".columnHiromasa",".didyouKnow",".columnIsao",".columnHayao",".columnHiroyuki",".startingScreen",".allPeopleMovies"])
+btnYoshifumi.addEventListener("click", () => {
+  handlingDom([".all", ".columnYoshifumi"], [".gridAll", ".spaceSearch", ".columnGoro", ".columnHiromasa", ".didyouKnow", ".columnIsao", ".columnHayao", ".columnHiroyuki", ".startingScreen", ".allPeopleMovies"])
 });
 
 const btnHiroyuki = document.getElementById("Hiroyuki");
-btnHiroyuki.addEventListener("click", ()=> {
-  handlingDom([".all", ".columnHiroyuki"],[".gridAll",".spaceSearch",".columnGoro",".columnHiromasa",".didyouKnow",".columnIsao",".columnYoshifumi",".columnHayao",".startingScreen",".allPeopleMovies"])
+btnHiroyuki.addEventListener("click", () => {
+  handlingDom([".all", ".columnHiroyuki"], [".gridAll", ".spaceSearch", ".columnGoro", ".columnHiromasa", ".didyouKnow", ".columnIsao", ".columnYoshifumi", ".columnHayao", ".startingScreen", ".allPeopleMovies"])
 });
 
 const btnGoro = document.getElementById("Goro");
-btnGoro.addEventListener("click", ()=> {
-  handlingDom([".all", ".columnGoro"],[".gridAll",".spaceSearch",".columnHiromasa",".columnIsao",".didyouKnow",".columnYoshifumi",".columnHayao",".startingScreen",".allPeopleMovies",".columnHiroyuki"])
+btnGoro.addEventListener("click", () => {
+  handlingDom([".all", ".columnGoro"], [".gridAll", ".spaceSearch", ".columnHiromasa", ".columnIsao", ".didyouKnow", ".columnYoshifumi", ".columnHayao", ".startingScreen", ".allPeopleMovies", ".columnHiroyuki"])
 });
 
 const btnHiromasa = document.getElementById("Hiromasa");
-btnHiromasa.addEventListener("click", ()=> {
-  handlingDom([".all", ".columnHiromasa"],[".gridAll",".spaceSearch",".columnIsao",".columnYoshifumi",".didyouKnow",".columnHayao",".startingScreen",".allPeopleMovies",".columnGoro",".columnHiroyuki"])
+btnHiromasa.addEventListener("click", () => {
+  handlingDom([".all", ".columnHiromasa"], [".gridAll", ".spaceSearch", ".columnIsao", ".columnYoshifumi", ".didyouKnow", ".columnHayao", ".startingScreen", ".allPeopleMovies", ".columnGoro", ".columnHiroyuki"])
 });
 
 const btnAllCharacters = document.getElementById("allCharacters");
-btnAllCharacters.addEventListener("click", ()=> {
-  handlingDom([".allPeopleMovies", ".allCharacters"],[".spaceSearch",".gridAll",".all",".didyouKnow",".startingScreen",".female",'.male',".unspecified"])
+btnAllCharacters.addEventListener("click", () => {
+  handlingDom([".allPeopleMovies", ".allCharacters"], [".spaceSearch", ".gridAll", ".all", ".didyouKnow", ".startingScreen", ".female", '.male', ".unspecified"])
 });
 
 const btnMaleCharacters = document.getElementById("male");
-btnMaleCharacters.addEventListener("click",()=> {
-  handlingDom([".allPeopleMovies", ".male"],[".gridAll",".all",".spaceSearch",".startingScreen",".didyouKnow",".female",'.allCharacters',".unspecified"])
+btnMaleCharacters.addEventListener("click", () => {
+  handlingDom([".allPeopleMovies", ".male"], [".gridAll", ".all", ".spaceSearch", ".startingScreen", ".didyouKnow", ".female", '.allCharacters', ".unspecified"])
 });
 
 const btnFemaleCharacters = document.getElementById("female");
-btnFemaleCharacters.addEventListener("click", ()=> {
-  handlingDom([".allPeopleMovies", ".female"],[".gridAll",".all",".spaceSearch",".startingScreen",".didyouKnow",".male",'.allCharacters',".unspecified"])
+btnFemaleCharacters.addEventListener("click", () => {
+  handlingDom([".allPeopleMovies", ".female"], [".gridAll", ".all", ".spaceSearch", ".startingScreen", ".didyouKnow", ".male", '.allCharacters', ".unspecified"])
 });
 
 const btnUnspecifiedCharacters = document.getElementById("s/a");
-btnUnspecifiedCharacters.addEventListener("click",  ()=> {
-  handlingDom([".allPeopleMovies", ".unspecified"],[".gridAll",".all",".didyouKnow",".spaceSearch",".startingScreen",".male",'.allCharacters',".female"])
+btnUnspecifiedCharacters.addEventListener("click", () => {
+  handlingDom([".allPeopleMovies", ".unspecified"], [".gridAll", ".all", ".didyouKnow", ".spaceSearch", ".startingScreen", ".male", '.allCharacters', ".female"])
 });
 
-const btnDidYouKnow=document.getElementById("didYouKnow");
-btnDidYouKnow.addEventListener("click",()=>{
-  handlingDom([".didyouKnow"],[".gridAll",".all",".startingScreen",".spaceSearch",".male",'.allCharacters',".female",".allPeopleMovies", ".unspecified"])
+const btnDidYouKnow = document.getElementById("didYouKnow");
+btnDidYouKnow.addEventListener("click", () => {
+  handlingDom([".didyouKnow"], [".gridAll", ".all", ".startingScreen", ".spaceSearch", ".male", '.allCharacters', ".female", ".allPeopleMovies", ".unspecified"])
 })
 
-const btnSearch=document.getElementById("search");
-btnSearch.addEventListener("click",()=>{
-  handlingDom([".spaceSearch"],[".gridAll",".all",".didyouKnow",".startingScreen",".male",'.allCharacters',".female",".allPeopleMovies", ".unspecified"])
+const btnSearch = document.getElementById("search");
+btnSearch.addEventListener("click", () => {
+  handlingDom([".spaceSearch"], [".gridAll", ".all", ".didyouKnow", ".startingScreen", ".male", '.allCharacters', ".female", ".allPeopleMovies", ".unspecified"])
 })
 
 //-----------------DIRECTORES DOM----------------
@@ -169,7 +170,54 @@ document.querySelectorAll('.directorNavItem').forEach(navItem => {
 })
 
 
+// const spaceSearch = document.querySelector('#formSearch');//input
+// const btn = document.querySelector('#btn');
+
+// btn.addEventListener('click', (e) => {
+//   e.preventDefault
+//   const result= document.querySelector('#result')
+//   const text = spaceSearch.value.toLowerCase()
+//   result.innerHTML = ""
+//   search2(dataGhibliJs, text)
+
+//   document.querySelector('#result').innerHTML +=
+//    `<div class = "card">
+//           <img src="${dataGhibliJs.poster}"><h4> ${dataGhibliJs.title}</h4>
+//          </div>`
+//  })
+
+  // const totoro= search(dataGhibliJs, 'a')
+  // console.log(totoro)
+//   const result = document.querySelector('#result');
+//  const spaceSearch = document.querySelector('#formSearch');
+//  export const search = () => {
+//    const text = spaceSearch.value.toLowerCase()
+//   result.innerHTML = ""
+//     for (let dataGhibli of dataGhibliJs) {
+//      let title = dataGhibli.title.toLowerCase()
+//      if (title.indexOf(text) !== -1) {
+//       result.innerHTML +=
+//        `<div class = "card">
+//          <img src="${dataGhibli.poster}"><h4> ${dataGhibli.title}</h4>
+//          </div>`
+//      }
+//     }
+//    for (let character of allcharacters) {
+//      let title = character.name.toLowerCase()
+//      if (title.indexOf(text) !== -1) {
+//        result.innerHTML +=
+//        `<div class = "card">
+//          <img src="${character.img}"><h4> ${character.name}</h4>
+//          </div>`
+//      }
+//    }
+//    if(result.innerHTML==='' ||result.innerHTML===[0-9]){
+//      result.innerHTML +=`<h4>No se ha encontrado su busqueda...</h4>`
+//  }
+//  }
+
+
 
 const btn = document.querySelector('#btn');
-btn.addEventListener('click', search) 
+btn.addEventListener('click', search)
 

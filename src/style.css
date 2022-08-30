@@ -276,7 +276,6 @@ footer {
   display: none;
 }
 
-
 .columnHayao div,
 .columnIsao div,
 .columnYoshifumi div,
@@ -457,20 +456,21 @@ h6 {
   box-shadow: 0 0 30px rgb(73, 34, 158);
 }
 
-@media (max-width: 800px) {
+@media (max-width: 500px) {
   .header {
-    height: 12vh;
-    width: 101%;
-    background-size: 23vw;
+    height: 10vh;
+    background-size: 28vw;
+  }
+
+  #home {
+    width: 15vw;
+    height: 8vh;
+    margin-left: 2vw;
   }
 
   .startingScreen {
-    font-size: 2.4vw;
-    height: 72vh;
-  }
-
-  .startingScreen:before {
-    height: 72%;
+    font-size: 1em;
+    height: 115vh;
   }
 
   .startingScreen img {
@@ -478,28 +478,37 @@ h6 {
   }
 
   .initialText {
-    padding: 4vw;
-    margin-bottom: 10vh;
+   position: absolute;
+    padding-right: 4vh;
+    margin-bottom: 70vh;
   }
 
   .dropdown button {
     padding: 8px 16px;
-    width: 24.11vw;
+    width: 18.721vw;
     height: 7vh;
-    font-size: 1.8vw;
+    font-size: 0.6em;
   }
 
   .dropdown div a {
-    font-size: 1.8vw;
+    
+    font-size: 0.7em;
+    font-family: 'Nanum Gothic';
   }
-
+  
+  .dropdown div a:hover {
+    background-color: #290b3bbc;
+    color: #fff;
+  }
+  
   .ColumnTwo,
   .allCharacters,
   .male,
   .female,
-  .unspecified {
+  .unspecified,
+  #result{
     grid-column: 2/4;
-    grid-template-columns: repeat(2, 27vw);
+    grid-template-columns: repeat(2, 30vw);
     grid-column-gap: 15vw;
     grid-row-gap: 2vw;
   }
@@ -508,30 +517,32 @@ h6 {
   .allCharacters div,
   .male div,
   .female div,
-  .unspecified div {
-    grid-template-rows: 18vh;
+  .unspecified div,
+  #result div {
+    grid-template-rows: 15vh;
   }
 
-  .unspecified div {
-    height: 20vh;
+  .unspecified div,#result div {
+    height: 15vh;
   }
 
   .ColumnTwo img,
   .allCharacters img,
   .male img,
   .female img,
-  .unspecified img {
-    height: calc(12vw - 1.7vw);
-    width: calc(23.5vw - 0.5vw);
+  .unspecified img, #result img{
+    height: calc(16vw - 1.7vw);
+    width: calc(27vw - 0.5vw);
   }
 
-  .ColumnTwo h4 {
-    font-size: 2vh;
+  .ColumnTwo h4,
+  #result h4 {
+    font-size: 0.6em;
   }
 
   footer {
     height: 6vh;
-    font-size: 2.3vw;
+    font-size: 1em;
   }
 
   #imgHayao,
@@ -545,11 +556,11 @@ h6 {
   }
 
   h2 {
-    margin-top: -0.5vh;
+    margin-top: -1.7em;
   }
 
   h6 {
-    font-size: 2vh;
+    font-size: 0.9em;
     margin-top: -1.5vh;
   }
 
@@ -558,12 +569,13 @@ h6 {
   .male h2,
   .female h2,
   .unspecified h2 {
-    font-size: 2vh;
+    font-size: 0.8em;
+    margin-top: -3vh;
   }
 
 
   .allDirectors {
-    height: 56vh;
+    height: 66vh;
   }
 
   .columnHayao,
@@ -584,4 +596,9 @@ h6 {
     width: 20vw;
   }
 
+
+#btn {
+  width: 15vw;
+  height: 6vw;
+}
 }

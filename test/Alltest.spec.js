@@ -1,4 +1,4 @@
-import { filtering, orderAZ, orderZA, orderNumbers, search} from '../src/data.js';
+import { filtering, orderAZ, orderZA, orderNumbers, search2} from '../src/data.js';
 //import {allcharacters} from '../src/data.js';
 
 describe('filtrarporgenero', () => {
@@ -150,7 +150,7 @@ describe("busca filtrando en la data", () => {
                 title: 'Castle in the Sky'
             },
         ];
-        expect(search(data, 'a')).toStrictEqual([
+        expect(search2(data, 'a')).toStrictEqual([
             {
                 title: "My Neighbors the Yamadas"
             },
