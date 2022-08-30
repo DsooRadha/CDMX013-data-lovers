@@ -214,3 +214,4 @@ btn.addEventListener('click', (e) => {
 //     `<div class = "card">
 //            <img src="${dataGhibliJs.poster}"><h4> ${dataGhibliJs.title}</h4>
 //           </div>`
+//
