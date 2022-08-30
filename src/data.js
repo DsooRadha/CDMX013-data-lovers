@@ -46,40 +46,11 @@ export const orderNumbers = (x) => x.sort((o1, o2) => o1.release_date - o2.relea
 //console.log(orderNumbers(dataGhibliJs))
 export const search2= (data, valor)=>{
   const searchFilter=data.filter(function(movie){
-  if (movie.title.indexOf(valor.toLowerCase()) !== -1) {
+  if (movie.title.toLowerCase().indexOf(valor.toLowerCase()) !== -1) {
     return  true
   }
     return false
   })
   return searchFilter
   }
-  // const totoro= search(dataGhibliJs, 'a')
-  // console.log(totoro)
   
- const spaceSearch = document.querySelector('#formSearch');
- export const search = () => {
-   const texto = spaceSearch.value.toLowerCase()
-   result.innerHTML = ""
-    for (let dataGhibli of dataGhibliJs) {
-     let title = dataGhibli.title.toLowerCase()
-     if (title.indexOf(texto) !== -1) {
-      result.innerHTML +=
-       `<div class = "card">
-         <img src="${dataGhibli.poster}"><h4> ${dataGhibli.title}</h4>
-         </div>`
-     }
-    }
-   for (let character of allcharacters) {
-     let title = character.name.toLowerCase()
-     if (title.indexOf(texto) !== -1) {
-       result.innerHTML +=
-       `<div class = "card">
-         <img src="${character.img}"><h4> ${character.name}</h4>
-         </div>`
-     }
-   }
-   if(result.innerHTML==='' ||result.innerHTML===[0-9]){
-     result.innerHTML +=`<h4>No se ha encontrado su busqueda...</h4>`
- }
- }
- const result = document.querySelector('#result');

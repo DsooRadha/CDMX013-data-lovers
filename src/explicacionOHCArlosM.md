@@ -14,6 +14,10 @@ declaro la función
 declaro una variable con el elemento HTML donde pintare la data... aun no le digo que lo haga solo lo llamo... porque lo voy a emplear... al parecer es mala  practica dejar variables flotando por el mundo requieren estar donde  se emplean
 solicitud de extración de la info en la API
 especifico el lenguaje en el que se encuentra la API
+ordeno esa información con sort jaja XD
+    -sort es una funcion que esta en data que ordena alfabeticamente, segun la key que especifiques... en este caso title
+despues itero sobre cada uno de sus elementos para que posteriormente
+de la instruccion de pintar estos datos en el DOM en la 
 
 
 

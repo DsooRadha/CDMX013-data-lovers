@@ -1,6 +1,4 @@
-
-//import { Chart } from "chart.js";
-import { dataGhibliJs, directors, peopleUnspecified, allcharacters, filtering, orderAZ, orderZA, search, search2} from "./data.js";
+import { dataGhibliJs, directors, peopleUnspecified, allcharacters, filtering, orderAZ, orderZA, search2 } from "./data.js";
 
 //--------------------FETCH-----------------AllMoviesZA
 dataAccess()
@@ -11,6 +9,7 @@ function dataAccess() {
       .then(data => {
         const dataAll = orderZA(data.films)
         dataAll.forEach(p => {
+          console.log(p)
           const card = document.createElement('div');
           card.className = "card";
           const img = document.createElement('img');
@@ -97,7 +96,7 @@ function handlingDomFlex(clasesMostrar, classOcultar) {
 
 const btnScreenStart = document.getElementById("home");
 btnScreenStart.addEventListener("click", () => {
-  handlingDomFlex([".startingScreen"], [".all",".gridAll", ".allPeopleMovies", ".didyouKnow", ".spaceSearch"])
+  handlingDomFlex([".startingScreen"], [".all", ".gridAll", ".allPeopleMovies", ".didyouKnow", ".spaceSearch"])
 });
 
 const btnMovies = document.getElementById("movies");
@@ -184,70 +183,34 @@ document.querySelectorAll('.directorNavItem').forEach(navItem => {
 })
 
 
- const spaceSearch = document.querySelector('#formSearch');//input
- const btn = document.querySelector('#btn');
+const spaceSearch = document.querySelector('#formSearch');//input
+const btn = document.querySelector('#btn');
 
- btn.addEventListener('click', (e) => {
-   e.preventDefault
-   const result= document.querySelector('#result')
-   const text = spaceSearch.value.toLowerCase()
-   const resultSearch=search2(dataGhibliJs, text)
-   console.log(resultSearch)
-   result.innerHTML = ""
-   result.innerHTML +=
-   resultSearch.forEach(p=>{
-    console.log (p)
+btn.addEventListener('click', (e) => {
+  e.preventDefault
+  const result = document.querySelector('#result')
+  const text = spaceSearch.value
+  const resultSearch = search2(dataGhibliJs, text)
+  result.innerHTML = ""
+  //"Resultado de busqueda "+ resultSearch.length 
+  resultSearch.forEach(p => {
+
     const card = document.createElement('div');
-          card.className = "card";
-          const img = document.createElement('img');
-          img.src = p.poster;
-          const title = document.createElement('h4')
-          title.textContent = p.title;
+    card.className = "card";
+    const img = document.createElement('img');
+    img.src = p.poster;
+    const title = document.createElement('h4')
+    title.textContent = p.title;
 
-          card.append(img, title)
-          result.appendChild(card);
-        });
-      })
- 
- 
-//  });}
-//     p
-//    })
+    card.append(img, title)
+    result.appendChild(card);
+  });
+  if (resultSearch.length == 0){
+    result.innerHTML = "No existe esta busqueda, prueba de nuevo" 
+  }
+})
+
+
 //     `<div class = "card">
 //            <img src="${dataGhibliJs.poster}"><h4> ${dataGhibliJs.title}</h4>
 //           </div>`
-//   })
-
-//   const result = document.querySelector('#result');
-//  const spaceSearch = document.querySelector('#formSearch');
-//  export const search = () => {
-//    const text = spaceSearch.value.toLowerCase()
-//   result.innerHTML = ""
-//     for (let dataGhibli of dataGhibliJs) {
-//      let title = dataGhibli.title.toLowerCase()
-//      if (title.indexOf(text) !== -1) {
-//       result.innerHTML +=
-//        `<div class = "card">
-//          <img src="${dataGhibli.poster}"><h4> ${dataGhibli.title}</h4>
-//          </div>`
-//      }
-//     }
-//    for (let character of allcharacters) {
-//      let title = character.name.toLowerCase()
-//      if (title.indexOf(text) !== -1) {
-//        result.innerHTML +=
-//        `<div class = "card">
-//          <img src="${character.img}"><h4> ${character.name}</h4>
-//          </div>`
-//      }
-//    }
-//    if(result.innerHTML==='' ||result.innerHTML===[0-9]){
-//      result.innerHTML +=`<h4>No se ha encontrado su busqueda...</h4>`
-//  }
-//  }
-
-
-
-//  const btn = document.querySelector('#btn');
-//  btn.addEventListener('click', search)
-
