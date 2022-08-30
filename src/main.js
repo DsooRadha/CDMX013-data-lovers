@@ -248,6 +248,6 @@ document.querySelectorAll('.directorNavItem').forEach(navItem => {
 
 
 
-// const btn = document.querySelector('#btn');
-// btn.addEventListener('click', search)
+//  const btn = document.querySelector('#btn');
+//  btn.addEventListener('click', search)
 
