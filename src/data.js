@@ -56,8 +56,6 @@ export const search2= (data, valor)=>{
   // const totoro= search(dataGhibliJs, 'a')
   // console.log(totoro)
   
-
-
  const spaceSearch = document.querySelector('#formSearch');
  export const search = () => {
    const texto = spaceSearch.value.toLowerCase()

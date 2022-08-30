@@ -1,6 +1,6 @@
 
 //import { Chart } from "chart.js";
-import { dataGhibliJs, directors, peopleUnspecified, allcharacters, filtering, orderAZ, orderZA, search} from "./data.js";
+import { dataGhibliJs, directors, peopleUnspecified, allcharacters, filtering, orderAZ, orderZA, search, search2} from "./data.js";
 
 //--------------------FETCH-----------------AllMoviesZA
 dataAccess()
@@ -86,6 +86,20 @@ function handlingDom(clasesMostrar, classOcultar) {
   }
 }
 
+function handlingDomFlex(clasesMostrar, classOcultar) {
+  for (let i = 0; i < clasesMostrar.length; i++) {
+    document.querySelector(clasesMostrar[i]).style.display = 'flex';
+  }
+  for (let i = 0; i < classOcultar.length; i++) {
+    document.querySelector(classOcultar[i]).style.display = 'none';
+  }
+}
+
+const btnScreenStart = document.getElementById("home");
+btnScreenStart.addEventListener("click", () => {
+  handlingDomFlex([".startingScreen"], [".all",".gridAll", ".allPeopleMovies", ".didyouKnow", ".spaceSearch"])
+});
+
 const btnMovies = document.getElementById("movies");
 btnMovies.addEventListener("click", () => {
   handlingDom([".gridAll"], [".all", ".startingScreen", ".allPeopleMovies", ".didyouKnow", ".spaceSearch"])
@@ -170,24 +184,40 @@ document.querySelectorAll('.directorNavItem').forEach(navItem => {
 })
 
 
-// const spaceSearch = document.querySelector('#formSearch');//input
-// const btn = document.querySelector('#btn');
+ const spaceSearch = document.querySelector('#formSearch');//input
+ const btn = document.querySelector('#btn');
 
-// btn.addEventListener('click', (e) => {
-//   e.preventDefault
-//   const result= document.querySelector('#result')
-//   const text = spaceSearch.value.toLowerCase()
-//   result.innerHTML = ""
-//   search2(dataGhibliJs, text)
+ btn.addEventListener('click', (e) => {
+   e.preventDefault
+   const result= document.querySelector('#result')
+   const text = spaceSearch.value.toLowerCase()
+   const resultSearch=search2(dataGhibliJs, text)
+   console.log(resultSearch)
+   result.innerHTML = ""
+   result.innerHTML +=
+   resultSearch.forEach(p=>{
+    console.log (p)
+    const card = document.createElement('div');
+          card.className = "card";
+          const img = document.createElement('img');
+          img.src = p.poster;
+          const title = document.createElement('h4')
+          title.textContent = p.title;
 
-//   document.querySelector('#result').innerHTML +=
-//    `<div class = "card">
-//           <img src="${dataGhibliJs.poster}"><h4> ${dataGhibliJs.title}</h4>
-//          </div>`
-//  })
+          card.append(img, title)
+          result.appendChild(card);
+        });
+      })
+ 
+ 
+//  });}
+//     p
+//    })
+//     `<div class = "card">
+//            <img src="${dataGhibliJs.poster}"><h4> ${dataGhibliJs.title}</h4>
+//           </div>`
+//   })
 
-  // const totoro= search(dataGhibliJs, 'a')
-  // console.log(totoro)
 //   const result = document.querySelector('#result');
 //  const spaceSearch = document.querySelector('#formSearch');
 //  export const search = () => {
@@ -218,6 +248,6 @@ document.querySelectorAll('.directorNavItem').forEach(navItem => {
 
 
 
-const btn = document.querySelector('#btn');
-btn.addEventListener('click', search)
+// const btn = document.querySelector('#btn');
+// btn.addEventListener('click', search)
 

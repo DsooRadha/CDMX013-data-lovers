@@ -44,9 +44,10 @@ body {
 .startingScreen img {
   width: 40vw;
   position: relative;
-  opacity: 0.75;
+  opacity: 0.8;
   margin-top: 4vh
 }
+
 
 .initialText {
   padding: 8vw;
@@ -538,6 +539,7 @@ h6 {
   .ColumnTwo h4,
   #result h4 {
     font-size: 0.6em;
+    margin-top: -3vh;
   }
 
   footer {
@@ -601,4 +603,23 @@ h6 {
   width: 15vw;
   height: 6vw;
 }
+
+.space3 p {
+  font-size: 0.8em;
+}
+
+.higherRT {
+  display: flex;
+  height: 20vh;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+
+
+.higherRT {
+  display: flex;
+  height: 44vh;
+}
+
+
 }
