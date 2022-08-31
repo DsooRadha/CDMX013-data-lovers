@@ -1,4 +1,4 @@
-import { dataGhibliJs, directors, peopleUnspecified, allcharacters, filtering, orderAZ, orderZA, search2 } from "./data.js";
+import { dataGhibliJs, directors, peopleUnspecified, allcharacters, filtering, orderAZ, orderZA, search } from "./data.js";
 
 //--------------------FETCH-----------------AllMoviesZA
 dataAccess()
@@ -9,7 +9,6 @@ function dataAccess() {
       .then(data => {
         const dataAll = orderZA(data.films)
         dataAll.forEach(p => {
-          console.log(p)
           const card = document.createElement('div');
           card.className = "card";
           const img = document.createElement('img');
@@ -25,6 +24,7 @@ function dataAccess() {
   return (dataghibli)
 }
 //--------------------DIRECTOR-----------------title and Date
+
 const renderDirector = (directorName, columnDirectorSelector) => {
 
   const movies = filtering(dataGhibliJs, 'director', directorName)
@@ -181,7 +181,7 @@ document.querySelectorAll('.directorNavItem').forEach(navItem => {
     directorSpaceRightElement.innerHTML = renderDirectorImage(directorName)
   })
 })
-
+//-----------------showSearch----------------
 
 const spaceSearch = document.querySelector('#formSearch');//input
 const btn = document.querySelector('#btn');
@@ -190,28 +190,28 @@ btn.addEventListener('click', (e) => {
   e.preventDefault
   const result = document.querySelector('#result')
   const text = spaceSearch.value
-  const resultSearch = search2(dataGhibliJs, text)
+  const resultSearch = search(dataGhibliJs, text)
   result.innerHTML = ""
   //"Resultado de busqueda "+ resultSearch.length 
+
   resultSearch.forEach(p => {
 
     const card = document.createElement('div');
     card.className = "card";
     const img = document.createElement('img');
     img.src = p.poster;
+    const imgPeople = document.createElement('img');
+    img.src = p.img;
     const title = document.createElement('h4')
     title.textContent = p.title;
 
-    card.append(img, title)
+    card.append(img, title,imgPeople)
     result.appendChild(card);
   });
   if (resultSearch.length == 0){
-    result.innerHTML = "No existe esta busqueda, prueba de nuevo" 
+  result.innerHTML = 'No existe esta busqueda, prueba de nuevo'
   }
 })
 
 
-//     `<div class = "card">
-//            <img src="${dataGhibliJs.poster}"><h4> ${dataGhibliJs.title}</h4>
-//           </div>`
-//
+ 

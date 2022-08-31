@@ -44,7 +44,7 @@ export const orderNumbers = (x) => x.sort((o1, o2) => o1.release_date - o2.relea
 // console.log(dataGhibliJs)
 // console.log(peopleUnspecified.length)
 //console.log(orderNumbers(dataGhibliJs))
-export const search2= (data, valor)=>{
+export const search= (data, valor)=>{
   const searchFilter=data.filter(function(movie){
   if (movie.title.toLowerCase().indexOf(valor.toLowerCase()) !== -1) {
     return  true
