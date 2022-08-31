@@ -82,11 +82,26 @@ var doubles = numbers.map(function(x) {
 
 
 ------------------DOM directores------------
-
+funcion para ocultar imagenes del director desde su target
+primera parte
 const renderDirectorImage = (directorName) => {
   const director = directors.filter(director => director.name === directorName)[0]
   return `<img id="imgHayao" src="${director.imgSrc}" alt="${director.name}" style="display: block;">`;
 }
+
+la funcion anonima de flecha tiene un parametro que es directorName la cual creando un nuevo array filtro el objeto de datajs en funcion de su key 'name' y le digo que itere en cada uno de esos elementos para que me regrese la imagen que corresponda  con determinado display.
+
+----ACA  tengo duda de como es que le digo que itere, porque tiene un indice 0 pero no se de donde o porque O__o  ... bueno siendo menos dramaticos el 0 es porque esta en el primer elemento del arreglo haciendo la comparación y dando la estructura de tambien como se va  a cargar la imagen segun el director 
+
+
+Despúes...
+llamo el espacio donde aparecerá esa imagen
+despues uso una cosa que se llama
+querySelectorAll
+trae todos los elementos de esa clase 
+posteriormente los itero cada que se les hace click lafuncion que recibe un parametro se explora su target
+
+TARGET = algo como caracteristicas del elemento
 
 const directorSpaceRightElement = document.querySelector('.spaceRigth')
 
