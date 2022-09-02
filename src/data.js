@@ -24,10 +24,10 @@ export const directors = [
   { name: "Gorō Miyazaki", selector: '.columnGoro', imgSrc: "./images/Goro.png" },
   { name: "Hiromasa Yonebayashi", selector: '.columnHiromasa', imgSrc: "./images/Hiromasa.png" },
 ]
-export const peopleUnspecified = allcharacters.filter(p => p.gender !== 'Female' && p.gender !== 'Male')
+export const peopleUnspecified = allcharacters.filter(p => p.gender !== 'Female' && p.gender !== 'Male');
 
 export const filtering = (allCharacters, propiedad, valor) => {
-  return allCharacters.filter(p => p[propiedad] == valor)
+  return allCharacters.filter(p => p[propiedad] == valor);
 }
 
 export const orderAZ = (x) => x.sort((o1, o2) => o1.name > o2.name ? 1 : -1);
@@ -45,12 +45,12 @@ export const orderNumbers = (x) => x.sort((o1, o2) => o1.release_date - o2.relea
 // console.log(peopleUnspecified.length)
 //console.log(orderNumbers(dataGhibliJs))
 export const search= (data, valor)=>{
-  const searchFilter=data.filter(function(movie){
+  const searchFilter=data.filter((movie)=>{
   if (movie.title.toLowerCase().indexOf(valor.toLowerCase()) !== -1) {
     return  true
   }
     return false
   })
   return searchFilter
-  }
+  };
   

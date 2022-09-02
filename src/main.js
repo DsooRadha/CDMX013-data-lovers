@@ -13,10 +13,10 @@ function dataAccess() {
           card.className = "card";
           const img = document.createElement('img');
           img.src = p.poster;
-          const title = document.createElement('h4')
+          const title = document.createElement('h4');
           title.textContent = p.title;
 
-          card.append(img, title)
+          card.append(img, title);
           column2.appendChild(card);
         });
       })
@@ -27,23 +27,23 @@ function dataAccess() {
 
 const renderDirector = (directorName, columnDirectorSelector) => {
 
-  const movies = filtering(dataGhibliJs, 'director', directorName)
+  const movies = filtering(dataGhibliJs, 'director', directorName);
 
   movies.forEach(d => {
     const columnDirectors = document.querySelector(columnDirectorSelector);
 
     const card = document.createElement('div');
     card.className = "card";
-    const title = document.createElement('h2')
+    const title = document.createElement('h2');
     title.textContent = d.title;
-    const date = document.createElement('h6')
+    const date = document.createElement('h6');
     date.textContent = d.release_date;
 
-    card.append(title, date)
+    card.append(title, date);
     columnDirectors.appendChild(card);
   })
 }
-directors.forEach(director => renderDirector(director.name, director.selector))
+directors.forEach(director => renderDirector(director.name, director.selector));
 
 //--------------------GENDER-----------------SHOW
 function showGender(item) {
@@ -51,29 +51,30 @@ function showGender(item) {
   const card = document.createElement('div');
   card.className = "card";
   const img = document.createElement('img');
-  img.src = item.img
-  const name = document.createElement('h2')
-  name.textContent = item.name
+  img.src = item.img;
+  const name = document.createElement('h2');
+  name.textContent = item.name;
 
-  card.append(img, name)
+  card.append(img, name);
   return (card);
 }
 
-window.addEventListener('load', () => {
+window.addEventListener('load', () => {    //para tener mayorcontrol de cuando se ejecuta y para los test
+  // load se gatilla cuando el navegador termina de cargar
   const columnCharacters = document.querySelector(".allCharacters");
   const columnMale = document.querySelector(".male");
   const columnFemale = document.querySelector(".female");
-  const columnUnspecified = document.querySelector(".unspecified")
-  const female = orderAZ(filtering(allcharacters, 'gender', 'Female'))
-  const male = orderZA(filtering(allcharacters, 'gender', 'Male'))
-  const other = orderAZ(peopleUnspecified)
-  male.map(showGender).forEach(element => columnMale.append(element))
-  female.map(showGender).forEach(element => columnFemale.append(element))
-  other.map(showGender).forEach(element => columnUnspecified.append(element))
-  allcharacters.map(showGender).forEach(element => columnCharacters.append(element))
+  const columnUnspecified = document.querySelector(".unspecified");
+  const female = orderAZ(filtering(allcharacters, 'gender', 'Female'));
+  const male = orderZA(filtering(allcharacters, 'gender', 'Male'));
+  const other = orderAZ(peopleUnspecified);
+  male.map(showGender).forEach(element => columnMale.append(element));
+  female.map(showGender).forEach(element => columnFemale.append(element));
+  other.map(showGender).forEach(element => columnUnspecified.append(element));
+  allcharacters.map(showGender).forEach(element => columnCharacters.append(element));
   // console.log(female.length)
   // console.log(male.length)
-})
+});
 
 //--------------------DOM-----------------
 function handlingDom(clasesMostrar, classOcultar) {
@@ -171,7 +172,7 @@ const renderDirectorImage = (directorName) => {
   return `<img id="imgHayao" src="${director.imgSrc}" alt="${director.name}" style="display: block;">`;
 }
 
-const directorSpaceRightElement = document.querySelector('.spaceRigth')
+const directorSpaceRightElement = document.querySelector('.spaceRigth');
 
 document.querySelectorAll('.directorNavItem').forEach(navItem => {
   navItem.addEventListener('click', (e) => {
@@ -180,38 +181,34 @@ document.querySelectorAll('.directorNavItem').forEach(navItem => {
     directorSpaceRightElement.innerHTML = ""
     directorSpaceRightElement.innerHTML = renderDirectorImage(directorName)
   })
-})
+});
 //-----------------showSearch----------------
-
 const spaceSearch = document.querySelector('#formSearch');//input
 const btn = document.querySelector('#btn');
 
 btn.addEventListener('click', (e) => {
   e.preventDefault
-  const result = document.querySelector('#result')
-  const text = spaceSearch.value
-  const resultSearch = search(dataGhibliJs, text)
+  const result = document.querySelector('#result');
+  const text = spaceSearch.value;
+  const resultSearch = search(dataGhibliJs, text);
   result.innerHTML = ""
-  //"Resultado de busqueda "+ resultSearch.length 
-
+  //"Resultado de busqueda es "+ resultSearch.length 
   resultSearch.forEach(p => {
 
     const card = document.createElement('div');
     card.className = "card";
     const img = document.createElement('img');
     img.src = p.poster;
-    const imgPeople = document.createElement('img');
-    img.src = p.img;
-    const title = document.createElement('h4')
+    const title = document.createElement('h4');
     title.textContent = p.title;
 
-    card.append(img, title,imgPeople)
+    card.append(img, title);
     result.appendChild(card);
   });
   if (resultSearch.length == 0){
   result.innerHTML = 'No existe esta busqueda, prueba de nuevo'
   }
-})
+});
 
 
  
