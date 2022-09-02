@@ -4,12 +4,12 @@
 
 html,
 body {
-  background-image: url("https://i1.wp.com/caps.pictures/198/6-castleinthesky/full/castleinthesky-disneyscreencaps.com-414.jpg");
+  background-image: url('https://cdna.artstation.com/p/assets/images/images/047/160/908/original/pxsprite-space.gif?1646911392');
   background-size: cover;
 }
 
 .header {
-  background: #011f4ebc;
+  background: #180757e1;
   height: 7vw;
   background-image: url("./images/studio-ghibli_0.png");
   background-size: 17vw;
@@ -19,149 +19,175 @@ body {
   justify-content: flex-start;
   opacity: 0.9;
   align-items: center;
-  padding: 0.3vw;
+  padding-left: 0.3vw;
+  z-index: 1;
 }
 
-
-.header button {
-  background-color: #011f4ebc;
-  margin-left: 5vw;
-  border: none;
-  color: white;
-  height: 13vh;
-  width: 20vw;
-  font-size: 1.6vw;
-  cursor: pointer;
-  font-family: 'Nanum Gothic';
-  background-image: url("./images/menuhamburguesa.png");
-  background-repeat: no-repeat;
-  background-size: 50%;
-  background-position: center;
-  border-radius: 1vw;
+.startingScreen {
+  margin-bottom: 20vh;
+  display: flex;
+  font-size: 1.4vw;
+  align-items: center;
+  color: rgb(251, 244, 224);
+  font-family: 'Patrick Hand', cursive;
 }
 
-.header button:hover {
-  background-color: #06457fea;
-  color: white;
+.startingScreen:before {
+  content: "";
+  width: 100%;
+  height: 70.6%;
+  background-color: #040610f4;
+  position: absolute;
+  opacity: 0.5;
 }
 
-.filter {
-  background-color: #011f4e;
-  height: 68vh;
-  width: 25vw;
-  display: none;
-  /*None*/
+.startingScreen img {
+  width: 40vw;
+  position: relative;
+  opacity: 0.8;
+  margin-top: 4vh
+}
+
+.initialText {
+  padding: 8vw;
+  align-items: rigth;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border-radius: 1vw;
-  margin: 3vw;
-  justify-self: center;
-  border-radius: 2vw;
-
+  position: relative;
+  justify-self: end;
+  text-align: right
 }
 
-.filter h1 {
+.dropdown {
+  display: inline-block;
+  position: relative;
+}
+
+.dropdown button {
+  border: none;
+  padding: 8px 16px;
   color: white;
-  margin: 1vw;
-  margin-top: 3vh;
-  margin-left: 5vw;
-  width: 24vw;
-  height: 6vw;
-  align-items: center;
-  justify-content: center;
-  padding: 1vh;
-  font-family: 'Nanum Gothic';
-  justify-items: center;
-  font-size: 1.2vw;
-
-}
-
-.filter button {
-  background-color: #06457fea;
-  border: solid #011f4ebc;
-  color: rgb(255, 255, 255);
-  padding: 1vh 1vw;
-  width: 25vw;
-  font-size: 1.2vw;
   cursor: pointer;
+  background-color: #180757cc;
+  width: 19.55vw;
+  height: 7vh;
+  font-size: 1.2vw;
   font-family: 'Nanum Gothic';
-  font-weight: bold;
-  height: 30vh;
-  text-align: center;
-  justify-content: center;
-
+  align-items: center;
+  flex-grow: 1;
+  flex-wrap: nowrap;
 }
 
-.filter button:hover {
-  background-color: #07285ee1;
+.dropdown:hover button {
+  background-color: #1d052cac;
   color: white;
+}
+
+.dropdown div {
+  background-color: #180757d8;
+  z-index: 1;
+  visibility: hidden;
+  position: absolute;
+  margin-left: 1vw;
+  min-width: 100%;
+  opacity: 0;
+  transition: 0.5s;
+  margin-left: 0vw;
+}
+
+.dropdown:hover div {
+  visibility: visible;
+  opacity: 1;
+}
+
+.dropdown div a {
+  display: block;
+  text-decoration: none;
+  padding: 1vw;
+  color: rgb(240, 255, 248);
+  transition: 0.5s;
+  white-space: nowrap;
+  text-transform: uppercase;
+  border-radius: 1vw;
+  font-size: 1vw;
+  font-family: 'Nanum Gothic';
+}
+
+.dropdown div a:hover {
+  background-color: #290b3b6d;
+  color: #fff;
+}
+
+#home {
+  width: 6vw;
+  height: 10vh;
+  background-image: url("./images/flame.png");
+  background-size: cover;
+  border-radius: 1.5vw;
+  background-repeat: no-repeat;
+  margin-left: 3vw;
+}
+
+#btn {
+    width: 6vw;
+    align-self: center;
+    height: 4vw;
+    background-color: #46045350;
+    font-family: 'Nanum Gothic';
+    color: aliceblue;
+    border-radius: 1vw;
+    cursor: pointer;
 }
 
 .gridAll {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 39vw;
-  background-image: url("./images/894d5e8ee8190a41c4baaaed35bf3597.png");
-  background-position: 0, 0;
-  background-size: 48vw;
-  background-repeat: no-repeat;
-  opacity: 0.7;
+  height: 72vh;
+  display: none;
+  background-color: #0c00088d;
 }
 
-
-.ColumnOne {
-  grid-column: 1/2;
-  margin-bottom: 4vh;
-  align-self: flex-end;
-  height: 23vh;
-  width: 20vw;
-  justify-self: center;
-  border-radius: 2vw;
-  background-color: #001c47f1;
-  color: #ffffff;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  padding: 3vw;
-  max-height: 23vh;
-
-}
-
-.ColumnTwo {
+.ColumnTwo,
+.allCharacters,
+.male,
+.female,
+.unspecified,
+#result {
   text-align: center;
   grid-column: 2/4;
   display: grid;
-  grid-template-columns: repeat(2, 21vw);
+  grid-template-columns: repeat(3, 22vw);
   overflow: auto;
   background-color: transparent;
   margin: 2vw;
   grid-column-gap: 9vw;
   grid-row-gap: -1vw;
-  margin-left: 4vw;
 }
 
-.ColumnTwo div {
+#result {
+  height: 50vh;
+  margin-top: -2vh;
+}
+
+.ColumnTwo div,
+.allCharacters div,
+.male div,
+.female div,
+.unspecified div,
+#result div {
   margin: 1vw;
-  background-color: transparent;
   text-align: center;
   display: grid;
   grid-template-rows: 24vh;
   align-items: flex-start;
   justify-content: center;
-  cursor: pointer;
-  background-color: #2aa89c;
+  background-color: #2a6660;
   border-radius: 1vw;
 }
 
-
-.ColumnTwo div:hover {
-  background-color: #2a6660;
-  color: white;
-  
-}
-.ColumnTwo img {
+.ColumnTwo img,
+.allCharacters img,
+.male img,
+.female img,
+.unspecified img,
+#result img {
   height: calc(10.5vw - 1.7vw);
   width: calc(18vw - 0.5vw);
   object-fit: cover;
@@ -169,7 +195,8 @@ body {
   margin-top: 1vh;
 }
 
-.ColumnTwo h4 {
+.ColumnTwo h4,
+#result h4 {
   text-align: center;
   justify-items: center;
   text-transform: uppercase;
@@ -182,31 +209,416 @@ body {
 }
 
 footer {
-  font-size: 1.2vw;
-  text-align: center;
-  color: rgb(171, 186, 199);
-  background: #011f4ee2;
-  font-family: 'PT Sans Narrow', sans-serif;
-  padding: 0.6vh;
-  height: 2.7vw;
+  color: rgb(222, 232, 240);
+  background: #180757cb;
+  height: 7vh;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-/*
-footer img {
-  width: 2vw;
-  margin: 0.5vw;
-  opacity: 0.7;
-}
-.chikorita {
-  transform: scaleX(-1);
-}
-*/
-.ColumnOne p {
-  line-height: 4vh;
-  font-family: 'Nanum Gothic', sans-serif;
-  font-size: 2em;
-
+  text-align: center;
+  justify-items: center;
+  text-transform: uppercase;
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1.4vw;
+  bottom: 0;
+  width: 100%;
+  position: absolute;
 }
 
+.all {
+  display: grid;
+  background-size: contain;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 36vw;
+  position: relative;
+  display: none;
+  background-color: #0c00088d;
+}
+
+.spaceRigth {
+  grid-column: 1/2;
+  margin-left: 5vw;
+}
+
+#imgHayao,
+#imgYoshifumi,
+#imgIsao,
+#imgHiroyuki,
+#imgGoro,
+#imgHiromasa {
+  display: none;
+  width: 65%;
+  margin-top: 10vh;
+  margin-left: 5.5vw;
+}
+
+.allDirectors {
+  grid-column: 2/4;
+  overflow: auto;
+  background-color: #236bc84d;
+  padding: 3vw;
+  margin: 4vw;
+  border-radius: 2vw;
+}
+
+.columnHayao,
+.columnIsao,
+.columnYoshifumi,
+.columnHiromasa,
+.columnGoro,
+.columnHiroyuki {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  column-gap: 2vw;
+  row-gap: 2vh;
+  display: grid;
+  padding: 0.8vw;
+  display: none;
+}
+
+.columnHayao div,
+.columnIsao div,
+.columnYoshifumi div,
+.columnHiromasa div,
+.columnGoro div,
+.columnHiroyuki div {
+  background-color: #286976be;
+  border-radius: 1vw;
+  padding: .8vw;
+  height: 10vh;
+  width: 14vw;
+  align-items: center;
+  justify-content: center;
+  padding-top: 8vh;
+}
+
+h2 {
+  text-align: center;
+  justify-items: center;
+  text-transform: uppercase;
+  color: rgb(255, 255, 255);
+  font-family: 'Patrick Hand';
+  font-size: 2.1vh;
+  align-items: center;
+  margin-top: -0.5vh;
+}
+
+h6 {
+  text-align: center;
+  justify-items: center;
+  text-transform: uppercase;
+  color: rgb(255, 255, 255);
+  font-family: 'Patrick Hand', cursive;
+  font-size: 2.3vh;
+  margin-top: -2vh;
+}
+
+.unspecified div{
+  height: 25vh;
+}
+.ColumnTwo h3,
+.allCharacters h2,
+.male h2,
+.female h2,
+.unspecified h2 {
+  text-align: center;
+  justify-items: center;
+  text-transform: uppercase;
+  color: rgb(255, 255, 255);
+  font-family: 'Patrick Hand', cursive;
+  font-size: 2.7vh;
+  height: calc(1vw - 1vw);
+  align-items: center;
+  margin-top: -4.5vh;
+}
+
+.allCharacters div,
+.male div,
+.female div,
+.unspecified div {
+  background-color: #9c4c75da;
+}
+
+.allPeopleMovies {
+  height: 72vh;
+  display: none;
+  background-color: #00040c8d;
+}
+
+.didyouKnow,
+.spaceSearch {
+  height: 72vh;
+  background-color: #020a238f;
+  display: grid;
+  color: aliceblue;
+  font-family: 'Patrick Hand';
+  font-size: 3vh;
+  padding: 2vw;
+  display: none;
+  text-align: center;
+}
+
+.didyouKnow div {
+  background-color: #042253;
+  border-radius: 2vw;
+  padding-left: 3vw;
+  padding-right: 3vw;
+  margin: 1vw;
+  overflow: auto;
+}
+
+.dykMovies {
+  height: 60vh;
+  display: grid;
+  justify-content: center;
+}
+
+.dykMovies img {
+  width: calc(25vw - 0.5vw);
+  object-fit: cover;
+  border-radius: 2vh;
+}
+
+.dykMovies .announce {
+  margin: 0;
+}
+
+.higherRT {
+  display: flex;
+  height: 44vh;
+}
+
+#startImage {
+  width: 40%;
+  margin-top: 4vh;
+  justify-self: center;
+  box-shadow: 0 0 20px rgb(20, 160, 207);
+}
+
+.cardKnow {
+  position: relative;
+  width: 40%;
+  height: 20vw;
+  border-radius: 0;
+  text-transform: uppercase;
+  cursor: pointer;
+  justify-self: center;
+}
+
+.cardKnow div {
+  position: absolute;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backface-visibility: hidden;
+  transition: 2s;
+  width: 22vw;
+}
+
+.cardKnow .front {
+  transform: perspective(500px) rotateY(0deg);
+}
+
+.cardKnow .back {
+  transform: perspective(500px) rotateY(180deg);
+}
+
+.cardKnow:hover .front {
+  transform: perspective(500px) rotateY(180deg);
+}
+
+.cardKnow:hover .back {
+  transform: perspective(500px) rotateY(360deg);
+}
+
+.space3 {
+  display: flex;
+  height: 40vh;
+}
+
+.space2 {
+  height: 30vh;
+}
+
+#result div {
+  height: 25vh;
+}
+
+#formSearch {
+  border-radius: 1vw;
+  height: 2vw;
+  width: 30vw;
+  margin-top: 2vh;
+  margin-right: 4vh;
+  background-color: #07151e97;
+  color: aliceblue;
+  font-family: 'Patrick Hand';
+  font-size: 2.5vh;
+  padding: 0.8vw;
+  box-shadow: 0 0 30px rgb(73, 34, 158);
+}
+
+@media (max-width: 500px) {
+  .header {
+    height: 10vh;
+    background-size: 28vw;
+  }
+
+  #home {
+    width: 15vw;
+    height: 8vh;
+    margin-left: 2vw;
+  }
+
+  .startingScreen {
+    font-size: 1em;
+    height: 115vh;
+  }
+
+  .startingScreen img {
+    width: 56vw;
+  }
+
+  .initialText {
+   position: absolute;
+    padding-right: 4vh;
+    margin-bottom: 70vh;
+  }
+
+  .dropdown button {
+    padding: 8px 16px;
+    width: 18.721vw;
+    height: 7vh;
+    font-size: 0.6em;
+  }
+
+  .dropdown div a {
+    
+    font-size: 0.7em;
+    font-family: 'Nanum Gothic';
+  }
+  
+  .dropdown div a:hover {
+    background-color: #290b3bbc;
+    color: #fff;
+  }
+  
+  .ColumnTwo,
+  .allCharacters,
+  .male,
+  .female,
+  .unspecified,
+  #result{
+    grid-column: 2/4;
+    grid-template-columns: repeat(2, 30vw);
+    grid-column-gap: 15vw;
+    grid-row-gap: 2vw;
+  }
+
+  .ColumnTwo div,
+  .allCharacters div,
+  .male div,
+  .female div,
+  .unspecified div,
+  #result div {
+    grid-template-rows: 15vh;
+  }
+
+  .unspecified div,#result div {
+    height: 15vh;
+  }
+
+  .ColumnTwo img,
+  .allCharacters img,
+  .male img,
+  .female img,
+  .unspecified img, #result img{
+    height: calc(16vw - 1.7vw);
+    width: calc(27vw - 0.5vw);
+  }
+
+  .ColumnTwo h4,
+  #result h4 {
+    font-size: 0.6em;
+    margin-top: -3vh;
+  }
+
+  footer {
+    height: 6vh;
+    font-size: 1em;
+  }
+
+  #imgHayao,
+  #imgYoshifumi,
+  #imgIsao,
+  #imgHiroyuki,
+  #imgGoro,
+  #imgHiromasa {
+    width: 95%;
+    margin-left: 0vw;
+  }
+
+  h2 {
+    margin-top: -1.7em;
+  }
+
+  h6 {
+    font-size: 0.9em;
+    margin-top: -1.5vh;
+  }
+
+  .ColumnTwo h3,
+  .allCharacters h2,
+  .male h2,
+  .female h2,
+  .unspecified h2 {
+    font-size: 0.8em;
+    margin-top: -3vh;
+  }
+
+
+  .allDirectors {
+    height: 66vh;
+  }
+
+  .columnHayao,
+  .columnIsao,
+  .columnYoshifumi,
+  .columnHiromasa,
+  .columnGoro,
+  .columnHiroyuki {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .columnHayao div,
+  .columnIsao div,
+  .columnYoshifumi div,
+  .columnHiromasa div,
+  .columnGoro div,
+  .columnHiroyuki div {
+    width: 20vw;
+  }
+
+
+#btn {
+  width: 15vw;
+  height: 6vw;
+}
+
+.space3 p {
+  font-size: 0.8em;
+}
+
+.higherRT {
+  display: flex;
+  height: 20vh;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+
+.higherRT {
+  display: flex;
+  height: 44vh;
+}
+}

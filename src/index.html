@@ -9,31 +9,142 @@
 
 <body>
   <div class="header">
-    <button id="menu"></button>
+    <div class="dropdown">
+      <button id="home"></button>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <button id="movies">PELICULAS</button>
+  </div>
+  <div class="dropdown">
+    <button id="prueba">PERSONAJES</button>
+    <div id="gender">
+      <a id="female">MUJERES</a>
+      <a id="male">HOMBRES</a>
+      <a id="s/a">SIN ESPECIFICAR</a>
+      <a id="allCharacters">TODXS</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button>DIRECTORES</button>
+    <div>
+      <a class="directorNavItem" id="Hayao" data-director-name="Hayao Miyazaki">Hayao Miyazaki</a>
+      <a class="directorNavItem" id="Isao" data-director-name="Isao Takahata">Isao Takahata</a>
+      <a class="directorNavItem" id="Yoshifumi" data-director-name="Yoshifumi Kondō">Yoshifumi Kondō</a>
+      <a class="directorNavItem" id="Hiroyuki" data-director-name="Hiroyuki Morita">Hiroyuki Morita</a>
+      <a class="directorNavItem" id="Goro" data-director-name="Gorō Miyazaki">Gorō Miyazaki</a>
+      <a class="directorNavItem" id="Hiromasa" data-director-name="Hiromasa Yonebayashi">Hiromasa Yonebayashi</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button id="didYouKnow">SABÍAS QUE</button>
+  </div>
+  <div class="dropdown">
+    <button id="search">BUSQUEDA</button>
+  </div>
+  <div class="startingScreen">
+    <img src="./images/894d5e8ee8190a41c4baaaed35bf3597.png" alt="niñacondragon">
+    <div class="initialText">
+      <h1>スタジオジブリ (Studio Ghibli)</h1>
+      <p> Es un estudio de animación japonés, con sede en Tokio. Fue fundada en 1985 por Hayao Miyazaki e Isao
+        Takahata,han realizado más de 20 películas.</p>
+    </div>
   </div>
 
   <div class="gridAll">
-    <div class="filter">
-      <h1>ORDENAR POR:</h1>
-      <button>DIRECTOR</button>
-      <button>TITULO (A-Z)</button>
-      <h1>BONUS:</h1>
-      <button>RATING</button>
-      <button>GALERÍA</button>
-    </div>
-    <div class="ColumnOne">
-      <p class="ghibliTitle">Studio Ghibli <br> スタジオジブリ <br>Es un estudio de animación japonés, con sede en Tokio. Fue
-        fundada en 1985 por Hayao Miyazaki e Isao Takahata,han realizado más de 20 películas.</p>
-    </div>
     <div class="ColumnTwo"></div>
-    <div id="card">
-      <div id="image"></div>
+  </div>
+  <div class="all">
+    <div class="spaceRigth">
+      <img id="imgHayao" src="./images/hayo.png" alt="Hayao">
+      <img id="imgIsao" src="./images/isao.png" alt="Isao">
+      <img id="imgYoshifumi" src="./images/yoshifumi.png" alt="yoshifumi">
+      <img id="imgHiroyuki" src="./images/hiroyuki.png" alt="Hiroyuki">
+      <img id="imgGoro" src="./images/Goro.png" alt="Goro">
+      <img id="imgHiromasa" src="./images/Hiromasa.png" alt="Hiromasa">
+    </div>
+    <div class="allDirectors">
+      <div class="columnHayao"></div>
+      <div class="columnIsao"></div>
+      <div class="columnYoshifumi"></div>
+      <div class="columnHiroyuki"></div>
+      <div class="columnGoro"></div>
+      <div class="columnHiromasa"></div>
     </div>
   </div>
-  <footer> 
-    <p>  TERMINOS Y CONDICIONES | POLITICA DE PRIVACIDAD  </p>
-     </footer>
+  <div class="allPeopleMovies">
+    <div class="male"></div>
+    <div class="female"></div>
+    <div class="unspecified"></div>
+    <div class="allCharacters"></div>
   </div>
+
+  <div class="didyouKnow">
+    <div class="dykMovies">
+      <img id="startImage"
+        src="https://cdn.domestika.org/c_fit,dpr_auto,f_auto,t_base_params,w_820/v1638350149/content-items/009/776/631/01-original-original.jpeg?1638350149"
+        alt="allCharactersGhibli">
+      <p>Studio Ghibli cuenta con 20 películas, ha tenido 6 diferentes directores a lo largo de su historia. Hayao
+        Miyazaki, ha dirigido 9 de las 20 películas.</p>
+      <div class="space3">
+        <p>Castle in the Sky fue la primer pelicula de Studio Ghibli en 1986.
+          <img src="https://c.tenor.com/p5I_T14WuzkAAAAC/laputa-castle-in-the-sky.gif" alt="castleInTheSky">
+        </p>
+        <p>La pelicula más reciente ha sido "When Marnie Was There" en el 2014.
+          <img src="https://i.pinimg.com/originals/8b/fa/de/8bfade4aafaa9e1871cc0bddcb966ec0.gif" alt="Marnie">
+        </p>
+        <p>La pelicula con mayor numero de vehiculos es "Porco Rosso" en 1992.
+          <img src="https://i.gifer.com/EbOV.gif" alt="porcoRosso">
+        </p>
+      </div>
+      <p>171 personajes hay en sus peliculas; 87 son hombres, 80 mujeres y 4 no tienen genero definido.</p>
+      <p> 129 de sus personajes son "Humanos".</p>
+      <p>10 personajes tienen el color de sus ojos "Gris"</p>
+      <p> 58 de sus personajes tienen el cabello "Cafe"</p>
+      <p class="announce">La pelicula con menor Rt Score es:</p>
+      <div class="cardKnow">
+        <div class="front">
+          <img src="https://giffiles.alphacoders.com/300/3008.gif" alt="talesFromEarth">
+        </div>
+        <div class="back">
+          <h3>Tales from Earth</h3>
+        </div>
+      </div>
+      <p class="announce">Las peliculas con mayor Rt Score son:</p>
+      <div class="higherRT">
+        <div class="cardKnow">
+          <div class="front">
+            <img src="https://i.pinimg.com/originals/5c/4d/d9/5c4dd904d5b70e92522237490969ed52.gif"
+              alt="princessKaguya">
+          </div>
+          <div class="back">
+            <h3>Tale of the Princess Kaguya</h3>
+          </div>
+        </div>
+        <div class="cardKnow">
+          <div class="front">
+            <img src="https://i.pinimg.com/originals/d4/ab/5c/d4ab5c879f56d8ba766e85469023a597.gif" alt="onlyYesterday">
+          </div>
+          <div class="back">
+            <h3>Only Yesterday</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="spaceSearch">
+    <div class="barre">
+      <input type="text" id="formSearch">
+      <button id="btn">BUSCAR</button>
+    </div>
+    <div class="search">
+      <div id="result"></div>
+    </div>
+  </div>
+  <footer>
+    <p> TERMINOS Y CONDICIONES | POLITICA DE PRIVACIDAD </p>
+  </footer>
   <script src="main.js" type="module"></script>
 </body>
 
