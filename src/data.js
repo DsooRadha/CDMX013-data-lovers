@@ -1,4 +1,3 @@
-
 import ghibli from './data/ghibli/ghibli.js';
 
 export const allcharacters = [];

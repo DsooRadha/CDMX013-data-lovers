@@ -46,7 +46,7 @@ const renderDirector = (directorName, columnDirectorSelector) => {
 directors.forEach(director => renderDirector(director.name, director.selector));
 
 //--------------------GENDER-----------------SHOW
-function showGender(item) {
+function showGender(item) { //mandarla a data
 
   const card = document.createElement('div');
   card.className = "card";
