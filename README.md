@@ -21,11 +21,11 @@ Studio Ghibli tiene una contribución en el pensar diferente, cuestionar los rol
 ### Diseño de la Interfaz de Usuario
 #### Prototipo de baja fidelidad
 
-![bocetoBajaFidelidad1](./images/bajafidelidad.jpg)
+![bocetoBajaFidelidad1](./src/images/bajafidelidad.jpg)
 #### Prototipo de alta fidelidad
 
-![bocetoAltaFidelidad1](./images/Altafidelidad1.jpg)
-![bocetoAltaFidelidad2](./images/altaFidelidad2.jpg)
+![bocetoAltaFidelidad1](./src/images/Altafidelidad1.jpg)
+![bocetoAltaFidelidad2](./src/images/altaFidelidad2.jpg)
 ### Pruebas unitarias
 
-![test](./images/Captura%20de%20Pantalla%202022-08-29%20a%20la(s)%2021.19.39.png)
+![test](./src/images/Captura%20de%20Pantalla%202022-08-29%20a%20la(s)%2021.19.39.png)

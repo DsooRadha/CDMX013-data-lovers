@@ -6,9 +6,10 @@ html,
 body {
   background-image: url('https://cdna.artstation.com/p/assets/images/images/047/160/908/original/pxsprite-space.gif?1646911392');
   background-size: cover;
+  margin:0;
 }
 
-.header {
+header {
   background: #180757e1;
   height: 7vw;
   background-image: url("./images/studio-ghibli_0.png");
@@ -24,42 +25,46 @@ body {
 }
 
 .startingScreen {
-  margin-bottom: 20vh;
   display: flex;
-  font-size: 1.4vw;
+  font-size: 1.4em;
   align-items: center;
   color: rgb(251, 244, 224);
   font-family: 'Patrick Hand', cursive;
+  position: relative;
+  height: 74.5vh;
 }
 
-.startingScreen:before {
+/* .startingScreen:before {
   content: "";
   width: 100%;
-  height: 70.6%;
+  height: 100%;
   background-color: #040610f4;
   position: absolute;
   opacity: 0.5;
-}
+} */
 
 .startingScreen img {
   width: 40vw;
-  position: relative;
   opacity: 0.8;
-  margin-top: 4vh
+  align-self: flex-end;
 }
 
 .initialText {
-  padding: 8vw;
-  align-items: rigth;
-  flex-direction: column;
+  padding: 5vw;
   position: relative;
   justify-self: end;
   text-align: right
 }
+.initialText h2{
+  font-size: 1.6em;
+  text-align: right
+}
 
 .dropdown {
-  display: inline-block;
+  display: flex;
   position: relative;
+  /* justify-content:space-between;
+  align-items: stretch; */
 }
 
 .dropdown button {
@@ -68,7 +73,7 @@ body {
   color: white;
   cursor: pointer;
   background-color: #180757cc;
-  width: 19.55vw;
+width: 15vw;
   height: 7vh;
   font-size: 1.2vw;
   font-family: 'Nanum Gothic';
