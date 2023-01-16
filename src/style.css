@@ -11,7 +11,7 @@ body {
 
 header {
   background: #180757e1;
-  height: 7vw;
+  height: 5vh;
   background-image: url("./images/studio-ghibli_0.png");
   background-size: 17vw;
   background-repeat: no-repeat;
@@ -20,8 +20,6 @@ header {
   justify-content: flex-start;
   opacity: 0.9;
   align-items: center;
-  padding-left: 0.3vw;
-  z-index: 1;
 }
 
 .startingScreen {
