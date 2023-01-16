@@ -6,7 +6,7 @@ html,
 body {
   background-image: url('https://cdna.artstation.com/p/assets/images/images/047/160/908/original/pxsprite-space.gif?1646911392');
   background-size: cover;
-  margin:0;
+  margin: 0;
 }
 
 header {
@@ -24,7 +24,7 @@ header {
 
 .startingScreen {
   display: flex;
-  flex-direction:column-reverse;
+  flex-direction: column-reverse;
   font-size: 1.8em;
   align-items: center;
   color: rgb(251, 244, 224);
@@ -58,14 +58,15 @@ header {
   justify-content: center;
   flex-direction: column;
 }
-.initialText h2{
+
+.initialText h2 {
   font-size: 1.6em;
   text-align: right
 }
 
 footer {
   color: rgb(222, 232, 240);
-  background: #180757cb;
+  background: #180757e4;
   height: 4vh;
   display: flex;
   align-items: center;
@@ -78,8 +79,13 @@ footer {
   position: absolute;
 }
 
-.dropdown {
+/* .dropdown {
   display: flex;
+} */
+nav {
+  display: flex;
+  justify-content: stretch;
+  width: 100vw;
 }
 
 .dropdown button {
@@ -136,7 +142,7 @@ footer {
   width: 8vw;
   background: none;
   border: none;
-  cursor:pointer;
+  cursor: pointer;
   height: 4vh;
   background-image: url("./images/flame.png");
   background-size: cover;
@@ -146,23 +152,30 @@ footer {
 }
 
 #btn {
-    width: 6vw;
-    align-self: center;
-    height: 4vw;
-    background-color: #46045350;
-    font-family: 'Nanum Gothic';
-    color: aliceblue;
-    border-radius: 1vw;
-    cursor: pointer;
+  width: 6vw;
+  align-self: center;
+  height: 4vw;
+  background-color: #46045350;
+  font-family: 'Nanum Gothic';
+  color: aliceblue;
+  border-radius: 1vw;
+  cursor: pointer;
 }
 
 .gridAll {
-  height: 72vh;
+  height: 57vh;
   display: none;
   background-color: #0c00088d;
+  margin: 3vw;
 }
 
-.ColumnTwo,
+.ColumnTwo {
+  height: 50vh;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 9vw;
+}
+
 .allCharacters,
 .male,
 .female,
@@ -228,19 +241,11 @@ footer {
 
 
 .all {
-  display: grid;
-  background-size: contain;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 36vw;
-  position: relative;
-  display: none;
+  height: 60vh;
   background-color: #0c00088d;
+  display: none;
 }
 
-.spaceRigth {
-  grid-column: 1/2;
-  margin-left: 5vw;
-}
 
 #imgHayao,
 #imgYoshifumi,
@@ -249,8 +254,7 @@ footer {
 #imgGoro,
 #imgHiromasa {
   display: none;
-  width: 65%;
-  margin-top: 10vh;
+  margin-top: 5vh;
   margin-left: 5.5vw;
 }
 
@@ -269,11 +273,6 @@ footer {
 .columnHiromasa,
 .columnGoro,
 .columnHiroyuki {
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 1fr;
-  column-gap: 2vw;
-  row-gap: 2vh;
-  display: grid;
   padding: 0.8vw;
   display: none;
 }
@@ -286,24 +285,43 @@ footer {
 .columnHiroyuki div {
   background-color: #286976be;
   border-radius: 1vw;
-  padding: .8vw;
-  height: 10vh;
-  width: 14vw;
-  align-items: center;
+  margin: 1vw;
+  height: 9vh;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  padding-top: 8vh;
 }
 
-h2 {
+.columnHayao div h2,
+.columnHayao div h6,
+.columnIsao div h2,
+.columnIsao div h6,
+.columnYoshifumi div h2,
+.columnYoshifumi div h6,
+.columnHiromasa div h2,
+.columnHiromasa div h6,
+.columnGoro div h2,
+.columnGoro div h6,
+.columnHiroyuki div h2,
+.columnHiroyuki div h6 {
   text-align: center;
-  justify-items: center;
-  text-transform: uppercase;
+  color: rgb(255, 255, 255);
+  font-family: 'Patrick Hand';
+  font-size: 2.5em;
+  margin: 0;
+}
+
+
+/* h2 {
+  text-align: center;
+  /* justify-items: center; */
+  /* text-transform: uppercase;
   color: rgb(255, 255, 255);
   font-family: 'Patrick Hand';
   font-size: 2.1vh;
-  align-items: center;
-  margin-top: -0.5vh;
-}
+  align-items: center; */
+  /* margin-top: -0.5vh; */
+/* } */ 
 
 h6 {
   text-align: center;
@@ -312,7 +330,7 @@ h6 {
   color: rgb(255, 255, 255);
   font-family: 'Patrick Hand', cursive;
   font-size: 2.3vh;
-  margin-top: -2vh;
+  margin-top: 0
 }
 
 .ColumnTwo h3,
@@ -321,14 +339,14 @@ h6 {
 .female h2,
 .unspecified h2 {
   text-align: center;
-  justify-items: center;
+
   text-transform: uppercase;
   color: rgb(255, 255, 255);
   font-family: 'Patrick Hand', cursive;
   font-size: 2.7vh;
   height: calc(1vw - 1vw);
   align-items: center;
-  margin-top: -4.5vh;
+  /* margin-top: -4.5vh; */
 }
 
 .allCharacters div,
@@ -456,164 +474,4 @@ h6 {
   font-size: 2.5vh;
   padding: 0.8vw;
   box-shadow: 0 0 30px rgb(73, 34, 158);
-}
-
-@media (max-width: 500px) {
-  .header {
-    height: 10vh;
-    background-size: 28vw;
-  }
-
-  #home {
-    width: 15vw;
-    height: 8vh;
-    margin-left: 2vw;
-  }
-
-  .startingScreen {
-    font-size: 1em;
-    height: 115vh;
-  }
-
-  .startingScreen img {
-    width: 56vw;
-  }
-
-  .initialText {
-   position: absolute;
-    padding-right: 4vh;
-    margin-bottom: 70vh;
-  }
-
-  .dropdown button {
-    padding: 8px 16px;
-    width: 18.721vw;
-    height: 7vh;
-    font-size: 0.6em;
-  }
-
-  .dropdown div a {
-    
-    font-size: 0.7em;
-    font-family: 'Nanum Gothic';
-  }
-  
-  .dropdown div a:hover {
-    background-color: #290b3bbc;
-    color: #fff;
-  }
-  
-  .ColumnTwo,
-  .allCharacters,
-  .male,
-  .female,
-  .unspecified,
-  #result{
-    grid-column: 2/4;
-    grid-template-columns: repeat(2, 30vw);
-    grid-column-gap: 15vw;
-    grid-row-gap: 2vw;
-  }
-
-  .ColumnTwo div,
-  .allCharacters div,
-  .male div,
-  .female div,
-  .unspecified div,
-  #result div {
-    grid-template-rows: 15vh;
-  }
-
-  .unspecified div,#result div {
-    height: 15vh;
-  }
-
-  .ColumnTwo img,
-  .allCharacters img,
-  .male img,
-  .female img,
-  .unspecified img, #result img{
-    height: calc(16vw - 1.7vw);
-    width: calc(27vw - 0.5vw);
-  }
-
-  .ColumnTwo h4,
-  #result h4 {
-    font-size: 0.6em;
-    margin-top: -3vh;
-  }
-
-
-  #imgHayao,
-  #imgYoshifumi,
-  #imgIsao,
-  #imgHiroyuki,
-  #imgGoro,
-  #imgHiromasa {
-    width: 95%;
-    margin-left: 0vw;
-  }
-
-  h2 {
-    margin-top: -1.7em;
-  }
-
-  h6 {
-    font-size: 0.9em;
-    margin-top: -1.5vh;
-  }
-
-  .ColumnTwo h3,
-  .allCharacters h2,
-  .male h2,
-  .female h2,
-  .unspecified h2 {
-    font-size: 0.8em;
-    margin-top: -3vh;
-  }
-
-
-  .allDirectors {
-    height: 66vh;
-  }
-
-  .columnHayao,
-  .columnIsao,
-  .columnYoshifumi,
-  .columnHiromasa,
-  .columnGoro,
-  .columnHiroyuki {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .columnHayao div,
-  .columnIsao div,
-  .columnYoshifumi div,
-  .columnHiromasa div,
-  .columnGoro div,
-  .columnHiroyuki div {
-    width: 20vw;
-  }
-
-
-#btn {
-  width: 15vw;
-  height: 6vw;
-}
-
-.space3 p {
-  font-size: 0.8em;
-}
-
-.higherRT {
-  display: flex;
-  height: 20vh;
-  flex-wrap: nowrap;
-  flex-direction: row;
-}
-
-.higherRT {
-  display: flex;
-  height: 44vh;
-}
 }
